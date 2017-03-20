@@ -5,6 +5,7 @@
  */
 package com.mycompany.excelgenerator;
 
+import com.mycompany.excelgenerator.dto.Employee;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -18,7 +19,7 @@ import org.jxls.template.SimpleExporter;
  *
  * @author Nantawat
  */
-public class NewClass {
+public class Test {
     public static void main(String[] args) throws FileNotFoundException, IOException {
         System.out.println("Test");
         

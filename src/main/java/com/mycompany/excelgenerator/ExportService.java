@@ -5,6 +5,9 @@
  */
 package com.mycompany.excelgenerator;
 
+import com.mycompany.excelgenerator.dto.Employee;
+import com.mycompany.excelgenerator.dto.Order;
+import com.mycompany.excelgenerator.dto.Net;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -19,7 +22,7 @@ import org.jxls.util.JxlsHelper;
  *
  * @author Nantawat
  */
-public class NewClass1 {
+public class ExportService {
 
     public static void main(String[] args) throws IOException {
 //        List<Employee> employees = generateSampleEmployeeData();
