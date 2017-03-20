@@ -5,6 +5,8 @@
  */
 package com.mycompany.excelgenerator.dto;
 
+import javax.swing.JTextField;
+
 /**
  *
  * @author Nantawat

@@ -5,6 +5,22 @@
  */
 package com.mycompany.ui;
 
+import com.mycompany.excelgenerator.dto.Net;
+import com.mycompany.excelgenerator.dto.Order;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.jxls.common.Context;
+import org.jxls.util.JxlsHelper;
+
 /**
  *
  * @author Nantawat
@@ -42,15 +58,15 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         receiveDate = new org.jdesktop.swingx.JXDatePicker();
         jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        customerTxt = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        saleSelect = new javax.swing.JComboBox<>();
+        sellerSelect = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        exportExcel = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,42 +95,43 @@ public class StartFrame extends javax.swing.JFrame {
 
         jLabel8.setText("ชื่อเซลล์");
 
-        saleSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "โจเซฟ", "Home Work", "อ้อย", "อ๋อ", "ตา", "เฮียสุวัฒน์", "เอก", "เบียร์"}));
+        sellerSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "โจเซฟ", "Home Work", "อ้อย", "อ๋อ", "ตา", "เฮียสุวัฒน์", "เอก", "เบียร์"}));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(24, 24, 24))
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel7))
-                                .addGap(23, 23, 23))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(6, 6, 6)))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel3)
-                            .addGap(51, 51, 51)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addGap(53, 53, 53)))
+                        .addContainerGap()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addGap(24, 24, 24))
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel7))
+                                    .addGap(23, 23, 23))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(jLabel3)
+                                    .addGap(51, 51, 51)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(53, 53, 53))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(billNumberTxt)
                     .addComponent(quotationIdTxt)
-                    .addComponent(orderDate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
-                    .addComponent(jTextField1)
+                    .addComponent(orderDate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                    .addComponent(customerTxt)
                     .addComponent(receiveDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(saleSelect, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(sellerSelect, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(21, 21, 21))
         );
         jPanel2Layout.setVerticalGroup(
@@ -130,12 +147,12 @@ public class StartFrame extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(customerTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(saleSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sellerSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(orderDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -200,8 +217,13 @@ public class StartFrame extends javax.swing.JFrame {
         jButton2.setText("<< Remove");
         jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 100, -1));
 
-        jToggleButton1.setText("Export Report");
-        jPanel3.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 380, -1, 50));
+        exportExcel.setText("Export Report");
+        exportExcel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exportExcelActionPerformed(evt);
+            }
+        });
+        jPanel3.add(exportExcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 380, -1, 50));
 
         jPanel1.add(jPanel3);
 
@@ -219,6 +241,56 @@ public class StartFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void exportExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportExcelActionPerformed
+        try {
+            Order order = new Order();
+            order.setBillNumber(billNumberTxt.getText());
+            order.setCustomerName(customerTxt.getText());
+            order.setQuotationId(quotationIdTxt.getText());
+            order.setSellerName(sellerSelect.getSelectedItem().toString());
+           
+            SimpleDateFormat formater = new SimpleDateFormat("dd-MM-yyyy");
+            formater.format(orderDate.getDate());
+            
+            order.setOrderDate(formater.format(orderDate.getDate()));
+            order.setReceiveDate( formater.format(receiveDate.getDate()));
+            
+            
+            createReport(order);
+        } catch (IOException ex) {
+            Logger.getLogger(StartFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_exportExcelActionPerformed
+
+    private void createReport(Order order) throws FileNotFoundException, IOException{
+        String srcFilePath = "target/complete.xls";
+        try (InputStream is = new FileInputStream(srcFilePath)) {
+            try (OutputStream os = new FileOutputStream("target/output_complete.xls")) {
+                Context context = new Context();
+                context.putVar("order", order);
+                context.putVar("nets", generateSampleNetData());
+                JxlsHelper.getInstance().processTemplate(is, os, context);
+            }
+        }
+    }
+    
+      private List<Net> generateSampleNetData() {
+    	  List<Net> nets = new ArrayList<>();
+    	  
+    	  Net net = new Net();
+    	  net.setHeight("2010");
+    	  net.setWide("826");
+    	  
+    	  Net net2 = new Net();
+    	  net2.setHeight("500");
+    	  net2.setWide("1652");
+    	  
+    	  nets.add(net);
+    	  nets.add(net2);
+    	  
+    	  return nets;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -256,6 +328,8 @@ public class StartFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField billNumberTxt;
+    private javax.swing.JTextField customerTxt;
+    private javax.swing.JToggleButton exportExcel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -273,11 +347,9 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JToggleButton jToggleButton1;
     private org.jdesktop.swingx.JXDatePicker orderDate;
     private javax.swing.JTextField quotationIdTxt;
     private org.jdesktop.swingx.JXDatePicker receiveDate;
-    private javax.swing.JComboBox<String> saleSelect;
+    private javax.swing.JComboBox<String> sellerSelect;
     // End of variables declaration//GEN-END:variables
 }
