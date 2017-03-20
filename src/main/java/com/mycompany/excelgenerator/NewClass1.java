@@ -41,11 +41,15 @@ public class NewClass1 {
         order.setReceiveDate("19/03/2017");
         order.setSellerName("Robert");
 
+        List<Net> nets = generateSampleNetData();
+        
+        
         String srcFilePath  = "target/complete.xls";
         try (InputStream is = new FileInputStream(srcFilePath)) {
             try (OutputStream os = new FileOutputStream("target/output_complete.xls")) {
                 Context context = new Context();
                 context.putVar("order", order);
+                context.putVar("nets", nets);
                 JxlsHelper.getInstance().processTemplate(is, os, context);
             }
         }
@@ -66,5 +70,22 @@ public class NewClass1 {
         employees.add(employee2);
         
         return employees;
+    }
+    
+    private static List<Net> generateSampleNetData() {
+    	  List<Net> nets = new ArrayList<>();
+    	  
+    	  Net net = new Net();
+    	  net.setHeight("2010");
+    	  net.setWide("826");
+    	  
+    	  Net net2 = new Net();
+    	  net2.setHeight("500");
+    	  net2.setWide("1652");
+    	  
+    	  nets.add(net);
+    	  nets.add(net2);
+    	  
+    	  return nets;
     }
 }
