@@ -25,17 +25,6 @@ import org.jxls.util.JxlsHelper;
 public class ExportService {
 
     public static void main(String[] args) throws IOException {
-//        List<Employee> employees = generateSampleEmployeeData();
-        
-//        String srcFilePath  = "target/template.xls";
-//        try (InputStream is = new FileInputStream(srcFilePath)) {
-//            try (OutputStream os = new FileOutputStream("target/output.xls")) {
-//                Context context = new Context();
-//                context.putVar("employees", employees);
-//                JxlsHelper.getInstance().processTemplate(is, os, context);
-//            }
-//        }
-        
         Order order = new Order();
         order.setBillNumber("987654321");
         order.setCustomerName("Jumbo");
@@ -45,7 +34,6 @@ public class ExportService {
         order.setSellerName("Robert");
 
         List<Net> nets = generateSampleNetData();
-        
         
         String srcFilePath  = "target/complete.xls";
         try (InputStream is = new FileInputStream(srcFilePath)) {
