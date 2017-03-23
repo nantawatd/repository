@@ -5,7 +5,6 @@
  */
 package com.mycompany.ui;
 
-import com.mycompany.excelgenerator.dto.Net;
 import com.mycompany.excelgenerator.dto.Order;
 import com.mycompany.excelgenerator.dto.OrderDetail;
 import java.io.FileInputStream;
@@ -120,20 +119,17 @@ public class StartFrame extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGap(24, 24, 24))
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel7))
-                            .addGap(23, 23, 23))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel3)
-                            .addGap(51, 51, 51)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(24, 24, 24))
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7))
+                        .addGap(23, 23, 23))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
                             .addComponent(jLabel8)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -281,25 +277,25 @@ public class StartFrame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "รายละเอียดสินค้า", "ชนิด", "กว้าง", "สูง", "ผ้ามุ้งสี"
+                "ลำดับ", "รายละเอียดสินค้า", "ชนิด", "กว้าง", "สูง", "ผ้ามุ้งสี"
             }
         ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
         jScrollPane1.setViewportView(reportTable);
-        if (reportTable.getColumnModel().getColumnCount() > 0) {
-            reportTable.getColumnModel().getColumn(0).setHeaderValue("รายละเอียดสินค้า");
-            reportTable.getColumnModel().getColumn(1).setHeaderValue("ชนิด");
-            reportTable.getColumnModel().getColumn(2).setHeaderValue("กว้าง");
-            reportTable.getColumnModel().getColumn(3).setHeaderValue("สูง");
-            reportTable.getColumnModel().getColumn(4).setHeaderValue("ผ้ามุ้งสี");
-        }
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -356,34 +352,46 @@ public class StartFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private Order createOrder() {
+        Order order = new Order();
+        order.setBillNumber(billNumberTxt.getText());
+        order.setQuotationId(quotationIdTxt.getText());
+        order.setCustomerName(customerTxt.getText());
+        order.setSellerName(sellerSelect.getSelectedItem().toString());
+        order.setOrderDate(formater.format(orderDate.getDate()));
+        order.setReceiveDate(formater.format(receiveDate.getDate()));
+        return order;
+    }
+
+    private List<OrderDetail> createOrderDetail() {
+        List<OrderDetail> orderDetails = new ArrayList<>();
+        OrderDetail detail;
+        
+        int columnCount = reportTable.getColumnCount();
+        int rowCount = reportTable.getRowCount();
+
+        for (int row = 0; row < rowCount; row++) {
+            detail = new OrderDetail();
+            detail.setDetail(reportTable.getValueAt(row, columnCount - 5).toString());
+            detail.setType(reportTable.getValueAt(row, columnCount - 4).toString());
+            detail.setWide(reportTable.getValueAt(row, columnCount - 3).toString());
+            detail.setHeight(reportTable.getValueAt(row, columnCount - 2).toString());
+            detail.setColor(reportTable.getValueAt(row, columnCount - 1).toString());
+            orderDetails.add(detail);
+        }
+        
+        return orderDetails;
+    }
+
     private void exportExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportExcelActionPerformed
         try {
-            Order order = new Order();
-            order.setBillNumber(billNumberTxt.getText());
-            order.setQuotationId(quotationIdTxt.getText());
-            order.setCustomerName(customerTxt.getText());
-            order.setSellerName(sellerSelect.getSelectedItem().toString());
-            order.setOrderDate(formater.format(orderDate.getDate()));
-            order.setReceiveDate(formater.format(receiveDate.getDate()));
+            //Order Infomation
+            Order order = createOrder();
+            
+            //Order Details
+            List<OrderDetail> orderDetails = createOrderDetail();
 
-            List<OrderDetail> orderDetails = new ArrayList<OrderDetail>();
-            OrderDetail detail;
-            
-            int columnCount = reportTable.getColumnCount();
-            int rowCount = reportTable.getRowCount();
-            
-            for (int row = 0; row < rowCount; row++) {
-                detail = new OrderDetail();
-                
-                detail.setDetail(reportTable.getValueAt(row, columnCount-5).toString());
-                detail.setType(reportTable.getValueAt(row, columnCount-4).toString());
-                detail.setWide(reportTable.getValueAt(row, columnCount-3).toString());
-                detail.setHeight(reportTable.getValueAt(row, columnCount-2).toString());
-                detail.setColor(reportTable.getValueAt(row, columnCount-1).toString());
-                
-                orderDetails.add(detail);
-            }
-            
+            //Export Report
             createReport(order, orderDetails);
         } catch (IOException ex) {
             Logger.getLogger(StartFrame.class.getName()).log(Level.SEVERE, null, ex);
@@ -392,7 +400,9 @@ public class StartFrame extends javax.swing.JFrame {
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         DefaultTableModel model = (DefaultTableModel) reportTable.getModel();
-        model.addRow(new Object[]{orderDetail.getText(),
+        model.addRow(new Object[]{
+            (model.getRowCount() + 1),
+            orderDetail.getText(),
             typeCombo.getSelectedItem().toString(),
             wideTxt.getText(),
             heightTxt.getText(),
@@ -407,6 +417,11 @@ public class StartFrame extends javax.swing.JFrame {
         for (int i = indices.length - 1; i >= 0; i--) {
             model.removeRow(indices[i]);
         }
+
+        //reset row number.
+        for (int i = 0; i < model.getRowCount(); i++) {
+            model.setValueAt(i + 1, i, 0);
+        }
     }//GEN-LAST:event_removeButtonActionPerformed
 
     private void createReport(Order order, List<OrderDetail> orderDetails) throws FileNotFoundException, IOException {
@@ -419,23 +434,6 @@ public class StartFrame extends javax.swing.JFrame {
                 JxlsHelper.getInstance().processTemplate(is, os, context);
             }
         }
-    }
-
-    private List<Net> generateSampleNetData() {
-        List<Net> nets = new ArrayList<>();
-
-        Net net = new Net();
-        net.setHeight("2010");
-        net.setWide("826");
-
-        Net net2 = new Net();
-        net2.setHeight("500");
-        net2.setWide("1652");
-
-        nets.add(net);
-        nets.add(net2);
-
-        return nets;
     }
 
     /**
@@ -473,7 +471,7 @@ public class StartFrame extends javax.swing.JFrame {
         });
     }
 
-    private SimpleDateFormat formater = new SimpleDateFormat("dd-MM-yyyy");
+    private static final SimpleDateFormat formater = new SimpleDateFormat("dd-MM-yyyy");
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JTextField billNumberTxt;
