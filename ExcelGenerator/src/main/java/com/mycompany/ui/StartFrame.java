@@ -20,9 +20,10 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
+import org.apache.commons.lang3.StringUtils;
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 import org.jxls.common.Context;
 import org.jxls.util.JxlsHelper;
 
@@ -84,7 +85,7 @@ public class StartFrame extends javax.swing.JFrame {
         reportTable = new javax.swing.JTable();
         addButton = new javax.swing.JButton();
         removeButton = new javax.swing.JButton();
-        exportExcel = new javax.swing.JToggleButton();
+        exportButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -331,13 +332,13 @@ public class StartFrame extends javax.swing.JFrame {
         });
         jPanel3.add(removeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 100, -1));
 
-        exportExcel.setText("Export Report");
-        exportExcel.addActionListener(new java.awt.event.ActionListener() {
+        exportButton.setText("Export Report");
+        exportButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exportExcelActionPerformed(evt);
+                exportButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(exportExcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 380, -1, 50));
+        jPanel3.add(exportButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 390, 120, 40));
 
         jPanel1.add(jPanel3);
 
@@ -361,8 +362,8 @@ public class StartFrame extends javax.swing.JFrame {
         order.setQuotationId(quotationIdTxt.getText());
         order.setCustomerName(customerTxt.getText());
         order.setSellerName(sellerSelect.getSelectedItem().toString());
-        order.setOrderDate(formater.format(orderDate.getDate()));
-        order.setReceiveDate(formater.format(receiveDate.getDate()));
+        order.setOrderDate(null != orderDate.getDate() ? FORMATER.format(orderDate.getDate()) : EMPTY);
+        order.setReceiveDate(null != receiveDate.getDate() ? FORMATER.format(receiveDate.getDate()) : EMPTY);
         return order;
     }
 
@@ -386,30 +387,18 @@ public class StartFrame extends javax.swing.JFrame {
         
         return orderDetails;
     }
-
-    private void exportExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportExcelActionPerformed
-        try {
-            //Order Infomation
-            Order order = createOrder();
-            
-            //Order Details
-            List<OrderDetail> orderDetails = createOrderDetail();
-
-            //Choose File Destination
-            JFileChooser jFileChooser = new JFileChooser();
-            FileFilter filter = new FileNameExtensionFilter("XLS","xls");
-            jFileChooser.setFileFilter(filter);
-            int ret = jFileChooser.showDialog(null, "Save");
-            
-            if (ret == JFileChooser.APPROVE_OPTION) {
-                //Export Report
-                createReport(order, orderDetails, jFileChooser);
+    
+    private void createReport(Order order, List<OrderDetail> orderDetails, JFileChooser fileDirectory) throws FileNotFoundException, IOException {
+        String srcFilePath = "target/complete.xls";
+        try (InputStream is = new FileInputStream(srcFilePath)) {
+            try (OutputStream os = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "." + XLS)) {
+                Context context = new Context();
+                context.putVar("order", order);
+                context.putVar("orderDetails", orderDetails);
+                JxlsHelper.getInstance().processTemplate(is, os, context);
             }
-          
-        } catch (IOException ex) {
-            Logger.getLogger(StartFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_exportExcelActionPerformed
+    }
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         DefaultTableModel model = (DefaultTableModel) reportTable.getModel();
@@ -431,30 +420,34 @@ public class StartFrame extends javax.swing.JFrame {
             model.removeRow(indices[i]);
         }
 
-        //reset row number.
+        //Reset row number.
         for (int i = 0; i < model.getRowCount(); i++) {
             model.setValueAt(i + 1, i, 0);
         }
     }//GEN-LAST:event_removeButtonActionPerformed
 
-    private void createReport(Order order, List<OrderDetail> orderDetails, JFileChooser jFileChooser) throws FileNotFoundException, IOException {
-        String srcFilePath = "target/complete.xls";
-        try (InputStream is = new FileInputStream(srcFilePath)) {
+    private void exportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportButtonActionPerformed
+        try {
+            //1. Order Infomation
+            Order order = createOrder();
             
-            String path = jFileChooser.getSelectedFile().toString();
-            System.out.println("PATH:" + path);
-            FileFilter filter = jFileChooser.getFileFilter();
+            //2. Order Details
+            List<OrderDetail> orderDetails = createOrderDetail();
+
+            //Choose File Destination
+            JFileChooser fileDirectory = new JFileChooser();
+            FileNameExtensionFilter filter = new FileNameExtensionFilter("Excel (." + XLS + ")", XLS);
+            fileDirectory.setFileFilter(filter);
             
-            System.out.println("File Extension:" + jFileChooser.getFileFilter());
-            
-            try (OutputStream os = new FileOutputStream(path + "." + jFileChooser.getFileFilter())) {
-                Context context = new Context();
-                context.putVar("order", order);
-                context.putVar("orderDetails", orderDetails);
-                JxlsHelper.getInstance().processTemplate(is, os, context);
+            if (fileDirectory.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+                //3. Export Report
+                createReport(order, orderDetails, fileDirectory);
             }
+          
+        } catch (IOException ex) {
+            Logger.getLogger(StartFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
+    }//GEN-LAST:event_exportButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -491,13 +484,14 @@ public class StartFrame extends javax.swing.JFrame {
         });
     }
 
-    private static final SimpleDateFormat formater = new SimpleDateFormat("dd-MM-yyyy");
+    private static final SimpleDateFormat FORMATER = new SimpleDateFormat("dd-MM-yyyy");
+    private static final String XLS = "xls";
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JTextField billNumberTxt;
     private javax.swing.JTextField colorTxt;
     private javax.swing.JTextField customerTxt;
-    private javax.swing.JToggleButton exportExcel;
+    private javax.swing.JButton exportButton;
     private javax.swing.JTextField heightTxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
