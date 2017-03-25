@@ -11,6 +11,7 @@ package com.mycompany.excelgenerator.dto;
  */
 public class OrderDetail {
     
+    private String no;
     private String detail;
     private String type;
     private String wide;
@@ -57,4 +58,11 @@ public class OrderDetail {
         this.color = color;
     }
     
+     public String getNo() {
+        return no;
+    }
+
+    public void setNo(String no) {
+        this.no = no;
+    }
 }

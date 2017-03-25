@@ -19,6 +19,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import org.jxls.common.Context;
 import org.jxls.util.JxlsHelper;
@@ -372,6 +375,7 @@ public class StartFrame extends javax.swing.JFrame {
 
         for (int row = 0; row < rowCount; row++) {
             detail = new OrderDetail();
+            detail.setNo(reportTable.getValueAt(row, columnCount - 6).toString());
             detail.setDetail(reportTable.getValueAt(row, columnCount - 5).toString());
             detail.setType(reportTable.getValueAt(row, columnCount - 4).toString());
             detail.setWide(reportTable.getValueAt(row, columnCount - 3).toString());
@@ -391,8 +395,17 @@ public class StartFrame extends javax.swing.JFrame {
             //Order Details
             List<OrderDetail> orderDetails = createOrderDetail();
 
-            //Export Report
-            createReport(order, orderDetails);
+            //Choose File Destination
+            JFileChooser jFileChooser = new JFileChooser();
+            FileFilter filter = new FileNameExtensionFilter("XLS","xls");
+            jFileChooser.setFileFilter(filter);
+            int ret = jFileChooser.showDialog(null, "Save");
+            
+            if (ret == JFileChooser.APPROVE_OPTION) {
+                //Export Report
+                createReport(order, orderDetails, jFileChooser);
+            }
+          
         } catch (IOException ex) {
             Logger.getLogger(StartFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -424,10 +437,17 @@ public class StartFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_removeButtonActionPerformed
 
-    private void createReport(Order order, List<OrderDetail> orderDetails) throws FileNotFoundException, IOException {
+    private void createReport(Order order, List<OrderDetail> orderDetails, JFileChooser jFileChooser) throws FileNotFoundException, IOException {
         String srcFilePath = "target/complete.xls";
         try (InputStream is = new FileInputStream(srcFilePath)) {
-            try (OutputStream os = new FileOutputStream("target/output_complete.xls")) {
+            
+            String path = jFileChooser.getSelectedFile().toString();
+            System.out.println("PATH:" + path);
+            FileFilter filter = jFileChooser.getFileFilter();
+            
+            System.out.println("File Extension:" + jFileChooser.getFileFilter());
+            
+            try (OutputStream os = new FileOutputStream(path + "." + jFileChooser.getFileFilter())) {
                 Context context = new Context();
                 context.putVar("order", order);
                 context.putVar("orderDetails", orderDetails);
