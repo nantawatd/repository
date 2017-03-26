@@ -20,9 +20,10 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+import javax.swing.JLabel;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
-import org.apache.commons.lang3.StringUtils;
+import javax.swing.table.TableCellRenderer;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import org.jxls.common.Context;
 import org.jxls.util.JxlsHelper;
@@ -38,6 +39,7 @@ public class StartFrame extends javax.swing.JFrame {
      */
     public StartFrame() {
         initComponents();
+        initComponents2();
     }
 
     /**
@@ -78,20 +80,22 @@ public class StartFrame extends javax.swing.JFrame {
         heightTxt = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        colorTxt = new javax.swing.JTextField();
         orderDetail = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        ropeNoCombo = new javax.swing.JComboBox<>();
+        netColorCombo = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         reportTable = new javax.swing.JTable();
+        exportButton = new javax.swing.JButton();
         addButton = new javax.swing.JButton();
         removeButton = new javax.swing.JButton();
-        exportButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Light", 1, 36)); // NOI18N
@@ -101,6 +105,10 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI Light", 0, 11)); // NOI18N
         jLabel2.setText("Make your life easier.");
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel3.setText("เลขที่บิล");
 
@@ -136,11 +144,11 @@ public class StartFrame extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(jLabel8)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 14, Short.MAX_VALUE)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(billNumberTxt)
                     .addComponent(quotationIdTxt)
-                    .addComponent(orderDate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                    .addComponent(orderDate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
                     .addComponent(customerTxt)
                     .addComponent(receiveDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(sellerSelect, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -176,92 +184,55 @@ public class StartFrame extends javax.swing.JFrame {
                 .addGap(19, 19, 19))
         );
 
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel9.setText("รายละเอียดสินค้า");
+        jPanel6.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 14, 94, -1));
 
         jLabel10.setText("ชนิด");
+        jPanel6.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 45, 94, -1));
 
         jLabel11.setText("กว้าง");
+        jPanel6.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 76, 55, -1));
 
         jLabel12.setText("สูง");
+        jPanel6.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 107, 55, -1));
 
         typeCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "W", "D"}));
+        jPanel6.add(typeCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 42, 68, -1));
+        jPanel6.add(wideTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 73, 68, -1));
 
         jLabel13.setText("มิลลิเมตร");
+        jPanel6.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 76, -1, -1));
+        jPanel6.add(heightTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 104, 68, -1));
 
         jLabel14.setText("มิลลิเมตร");
+        jPanel6.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 107, -1, -1));
 
         jLabel15.setText("ผ้ามุ้งสี");
+        jPanel6.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 111, -1));
+        jPanel6.add(orderDetail, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 11, 68, -1));
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel15)
-                        .addGap(67, 67, 67)
-                        .addComponent(colorTxt))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(orderDetail))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(typeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(wideTxt))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(heightTxt)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel14))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(orderDetail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(typeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(wideTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(heightTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(colorTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(57, Short.MAX_VALUE))
-        );
+        jLabel16.setText("จำนวนเชือก");
+        jPanel6.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 169, 68, -1));
+
+        ropeNoCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "4", "6", "8", "10", "14" }));
+        jPanel6.add(ropeNoCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 166, 70, -1));
+
+        netColorCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "เทา", "ดำ"}));
+        netColorCombo.setPreferredSize(new java.awt.Dimension(28, 25));
+        jPanel6.add(netColorCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 135, 70, 20));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -269,26 +240,28 @@ public class StartFrame extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 270, 480));
+        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 270, 490));
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
         reportTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ลำดับ", "รายละเอียดสินค้า", "ชนิด", "กว้าง", "สูง", "ผ้ามุ้งสี"
+                "ลำดับ", "รายละเอียดสินค้า", "ชนิด", "กว้าง", "สูง", "ผ้ามุ้งสี", "จำนวนเชือก"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -300,18 +273,38 @@ public class StartFrame extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(reportTable);
+        if (reportTable.getColumnModel().getColumnCount() > 0) {
+            reportTable.getColumnModel().getColumn(0).setPreferredWidth(40);
+            reportTable.getColumnModel().getColumn(1).setPreferredWidth(100);
+            reportTable.getColumnModel().getColumn(2).setPreferredWidth(50);
+            reportTable.getColumnModel().getColumn(3).setPreferredWidth(60);
+            reportTable.getColumnModel().getColumn(4).setPreferredWidth(60);
+            reportTable.getColumnModel().getColumn(5).setPreferredWidth(50);
+        }
+
+        exportButton.setText("Export Report");
+        exportButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exportButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(exportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 160, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                .addComponent(exportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, 440, 480));
@@ -332,14 +325,6 @@ public class StartFrame extends javax.swing.JFrame {
         });
         jPanel3.add(removeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 100, -1));
 
-        exportButton.setText("Export Report");
-        exportButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exportButtonActionPerformed(evt);
-            }
-        });
-        jPanel3.add(exportButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 390, 120, 40));
-
         jPanel1.add(jPanel3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -350,7 +335,7 @@ public class StartFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 573, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
         );
 
         pack();
@@ -376,12 +361,13 @@ public class StartFrame extends javax.swing.JFrame {
 
         for (int row = 0; row < rowCount; row++) {
             detail = new OrderDetail();
-            detail.setNo(reportTable.getValueAt(row, columnCount - 6).toString());
-            detail.setDetail(reportTable.getValueAt(row, columnCount - 5).toString());
-            detail.setType(reportTable.getValueAt(row, columnCount - 4).toString());
-            detail.setWide(reportTable.getValueAt(row, columnCount - 3).toString());
-            detail.setHeight(reportTable.getValueAt(row, columnCount - 2).toString());
-            detail.setColor(reportTable.getValueAt(row, columnCount - 1).toString());
+            detail.setNo(reportTable.getValueAt(row, columnCount - 7).toString());
+            detail.setDetail(reportTable.getValueAt(row, columnCount - 6).toString());
+            detail.setType(reportTable.getValueAt(row, columnCount - 5).toString());
+            detail.setWide(reportTable.getValueAt(row, columnCount - 4).toString());
+            detail.setHeight(reportTable.getValueAt(row, columnCount - 3).toString());
+            detail.setColor(reportTable.getValueAt(row, columnCount - 2).toString());
+            detail.setRopeNo(Integer.parseInt(reportTable.getValueAt(row, columnCount - 1).toString()));
             orderDetails.add(detail);
         }
         
@@ -408,7 +394,8 @@ public class StartFrame extends javax.swing.JFrame {
             typeCombo.getSelectedItem().toString(),
             wideTxt.getText(),
             heightTxt.getText(),
-            colorTxt.getText()}
+            netColorCombo.getSelectedItem().toString(),
+            ropeNoCombo.getSelectedItem().toString()}
         );
     }//GEN-LAST:event_addButtonActionPerformed
 
@@ -475,7 +462,7 @@ public class StartFrame extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(StartFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -489,7 +476,6 @@ public class StartFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JTextField billNumberTxt;
-    private javax.swing.JTextField colorTxt;
     private javax.swing.JTextField customerTxt;
     private javax.swing.JButton exportButton;
     private javax.swing.JTextField heightTxt;
@@ -500,6 +486,7 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -515,14 +502,22 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JComboBox<String> netColorCombo;
     private org.jdesktop.swingx.JXDatePicker orderDate;
     private javax.swing.JTextField orderDetail;
     private javax.swing.JTextField quotationIdTxt;
     private org.jdesktop.swingx.JXDatePicker receiveDate;
     private javax.swing.JButton removeButton;
     private javax.swing.JTable reportTable;
+    private javax.swing.JComboBox<String> ropeNoCombo;
     private javax.swing.JComboBox<String> sellerSelect;
     private javax.swing.JComboBox<String> typeCombo;
     private javax.swing.JTextField wideTxt;
     // End of variables declaration//GEN-END:variables
+
+    private void initComponents2() { 
+        TableCellRenderer header = reportTable.getTableHeader().getDefaultRenderer();
+        JLabel headerLabel = (JLabel) header;
+        headerLabel.setHorizontalAlignment(JLabel.CENTER);
+    }
 }

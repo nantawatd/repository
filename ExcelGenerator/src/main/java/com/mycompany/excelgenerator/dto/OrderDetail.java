@@ -17,6 +17,7 @@ public class OrderDetail {
     private String wide;
     private String height;
     private String color;
+    private Integer ropeNo;
 
     public String getDetail() {
         return detail;
@@ -64,5 +65,13 @@ public class OrderDetail {
 
     public void setNo(String no) {
         this.no = no;
+    }
+
+    public int getRopeNo() {
+        return ropeNo;
+    }
+
+    public void setRopeNo(Integer ropeNo) {
+        this.ropeNo = ropeNo;
     }
 }
