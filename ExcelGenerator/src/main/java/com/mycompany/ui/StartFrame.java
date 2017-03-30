@@ -16,9 +16,13 @@ import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -84,6 +88,7 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         ropeNoCombo = new javax.swing.JComboBox<>();
         netColorCombo = new javax.swing.JComboBox<>();
+        imageCombo = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         reportTable = new javax.swing.JTable();
@@ -223,6 +228,7 @@ public class StartFrame extends javax.swing.JFrame {
         netColorCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "เทา", "ดำ"}));
         netColorCombo.setPreferredSize(new java.awt.Dimension(28, 25));
         jPanel6.add(netColorCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 135, 70, 20));
+        jPanel6.add(imageCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(116, 200, 120, -1));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -241,11 +247,11 @@ public class StartFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 270, 490));
+        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 270, 520));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -254,14 +260,14 @@ public class StartFrame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ลำดับ", "รายละเอียดสินค้า", "ชนิด", "กว้าง", "สูง", "ผ้ามุ้งสี", "จำนวนเชือก"
+                "ลำดับ", "รายละเอียดสินค้า", "ชนิด", "กว้าง", "สูง", "ผ้ามุ้งสี", "จำนวนเชือก", "Image"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, true
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -293,11 +299,11 @@ public class StartFrame extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap(350, Short.MAX_VALUE)
                 .addComponent(exportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addComponent(jScrollPane1)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -307,7 +313,7 @@ public class StartFrame extends javax.swing.JFrame {
                 .addComponent(exportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, 440, 480));
+        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, 480, 480));
 
         addButton.setText("Add >>");
         addButton.addActionListener(new java.awt.event.ActionListener() {
@@ -331,11 +337,11 @@ public class StartFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 871, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
         );
 
         pack();
@@ -395,8 +401,10 @@ public class StartFrame extends javax.swing.JFrame {
             wideTxt.getText(),
             heightTxt.getText(),
             netColorCombo.getSelectedItem().toString(),
-            ropeNoCombo.getSelectedItem().toString()}
+            ropeNoCombo.getSelectedItem().toString(),
+            new JLabel(new ImageIcon(imageCombo.getSelectedItem().toString()))}
         );
+        
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
@@ -471,7 +479,8 @@ public class StartFrame extends javax.swing.JFrame {
         });
     }
 
-    private static final SimpleDateFormat FORMATER = new SimpleDateFormat("dd-MM-yyyy");
+    private static final Locale locale = new Locale("th", "TH");
+    private static final SimpleDateFormat FORMATER = new SimpleDateFormat("dd/MM/yy", locale);
     private static final String XLS = "xls";
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
@@ -479,6 +488,7 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JTextField customerTxt;
     private javax.swing.JButton exportButton;
     private javax.swing.JTextField heightTxt;
+    private javax.swing.JComboBox<ImageIcon> imageCombo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -516,8 +526,22 @@ public class StartFrame extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void initComponents2() { 
+        
+        // Set Text Hearder to Center.
         TableCellRenderer header = reportTable.getTableHeader().getDefaultRenderer();
         JLabel headerLabel = (JLabel) header;
         headerLabel.setHorizontalAlignment(JLabel.CENTER);
+        
+        // Thai Calendar.
+        orderDate.setLocale(locale);
+        receiveDate.setLocale(locale);
+        
+        orderDate.setDate(new Date());
+        
+        // Set Image Combobox
+        imageCombo.addItem(new ImageIcon("src\\main\\java\\com\\mycompany\\resource\\double_left.PNG"));
+        imageCombo.addItem(new ImageIcon("src\\main\\java\\com\\mycompany\\resource\\double_right.PNG"));
+        imageCombo.addItem(new ImageIcon("src\\main\\java\\com\\mycompany\\resource\\tripple_right.PNG"));
+        
     }
 }
