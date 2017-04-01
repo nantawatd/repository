@@ -18,6 +18,15 @@ public class OrderDetail {
     private String height;
     private String color;
     private Integer ropeNo;
+    private byte[] image;
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
 
     public String getDetail() {
         return detail;

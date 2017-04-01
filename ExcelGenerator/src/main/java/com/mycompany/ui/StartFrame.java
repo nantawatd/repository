@@ -7,11 +7,13 @@ package com.mycompany.ui;
 
 import com.mycompany.excelgenerator.dto.Order;
 import com.mycompany.excelgenerator.dto.OrderDetail;
+import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -22,7 +24,6 @@ import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
-import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -31,6 +32,7 @@ import javax.swing.table.TableCellRenderer;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import org.jxls.common.Context;
 import org.jxls.util.JxlsHelper;
+import org.jxls.util.Util;
 
 /**
  *
@@ -264,7 +266,7 @@ public class StartFrame extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, javax.swing.ImageIcon.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false, false
@@ -358,7 +360,7 @@ public class StartFrame extends javax.swing.JFrame {
         return order;
     }
 
-    private List<OrderDetail> createOrderDetail() {
+    private List<OrderDetail> createOrderDetail() throws IOException {
         List<OrderDetail> orderDetails = new ArrayList<>();
         OrderDetail detail;
         
@@ -367,13 +369,26 @@ public class StartFrame extends javax.swing.JFrame {
 
         for (int row = 0; row < rowCount; row++) {
             detail = new OrderDetail();
-            detail.setNo(reportTable.getValueAt(row, columnCount - 7).toString());
-            detail.setDetail(reportTable.getValueAt(row, columnCount - 6).toString());
-            detail.setType(reportTable.getValueAt(row, columnCount - 5).toString());
-            detail.setWide(reportTable.getValueAt(row, columnCount - 4).toString());
-            detail.setHeight(reportTable.getValueAt(row, columnCount - 3).toString());
-            detail.setColor(reportTable.getValueAt(row, columnCount - 2).toString());
-            detail.setRopeNo(Integer.parseInt(reportTable.getValueAt(row, columnCount - 1).toString()));
+            detail.setNo(reportTable.getValueAt(row, columnCount - 8).toString());
+            detail.setDetail(reportTable.getValueAt(row, columnCount - 7).toString());
+            detail.setType(reportTable.getValueAt(row, columnCount - 6).toString());
+            detail.setWide(reportTable.getValueAt(row, columnCount - 5).toString());
+            detail.setHeight(reportTable.getValueAt(row, columnCount - 4).toString());
+            detail.setColor(reportTable.getValueAt(row, columnCount - 3).toString());
+            detail.setRopeNo(Integer.parseInt(reportTable.getValueAt(row, columnCount - 2).toString()));
+            
+//            InputStream imageInputStream = (InputStream) reportTable.getValueAt(row, columnCount - 1);
+
+//            ImageIcon imageIcon = (ImageIcon) reportTable.getValueAt(row, columnCount - 1);
+//            
+//            ByteOutputStream out = new ByteOutputStream();
+//            ObjectOutputStream o = new ObjectOutputStream(out);
+//            o.writeObject(imageIcon);
+//            detail.setImage(out.getBytes());
+            InputStream is = new FileInputStream("image/double_left.PNG");
+            byte[] imageBytes = Util.toByteArray(is);
+            detail.setImage(imageBytes);
+            
             orderDetails.add(detail);
         }
         
@@ -394,6 +409,7 @@ public class StartFrame extends javax.swing.JFrame {
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         DefaultTableModel model = (DefaultTableModel) reportTable.getModel();
+        
         model.addRow(new Object[]{
             (model.getRowCount() + 1),
             orderDetail.getText(),
@@ -402,7 +418,7 @@ public class StartFrame extends javax.swing.JFrame {
             heightTxt.getText(),
             netColorCombo.getSelectedItem().toString(),
             ropeNoCombo.getSelectedItem().toString(),
-            new JLabel(new ImageIcon(imageCombo.getSelectedItem().toString()))}
+            new ImageIcon(imageCombo.getSelectedItem().toString())}
         );
         
     }//GEN-LAST:event_addButtonActionPerformed
@@ -539,9 +555,9 @@ public class StartFrame extends javax.swing.JFrame {
         orderDate.setDate(new Date());
         
         // Set Image Combobox
-        imageCombo.addItem(new ImageIcon("src\\main\\java\\com\\mycompany\\resource\\double_left.PNG"));
-        imageCombo.addItem(new ImageIcon("src\\main\\java\\com\\mycompany\\resource\\double_right.PNG"));
-        imageCombo.addItem(new ImageIcon("src\\main\\java\\com\\mycompany\\resource\\tripple_right.PNG"));
+        imageCombo.addItem(new ImageIcon("image/double_left.PNG"));
+        imageCombo.addItem(new ImageIcon("image/double_right.PNG"));
+        imageCombo.addItem(new ImageIcon("image/tripple_right.PNG"));
         
     }
 }
