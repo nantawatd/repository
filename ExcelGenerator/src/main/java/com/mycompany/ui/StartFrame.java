@@ -7,13 +7,11 @@ package com.mycompany.ui;
 
 import com.mycompany.excelgenerator.dto.Order;
 import com.mycompany.excelgenerator.dto.OrderDetail;
-import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -95,6 +93,7 @@ public class StartFrame extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         reportTable = new javax.swing.JTable();
         exportButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         addButton = new javax.swing.JButton();
         removeButton = new javax.swing.JButton();
 
@@ -297,6 +296,13 @@ public class StartFrame extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -306,12 +312,18 @@ public class StartFrame extends javax.swing.JFrame {
                 .addComponent(exportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addComponent(jScrollPane1)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                .addGap(39, 39, 39)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addComponent(exportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -391,7 +403,6 @@ public class StartFrame extends javax.swing.JFrame {
             
             orderDetails.add(detail);
         }
-        
         return orderDetails;
     }
     
@@ -460,6 +471,28 @@ public class StartFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_exportButtonActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try(InputStream is = new FileInputStream("target/image_demo2.xlsx")) {
+            try (OutputStream os = new FileOutputStream("target/image.xlsx")) {
+                Context context = new Context();
+//                InputStream imageInputStream = new FileInputStream("target/business.png");
+                
+                InputStream imageInputStream = new FileInputStream("image/double_left.PNG");
+                byte[] imageBytes = Util.toByteArray(imageInputStream);
+                
+//                byte[] imageBytes = Util.toByteArray(imageInputStream);
+                OrderDetail detail = new OrderDetail();
+                detail.setImage(imageBytes);
+                context.putVar("dep", detail);
+                JxlsHelper.getInstance().processTemplate(is, os, context);
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(StartFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(StartFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -505,6 +538,7 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JButton exportButton;
     private javax.swing.JTextField heightTxt;
     private javax.swing.JComboBox<ImageIcon> imageCombo;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
