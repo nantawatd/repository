@@ -127,7 +127,7 @@
                               <Component id="quotationIdTxt" max="32767" attributes="0"/>
                               <Component id="customerTxt" max="32767" attributes="0"/>
                               <Component id="receiveDate" pref="115" max="32767" attributes="0"/>
-                              <Component id="jTextField1" max="32767" attributes="0"/>
+                              <Component id="comment1Txt" max="32767" attributes="0"/>
                               <Component id="sellerSelect" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="21" pref="21" max="-2" attributes="0"/>
@@ -169,7 +169,7 @@
                           </Group>
                           <EmptySpace pref="11" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comment1Txt" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
@@ -233,7 +233,7 @@
                     <Property name="text" type="java.lang.String" value="&#xe2b;&#xe21;&#xe32;&#xe22;&#xe40;&#xe2b;&#xe15;&#xe38;"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField1">
+                <Component class="javax.swing.JTextField" name="comment1Txt">
                 </Component>
               </SubComponents>
             </Container>

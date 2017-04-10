@@ -19,6 +19,15 @@ public class Order {
     private String receiveDate;
     private String customerName;
     private String sellerName;
+    private String comment1;
+
+    public String getComment1() {
+        return comment1;
+    }
+
+    public void setComment1(String comment1) {
+        this.comment1 = comment1;
+    }
     
     public String getQuotationId() {
         return quotationId;

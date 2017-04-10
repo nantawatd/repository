@@ -7,18 +7,11 @@ package com.mycompany.ui;
 
 import com.mycompany.excelgenerator.dto.Order;
 import com.mycompany.excelgenerator.dto.OrderDetail;
-import com.sun.xml.internal.messaging.saaj.util.ByteInputStream;
-import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
-import java.awt.image.RenderedImage;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -28,7 +21,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
@@ -81,7 +73,7 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         sellerSelect = new javax.swing.JComboBox<>();
         jLabel18 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        comment1Txt = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -170,7 +162,7 @@ public class StartFrame extends javax.swing.JFrame {
                     .addComponent(quotationIdTxt)
                     .addComponent(customerTxt)
                     .addComponent(receiveDate, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
-                    .addComponent(jTextField1)
+                    .addComponent(comment1Txt)
                     .addComponent(sellerSelect, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(21, 21, 21))
         );
@@ -203,7 +195,7 @@ public class StartFrame extends javax.swing.JFrame {
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comment1Txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18))
                 .addGap(54, 54, 54))
         );
@@ -400,6 +392,7 @@ public class StartFrame extends javax.swing.JFrame {
         order.setSellerName(sellerSelect.getSelectedItem().toString());
         order.setOrderDate(null != orderDate.getDate() ? FORMATER.format(orderDate.getDate()) : EMPTY);
         order.setReceiveDate(null != receiveDate.getDate() ? FORMATER.format(receiveDate.getDate()) : EMPTY);
+        order.setComment1(comment1Txt.getText());
         return order;
     }
 
@@ -486,7 +479,7 @@ public class StartFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_exportButtonActionPerformed
     
     private void createReport(Order order, List<OrderDetail> orderDetails, JFileChooser fileDirectory) throws FileNotFoundException, IOException {
-        String srcFilePath = "target/complete.xls";
+        String srcFilePath = "report1.xls";
         try (InputStream is = new FileInputStream(srcFilePath)) {
             try (OutputStream os = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "." + XLS)) {
                 Context context = new Context();
@@ -538,6 +531,7 @@ public class StartFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JTextField billNumberTxt;
+    private javax.swing.JTextField comment1Txt;
     private javax.swing.JTextField commentTxt;
     private javax.swing.JTextField customerTxt;
     private javax.swing.JButton exportButton;
@@ -566,7 +560,6 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JComboBox<String> netColorCombo;
     private org.jdesktop.swingx.JXDatePicker orderDate;
     private javax.swing.JTextField orderDetail;
