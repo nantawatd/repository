@@ -12,6 +12,7 @@ package com.mycompany.excelgenerator.dto;
 public class OrderDetail {
     
     private String no;
+    private String comment;
     private String detail;
     private String type;
     private String wide;
@@ -19,7 +20,15 @@ public class OrderDetail {
     private String color;
     private Integer ropeNo;
     private byte[] image;
+    
+    public String getComment() {
+        return comment;
+    }
 
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+    
     public byte[] getImage() {
         return image;
     }
