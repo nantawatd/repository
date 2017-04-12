@@ -585,6 +585,8 @@ public class StartFrame extends javax.swing.JFrame {
         receiveDate.setLocale(locale);
         
         orderDate.setDate(new Date());
+        orderDate.setFormats(FORMATER);
+        receiveDate.setFormats(FORMATER);
         
         // Set Image Combobox
         imageCombo.addItem(new ImageIcon("image/two_left.PNG", "image/two_left.PNG"));
