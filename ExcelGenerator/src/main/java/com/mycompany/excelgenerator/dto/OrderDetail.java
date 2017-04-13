@@ -17,9 +17,10 @@ public class OrderDetail {
     private String type;
     private String wide;
     private String height;
-    private String color;
+    private String netColor;
     private Integer ropeNo;
     private byte[] image;
+    private String aluColor;
     
     public String getComment() {
         return comment;
@@ -69,12 +70,20 @@ public class OrderDetail {
         this.height = height;
     }
 
-    public String getColor() {
-        return color;
+    public String getNetColor() {
+        return netColor;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setNetColor(String netColor) {
+        this.netColor = netColor;
+    }
+
+    public String getAluColor() {
+        return aluColor;
+    }
+
+    public void setAluColor(String aluColor) {
+        this.aluColor = aluColor;
     }
     
      public String getNo() {
