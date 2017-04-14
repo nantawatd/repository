@@ -13,6 +13,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -434,7 +435,7 @@ public class StartFrame extends javax.swing.JFrame {
             detail.setDetail(reportTable.getValueAt(row, columnCount - 9).toString());
             
             ImageIcon imageIcon = (ImageIcon) reportTable.getValueAt(row, columnCount - 8);
-            InputStream is = new FileInputStream(getClass().getResource(imageIcon.getDescription()).getFile());
+            InputStream is = getClass().getResourceAsStream(imageIcon.getDescription());
             byte[] imageBytes = Util.toByteArray(is);
             detail.setImage(imageBytes);
             
