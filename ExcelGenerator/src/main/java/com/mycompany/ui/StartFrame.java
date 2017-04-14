@@ -434,7 +434,7 @@ public class StartFrame extends javax.swing.JFrame {
             detail.setDetail(reportTable.getValueAt(row, columnCount - 9).toString());
             
             ImageIcon imageIcon = (ImageIcon) reportTable.getValueAt(row, columnCount - 8);
-            InputStream is = new FileInputStream(imageIcon.getDescription());
+            InputStream is = new FileInputStream(getClass().getResource(imageIcon.getDescription()).getFile());
             byte[] imageBytes = Util.toByteArray(is);
             detail.setImage(imageBytes);
             
@@ -620,9 +620,9 @@ public class StartFrame extends javax.swing.JFrame {
         receiveDate.setFormats(FORMATER);
         
         // Set Image Combobox
-        imageCombo.addItem(new ImageIcon("image/two_left.PNG", "image/two_left.PNG"));
-        imageCombo.addItem(new ImageIcon("image/two_right.PNG", "image/two_right.PNG"));
-        imageCombo.addItem(new ImageIcon("image/three_left.PNG", "image/three_left.PNG"));
-        imageCombo.addItem(new ImageIcon("image/three_right.PNG", "image/three_right.PNG"));
+        imageCombo.addItem(new ImageIcon(getClass().getResource("/image/two_left.PNG"), "/image/two_left.PNG"));
+        imageCombo.addItem(new ImageIcon(getClass().getResource("/image/two_right.PNG"), "/image/two_right.PNG"));
+        imageCombo.addItem(new ImageIcon(getClass().getResource("/image/three_left.PNG"), "/image/three_left.PNG"));
+        imageCombo.addItem(new ImageIcon(getClass().getResource("/image/three_right.PNG"), "/image/three_right.PNG"));
     }
 }
