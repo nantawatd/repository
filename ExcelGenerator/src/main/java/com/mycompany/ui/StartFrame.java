@@ -232,7 +232,7 @@ public class StartFrame extends javax.swing.JFrame {
 
         jLabel17.setText("หมายเหตุ");
 
-        netColorCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ขาว", "ดำ" }));
+        netColorCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "เทา", "ดำ" }));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -435,7 +435,9 @@ public class StartFrame extends javax.swing.JFrame {
             detail.setDetail(reportTable.getValueAt(row, columnCount - 9).toString());
             
             ImageIcon imageIcon = (ImageIcon) reportTable.getValueAt(row, columnCount - 8);
+            System.out.println("Desc ::" + imageIcon.getDescription());
             InputStream is = getClass().getResourceAsStream(imageIcon.getDescription());
+            System.out.println("is:::" + is);
             byte[] imageBytes = Util.toByteArray(is);
             detail.setImage(imageBytes);
             
@@ -455,10 +457,12 @@ public class StartFrame extends javax.swing.JFrame {
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         DefaultTableModel model = (DefaultTableModel) reportTable.getModel();
         
+        System.out.println("Image Table "+ imageCombo.getSelectedItem().toString());
+        
         model.addRow(new Object[]{
             (model.getRowCount() + 1),
             orderDetail.getText(),
-            new ImageIcon(imageCombo.getSelectedItem().toString()),
+            new ImageIcon(getClass().getResource(imageCombo.getSelectedItem().toString()), ((ImageIcon) imageCombo.getSelectedItem()).getDescription()),
             commentTxt.getText(), 
             typeCombo.getSelectedItem().toString(),
             wideTxt.getText(),
@@ -508,8 +512,9 @@ public class StartFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_exportButtonActionPerformed
     
     private void createReport(Order order, List<OrderDetail> orderDetails, JFileChooser fileDirectory) throws FileNotFoundException, IOException {
-        String srcFilePath = "report1.xls";
-        try (InputStream is = new FileInputStream(srcFilePath)) {
+        String srcFilePath = "/template/report1.xls";
+        
+        try (InputStream is = getClass().getResourceAsStream(srcFilePath)) {
             try (OutputStream os = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "." + XLS)) {
                 Context context = new Context();
                 context.putVar("order", order);
