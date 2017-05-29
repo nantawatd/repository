@@ -1,0 +1,3 @@
+- create new excel and test page by default
+- https://support.office.com/en-us/article/Dynamically-display-the-contents-of-a-cell-or-range-in-a-graphic-object-e2e7a629-5662-42d6-9295-06d112c2099f
+- https://excelribbon.tips.net/T005832_Dynamic_Text_Boxes.html
