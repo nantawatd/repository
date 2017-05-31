@@ -20,6 +20,10 @@ public class OrderDetail {
     private String netColor;
     private Integer ropeNo;
     private byte[] image;
+    private Integer rope1;
+    private Integer rope2;
+    private Integer rope3;
+    private Integer rope4;
     private String aluColor;
     
     public String getComment() {
@@ -100,5 +104,37 @@ public class OrderDetail {
 
     public void setRopeNo(Integer ropeNo) {
         this.ropeNo = ropeNo;
+    }
+    
+    public Integer getRope1() {
+        return rope1;
+    }
+
+    public void setRope1(Integer rope1) {
+        this.rope1 = rope1;
+    }
+
+    public Integer getRope2() {
+        return rope2;
+    }
+
+    public void setRope2(Integer rope2) {
+        this.rope2 = rope2;
+    }
+
+    public Integer getRope3() {
+        return rope3;
+    }
+
+    public void setRope3(Integer rope3) {
+        this.rope3 = rope3;
+    }
+
+    public Integer getRope4() {
+        return rope4;
+    }
+
+    public void setRope4(Integer rope4) {
+        this.rope4 = rope4;
     }
 }

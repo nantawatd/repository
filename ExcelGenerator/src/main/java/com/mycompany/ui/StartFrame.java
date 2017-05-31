@@ -28,6 +28,7 @@ import javax.swing.JLabel;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
+import org.apache.commons.lang3.StringUtils;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import org.jxls.common.Context;
 import org.jxls.util.JxlsHelper;
@@ -93,14 +94,22 @@ public class StartFrame extends javax.swing.JFrame {
         commentTxt = new javax.swing.JTextField();
         imageCombo = new javax.swing.JComboBox<>();
         netColorCombo = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        reportTable = new javax.swing.JTable();
         addButton = new javax.swing.JButton();
         removeButton = new javax.swing.JButton();
         exportButton = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         aluColorCombo = new javax.swing.JComboBox<>();
+        ropeTxt1 = new javax.swing.JTextField();
+        ropeTxt2 = new javax.swing.JTextField();
+        ropeTxt3 = new javax.swing.JTextField();
+        ropeTxt4 = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        reportTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -229,6 +238,11 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel16.setText("จำนวนเชือก");
 
         ropeNoCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "4", "6", "8", "10", "14" }));
+        ropeNoCombo.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ropeNoComboItemStateChanged(evt);
+            }
+        });
 
         jLabel17.setText("หมายเหตุ");
 
@@ -314,33 +328,6 @@ public class StartFrame extends javax.swing.JFrame {
 
         jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 380, 260));
 
-        reportTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ลำดับ", "รายละเอียดสินค้า", "Image", "หมายเหตุ", "ชนิด", "กว้าง", "สูง", "ผ้ามุ้งสี", "จำนวนเชือก", "Alu สี"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, javax.swing.ImageIcon.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(reportTable);
-
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 870, 210));
-
         addButton.setText("Add ");
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -363,7 +350,7 @@ public class StartFrame extends javax.swing.JFrame {
                 exportButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(exportButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 550, 120, 40));
+        jPanel3.add(exportButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 570, 120, 40));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -371,28 +358,107 @@ public class StartFrame extends javax.swing.JFrame {
 
         aluColorCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ขาว", "ดำ", "ไม้", "เทาซาฮาร่า", "ดำซาฮาร่า", "ดาร์คบราว" }));
 
+        ropeTxt2.setEnabled(false);
+
+        ropeTxt3.setEnabled(false);
+
+        ropeTxt4.setEnabled(false);
+
+        jLabel20.setText("เชือกเส้นที่ 1");
+
+        jLabel21.setText("เชือกเส้นที่ 2");
+
+        jLabel22.setText("เชือกเส้นที่ 3");
+
+        jLabel23.setText("เชือกเส้นที่ 4");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(aluColorCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGap(10, 10, 10)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42)
+                        .addComponent(aluColorCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ropeTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ropeTxt2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ropeTxt3, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ropeTxt4, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19)
+                .addGap(11, 11, 11)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel19))
                     .addComponent(aluColorCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addGap(6, 6, 6)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ropeTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel20))
+                .addGap(9, 9, 9)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(ropeTxt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel22)
+                    .addComponent(ropeTxt3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ropeTxt4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel23)))
         );
 
-        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 20, 220, 170));
+        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 20, 220, 200));
+
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        reportTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ลำดับ", "รายละเอียดสินค้า", "Image", "หมายเหตุ", "ชนิด", "กว้าง", "สูง", "ผ้ามุ้งสี", "จำนวนเชือก", "เชือกเส้น 1", "เชือกเส้น 2", "เชือกเส้น 3", "เชือกเส้น 4", "Alu สี"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Object.class, javax.swing.ImageIcon.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        reportTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        jScrollPane1.setViewportView(reportTable);
+
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 861, 220));
 
         jPanel1.add(jPanel3);
 
@@ -400,11 +466,11 @@ public class StartFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 951, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
         );
 
         pack();
@@ -431,22 +497,28 @@ public class StartFrame extends javax.swing.JFrame {
 
         for (int row = 0; row < rowCount; row++) {
             detail = new OrderDetail();
-            detail.setNo(reportTable.getValueAt(row, columnCount - 10).toString());
-            detail.setDetail(reportTable.getValueAt(row, columnCount - 9).toString());
+            detail.setNo(reportTable.getValueAt(row, columnCount - 14).toString());
+            detail.setDetail(reportTable.getValueAt(row, columnCount - 13).toString());
             
-            ImageIcon imageIcon = (ImageIcon) reportTable.getValueAt(row, columnCount - 8);
+            ImageIcon imageIcon = (ImageIcon) reportTable.getValueAt(row, columnCount - 12);
             System.out.println("Desc ::" + imageIcon.getDescription());
             InputStream is = getClass().getResourceAsStream(imageIcon.getDescription());
             System.out.println("is:::" + is);
             byte[] imageBytes = Util.toByteArray(is);
             detail.setImage(imageBytes);
             
-            detail.setComment(reportTable.getValueAt(row, columnCount - 7).toString());
-            detail.setType(reportTable.getValueAt(row, columnCount - 6).toString());
-            detail.setWide(reportTable.getValueAt(row, columnCount - 5).toString());
-            detail.setHeight(reportTable.getValueAt(row, columnCount - 4).toString());
-            detail.setNetColor(reportTable.getValueAt(row, columnCount - 3).toString());
-            detail.setRopeNo(Integer.parseInt(reportTable.getValueAt(row, columnCount - 2).toString()));
+            detail.setComment(reportTable.getValueAt(row, columnCount - 11).toString());
+            detail.setType(reportTable.getValueAt(row, columnCount - 10).toString());
+            detail.setWide(reportTable.getValueAt(row, columnCount - 9).toString());
+            detail.setHeight(reportTable.getValueAt(row, columnCount - 8).toString());
+            detail.setNetColor(reportTable.getValueAt(row, columnCount - 7).toString());
+            detail.setRopeNo(Integer.parseInt(reportTable.getValueAt(row, columnCount - 6).toString()));
+            
+            detail.setRope1(Integer.parseInt(reportTable.getValueAt(row, columnCount - 5).toString()));
+            detail.setRope2(Integer.parseInt(reportTable.getValueAt(row, columnCount - 4).toString()));
+            detail.setRope3(Integer.parseInt(reportTable.getValueAt(row, columnCount - 3).toString()));
+            detail.setRope4(Integer.parseInt(reportTable.getValueAt(row, columnCount - 2).toString()));
+            
             detail.setAluColor(reportTable.getValueAt(row, columnCount - 1).toString());
             
             orderDetails.add(detail);
@@ -469,6 +541,10 @@ public class StartFrame extends javax.swing.JFrame {
             heightTxt.getText(),
             netColorCombo.getSelectedItem().toString(),
             ropeNoCombo.getSelectedItem().toString(),
+            StringUtils.isNotBlank(ropeTxt1.getText())? Integer.parseInt(ropeTxt1.getText()) : 0,
+            StringUtils.isNotBlank(ropeTxt2.getText())? Integer.parseInt(ropeTxt2.getText()) : 0,
+            StringUtils.isNotBlank(ropeTxt3.getText())? Integer.parseInt(ropeTxt3.getText()) : 0,
+            StringUtils.isNotBlank(ropeTxt4.getText())? Integer.parseInt(ropeTxt4.getText()) : 0,
             aluColorCombo.getSelectedItem().toString()
          });
          
@@ -510,6 +586,33 @@ public class StartFrame extends javax.swing.JFrame {
             Logger.getLogger(StartFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_exportButtonActionPerformed
+
+    private void ropeNoComboItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ropeNoComboItemStateChanged
+        String ropeComboValue = ropeNoCombo.getSelectedItem().toString();
+        if(StringUtils.isNotBlank(ropeComboValue)){
+            Integer ropeIntValue = Integer.parseInt(ropeComboValue);
+            
+            if (ropeIntValue <= 14) {
+                if (6 <= ropeIntValue) {
+                    ropeTxt2.setEnabled(true);
+                }else{
+                    ropeTxt2.setEnabled(false);
+                }
+                
+                if (10 <= ropeIntValue) {
+                    ropeTxt3.setEnabled(true);
+                }else{
+                    ropeTxt3.setEnabled(false);
+                }
+                
+                if (10 < ropeIntValue) {
+                    ropeTxt4.setEnabled(true);
+                }else{
+                    ropeTxt4.setEnabled(false);
+                }
+            }
+        }
+    }//GEN-LAST:event_ropeNoComboItemStateChanged
     
     private void createReport(Order order, List<OrderDetail> orderDetails, JFileChooser fileDirectory) throws FileNotFoundException, IOException {
         String srcFilePath = "/template/report1.xls";
@@ -584,6 +687,10 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -605,11 +712,15 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JButton removeButton;
     private javax.swing.JTable reportTable;
     private javax.swing.JComboBox<String> ropeNoCombo;
+    private javax.swing.JTextField ropeTxt1;
+    private javax.swing.JTextField ropeTxt2;
+    private javax.swing.JTextField ropeTxt3;
+    private javax.swing.JTextField ropeTxt4;
     private javax.swing.JComboBox<String> sellerSelect;
     private javax.swing.JComboBox<String> typeCombo;
     private javax.swing.JTextField wideTxt;
     // End of variables declaration//GEN-END:variables
-
+     
     private void initComponents2() { 
         
         // Set Text Hearder to Center.
