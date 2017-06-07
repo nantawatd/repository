@@ -7,13 +7,11 @@ package com.mycompany.ui;
 
 import com.mycompany.excelgenerator.dto.Order;
 import com.mycompany.excelgenerator.dto.OrderDetail;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,7 +23,9 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import org.apache.commons.lang3.StringUtils;
@@ -57,9 +57,9 @@ public class StartFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -94,8 +94,6 @@ public class StartFrame extends javax.swing.JFrame {
         commentTxt = new javax.swing.JTextField();
         imageCombo = new javax.swing.JComboBox<>();
         netColorCombo = new javax.swing.JComboBox<>();
-        addButton = new javax.swing.JButton();
-        removeButton = new javax.swing.JButton();
         exportButton = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
@@ -110,6 +108,10 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         reportTable = new javax.swing.JTable();
+        removeLabel = new javax.swing.JLabel();
+        addLabel = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -117,11 +119,6 @@ public class StartFrame extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI Light", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("MiDesign");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 164, 55));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Light", 0, 11)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -136,13 +133,23 @@ public class StartFrame extends javax.swing.JFrame {
 
         jLabel5.setText("วันที่สั่ง");
 
+        billNumberTxt.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        billNumberTxt.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        quotationIdTxt.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        quotationIdTxt.setPreferredSize(new java.awt.Dimension(6, 22));
+
         jLabel6.setText("วันที่รับ");
 
         jLabel7.setText("ชื่อลูกค้า");
 
+        customerTxt.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        customerTxt.setPreferredSize(new java.awt.Dimension(6, 22));
+
         jLabel8.setText("ชื่อเซลล์");
 
         sellerSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "โจเซฟ", "Home Work", "อ้อย", "อ๋อ", "ตา", "เฮียสุวัฒน์", "เอก", "เบียร์"}));
+        sellerSelect.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
 
         jLabel18.setText("หมายเหตุ");
 
@@ -162,9 +169,9 @@ public class StartFrame extends javax.swing.JFrame {
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel7)
-                                        .addComponent(jLabel3)
                                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGap(0, 0, Short.MAX_VALUE))
                                 .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
@@ -173,9 +180,9 @@ public class StartFrame extends javax.swing.JFrame {
                         .addGap(7, 7, 7)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(orderDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(billNumberTxt)
-                    .addComponent(quotationIdTxt)
-                    .addComponent(customerTxt)
+                    .addComponent(billNumberTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(quotationIdTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(customerTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(receiveDate, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
                     .addComponent(comment1Txt)
                     .addComponent(sellerSelect, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -208,7 +215,7 @@ public class StartFrame extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(receiveDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comment1Txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18))
@@ -328,29 +335,13 @@ public class StartFrame extends javax.swing.JFrame {
 
         jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 380, 260));
 
-        addButton.setText("Add ");
-        addButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addButtonActionPerformed(evt);
-            }
-        });
-        jPanel3.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 290, 100, -1));
-
-        removeButton.setText(" Remove");
-        removeButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                removeButtonActionPerformed(evt);
-            }
-        });
-        jPanel3.add(removeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, 100, -1));
-
         exportButton.setText("Export Report");
         exportButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exportButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(exportButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 570, 120, 40));
+        jPanel3.add(exportButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 560, 120, 40));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -458,19 +449,65 @@ public class StartFrame extends javax.swing.JFrame {
         reportTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         jScrollPane1.setViewportView(reportTable);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 861, 220));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 861, 220));
+
+        removeLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Trash_32px.png"))); // NOI18N
+        removeLabel.setText("ลบ");
+        removeLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                removeLabelMouseReleased(evt);
+            }
+        });
+        jPanel3.add(removeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 280, 70, -1));
+
+        addLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Plus_32px.png"))); // NOI18N
+        addLabel.setText("เพิ่ม");
+        addLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                addLabelMouseReleased(evt);
+            }
+        });
+        jPanel3.add(addLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 70, -1));
 
         jPanel1.add(jPanel3);
+
+        jTabbedPane1.addTab("tab1", jPanel1);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 900, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 612, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab2", jPanel5);
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 900, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 612, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab3", jPanel7);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 951, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -526,44 +563,6 @@ public class StartFrame extends javax.swing.JFrame {
         return orderDetails;
     }
 
-    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-        DefaultTableModel model = (DefaultTableModel) reportTable.getModel();
-        
-        System.out.println("Image Table "+ imageCombo.getSelectedItem().toString());
-        
-        model.addRow(new Object[]{
-            (model.getRowCount() + 1),
-            orderDetail.getText(),
-            new ImageIcon(getClass().getResource(imageCombo.getSelectedItem().toString()), ((ImageIcon) imageCombo.getSelectedItem()).getDescription()),
-            commentTxt.getText(), 
-            typeCombo.getSelectedItem().toString(),
-            wideTxt.getText(),
-            heightTxt.getText(),
-            netColorCombo.getSelectedItem().toString(),
-            ropeNoCombo.getSelectedItem().toString(),
-            StringUtils.isNotBlank(ropeTxt1.getText())? Integer.parseInt(ropeTxt1.getText()) : 0,
-            StringUtils.isNotBlank(ropeTxt2.getText())? Integer.parseInt(ropeTxt2.getText()) : 0,
-            StringUtils.isNotBlank(ropeTxt3.getText())? Integer.parseInt(ropeTxt3.getText()) : 0,
-            StringUtils.isNotBlank(ropeTxt4.getText())? Integer.parseInt(ropeTxt4.getText()) : 0,
-            aluColorCombo.getSelectedItem().toString()
-         });
-         
-    }//GEN-LAST:event_addButtonActionPerformed
-
-    private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
-        DefaultTableModel model = (DefaultTableModel) reportTable.getModel();
-        int[] indices = reportTable.getSelectedRows();
-        Arrays.sort(indices);
-        for (int i = indices.length - 1; i >= 0; i--) {
-            model.removeRow(indices[i]);
-        }
-
-        //Reset row number.
-        for (int i = 0; i < model.getRowCount(); i++) {
-            model.setValueAt(i + 1, i, 0);
-        }
-    }//GEN-LAST:event_removeButtonActionPerformed
-
     private void exportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportButtonActionPerformed
         try {
             //1. Order Infomation
@@ -613,17 +612,64 @@ public class StartFrame extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_ropeNoComboItemStateChanged
+
+    private void addLabelMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLabelMouseReleased
+        DefaultTableModel model = (DefaultTableModel) reportTable.getModel();
+        
+        System.out.println("Image Table "+ imageCombo.getSelectedItem().toString());
+        
+        model.addRow(new Object[]{
+            (model.getRowCount() + 1),
+            orderDetail.getText(),
+            new ImageIcon(getClass().getResource(imageCombo.getSelectedItem().toString()), ((ImageIcon) imageCombo.getSelectedItem()).getDescription()),
+            commentTxt.getText(), 
+            typeCombo.getSelectedItem().toString(),
+            wideTxt.getText(),
+            heightTxt.getText(),
+            netColorCombo.getSelectedItem().toString(),
+            ropeNoCombo.getSelectedItem().toString(),
+            StringUtils.isNotBlank(ropeTxt1.getText())? Integer.parseInt(ropeTxt1.getText()) : 0,
+            StringUtils.isNotBlank(ropeTxt2.getText())? Integer.parseInt(ropeTxt2.getText()) : 0,
+            StringUtils.isNotBlank(ropeTxt3.getText())? Integer.parseInt(ropeTxt3.getText()) : 0,
+            StringUtils.isNotBlank(ropeTxt4.getText())? Integer.parseInt(ropeTxt4.getText()) : 0,
+            aluColorCombo.getSelectedItem().toString()
+         });
+    }//GEN-LAST:event_addLabelMouseReleased
+
+    private void removeLabelMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeLabelMouseReleased
+        DefaultTableModel model = (DefaultTableModel) reportTable.getModel();
+        int[] indices = reportTable.getSelectedRows();
+        Arrays.sort(indices);
+        for (int i = indices.length - 1; i >= 0; i--) {
+            model.removeRow(indices[i]);
+        }
+
+        //Reset row number.
+        for (int i = 0; i < model.getRowCount(); i++) {
+            model.setValueAt(i + 1, i, 0);
+        }
+    }//GEN-LAST:event_removeLabelMouseReleased
     
     private void createReport(Order order, List<OrderDetail> orderDetails, JFileChooser fileDirectory) throws FileNotFoundException, IOException {
         String srcFilePath = "/template/report1.xls";
+        String srcFilePath2 = "/template/report1.xls";
         
-        try (InputStream is = getClass().getResourceAsStream(srcFilePath)) {
-            try (OutputStream os = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "." + XLS)) {
-                Context context = new Context();
-                context.putVar("order", order);
-                context.putVar("orderDetails", orderDetails);
-                JxlsHelper.getInstance().processTemplate(is, os, context);
-            }
+        try {
+            InputStream is = getClass().getResourceAsStream(srcFilePath);
+            InputStream is2 = getClass().getResourceAsStream(srcFilePath2);
+            
+            OutputStream os = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "." + XLS);
+            OutputStream os2 = new FileOutputStream(fileDirectory.getSelectedFile().toString()+ "_2" + "." + XLS);
+            
+            Context context = new Context();
+            context.putVar("order", order);
+            context.putVar("orderDetails", orderDetails);
+            JxlsHelper.getInstance().processTemplate(is, os, context);
+            JxlsHelper.getInstance().processTemplate(is2, os2, context);
+            
+        }
+        catch(IOException ex){
+            ex.printStackTrace();
         }
     }
     
@@ -638,7 +684,7 @@ public class StartFrame extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -666,7 +712,7 @@ public class StartFrame extends javax.swing.JFrame {
     private static final SimpleDateFormat FORMATER = new SimpleDateFormat("dd/MM/yy", locale);
     private static final String XLS = "xls";
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addButton;
+    private javax.swing.JLabel addLabel;
     private javax.swing.JComboBox<String> aluColorCombo;
     private javax.swing.JTextField billNumberTxt;
     private javax.swing.JTextField comment1Txt;
@@ -675,7 +721,6 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JButton exportButton;
     private javax.swing.JTextField heightTxt;
     private javax.swing.JComboBox<ImageIcon> imageCombo;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -702,14 +747,17 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JComboBox<String> netColorCombo;
     private org.jdesktop.swingx.JXDatePicker orderDate;
     private javax.swing.JTextField orderDetail;
     private javax.swing.JTextField quotationIdTxt;
     private org.jdesktop.swingx.JXDatePicker receiveDate;
-    private javax.swing.JButton removeButton;
+    private javax.swing.JLabel removeLabel;
     private javax.swing.JTable reportTable;
     private javax.swing.JComboBox<String> ropeNoCombo;
     private javax.swing.JTextField ropeTxt1;
