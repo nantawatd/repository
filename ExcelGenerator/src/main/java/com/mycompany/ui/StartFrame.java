@@ -134,9 +134,12 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel5.setText("วันที่สั่ง");
 
         billNumberTxt.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        billNumberTxt.setMinimumSize(new java.awt.Dimension(6, 22));
         billNumberTxt.setPreferredSize(new java.awt.Dimension(6, 22));
 
         quotationIdTxt.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        quotationIdTxt.setMinimumSize(new java.awt.Dimension(6, 22));
+        quotationIdTxt.setName(""); // NOI18N
         quotationIdTxt.setPreferredSize(new java.awt.Dimension(6, 22));
 
         jLabel6.setText("วันที่รับ");
@@ -144,6 +147,8 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel7.setText("ชื่อลูกค้า");
 
         customerTxt.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        customerTxt.setMinimumSize(new java.awt.Dimension(6, 22));
+        customerTxt.setName(""); // NOI18N
         customerTxt.setPreferredSize(new java.awt.Dimension(6, 22));
 
         jLabel8.setText("ชื่อเซลล์");
@@ -152,6 +157,10 @@ public class StartFrame extends javax.swing.JFrame {
         sellerSelect.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
 
         jLabel18.setText("หมายเหตุ");
+
+        comment1Txt.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        comment1Txt.setMinimumSize(new java.awt.Dimension(6, 22));
+        comment1Txt.setPreferredSize(new java.awt.Dimension(6, 22));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -184,7 +193,7 @@ public class StartFrame extends javax.swing.JFrame {
                     .addComponent(quotationIdTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(customerTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(receiveDate, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
-                    .addComponent(comment1Txt)
+                    .addComponent(comment1Txt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(sellerSelect, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(21, 21, 21))
         );
@@ -235,16 +244,30 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel12.setText("สูง");
 
         typeCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "W", "D"}));
+        typeCombo.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+
+        wideTxt.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        wideTxt.setMinimumSize(new java.awt.Dimension(6, 22));
+        wideTxt.setPreferredSize(new java.awt.Dimension(6, 22));
 
         jLabel13.setText("มิลลิเมตร");
+
+        heightTxt.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        heightTxt.setMinimumSize(new java.awt.Dimension(6, 22));
+        heightTxt.setPreferredSize(new java.awt.Dimension(6, 22));
 
         jLabel14.setText("มิลลิเมตร");
 
         jLabel15.setText("ผ้ามุ้งสี");
 
+        orderDetail.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        orderDetail.setMinimumSize(new java.awt.Dimension(6, 22));
+        orderDetail.setPreferredSize(new java.awt.Dimension(6, 22));
+
         jLabel16.setText("จำนวนเชือก");
 
         ropeNoCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "4", "6", "8", "10", "14" }));
+        ropeNoCombo.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
         ropeNoCombo.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 ropeNoComboItemStateChanged(evt);
@@ -253,7 +276,14 @@ public class StartFrame extends javax.swing.JFrame {
 
         jLabel17.setText("หมายเหตุ");
 
+        commentTxt.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        commentTxt.setMinimumSize(new java.awt.Dimension(6, 22));
+        commentTxt.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        imageCombo.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+
         netColorCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "เทา", "ดำ" }));
+        netColorCombo.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -348,12 +378,26 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel19.setText("Alu สี");
 
         aluColorCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ขาว", "ดำ", "ไม้", "เทาซาฮาร่า", "ดำซาฮาร่า", "ดาร์คบราว" }));
+        aluColorCombo.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
 
+        ropeTxt1.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        ropeTxt1.setMinimumSize(new java.awt.Dimension(6, 22));
+        ropeTxt1.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        ropeTxt2.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
         ropeTxt2.setEnabled(false);
+        ropeTxt2.setMinimumSize(new java.awt.Dimension(6, 22));
+        ropeTxt2.setPreferredSize(new java.awt.Dimension(6, 22));
 
+        ropeTxt3.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
         ropeTxt3.setEnabled(false);
+        ropeTxt3.setMinimumSize(new java.awt.Dimension(6, 22));
+        ropeTxt3.setPreferredSize(new java.awt.Dimension(6, 22));
 
+        ropeTxt4.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
         ropeTxt4.setEnabled(false);
+        ropeTxt4.setMinimumSize(new java.awt.Dimension(6, 22));
+        ropeTxt4.setPreferredSize(new java.awt.Dimension(6, 22));
 
         jLabel20.setText("เชือกเส้นที่ 1");
 
