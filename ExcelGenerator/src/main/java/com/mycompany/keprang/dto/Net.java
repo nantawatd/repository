@@ -1,4 +1,4 @@
-package com.mycompany.excelgenerator.dto;
+package com.mycompany.keprang.dto;
 
 public class Net {
     private String wide;
