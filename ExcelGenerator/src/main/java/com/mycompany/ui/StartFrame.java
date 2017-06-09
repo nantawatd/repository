@@ -23,6 +23,7 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.JTable;
 import javax.swing.SwingConstants;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -116,7 +117,6 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         imageComboKS = new javax.swing.JComboBox<>();
         jLabel33 = new javax.swing.JLabel();
-        exportButton1 = new javax.swing.JButton();
         jPanel14 = new javax.swing.JPanel();
         ropeTxt1KS = new javax.swing.JTextField();
         ropeTxt2KS = new javax.swing.JTextField();
@@ -580,14 +580,6 @@ public class StartFrame extends javax.swing.JFrame {
         );
 
         jPanel12.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 310, 210));
-
-        exportButton1.setText("Export Report");
-        exportButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exportButton1ActionPerformed(evt);
-            }
-        });
-        jPanel12.add(exportButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 560, 120, 40));
 
         jPanel14.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1118,8 +1110,16 @@ public class StartFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_addLabelKMouseReleased
 
     private void removeLabelKMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeLabelKMouseReleased
-        DefaultTableModel model = (DefaultTableModel) reportTableK.getModel();
-        int[] indices = reportTableK.getSelectedRows();
+       removeItemFromTable(reportTableK);
+    }//GEN-LAST:event_removeLabelKMouseReleased
+
+    private void removeLabelKSMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeLabelKSMouseReleased
+        removeItemFromTable(reportTableKS);
+    }//GEN-LAST:event_removeLabelKSMouseReleased
+
+    private void removeItemFromTable(JTable reportTable){
+        DefaultTableModel model = (DefaultTableModel) reportTable.getModel();
+        int[] indices = reportTable.getSelectedRows();
         Arrays.sort(indices);
         for (int i = indices.length - 1; i >= 0; i--) {
             model.removeRow(indices[i]);
@@ -1129,27 +1129,59 @@ public class StartFrame extends javax.swing.JFrame {
         for (int i = 0; i < model.getRowCount(); i++) {
             model.setValueAt(i + 1, i, 0);
         }
-    }//GEN-LAST:event_removeLabelKMouseReleased
-
-    private void exportButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_exportButton1ActionPerformed
-
-    private void removeLabelKSMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeLabelKSMouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_removeLabelKSMouseReleased
-
+    }
+    
     private void addLabelKSMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLabelKSMouseReleased
-        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) reportTableKS.getModel();
+        
+        model.addRow(new Object[]{
+            (model.getRowCount() + 1),
+            orderDetailKS.getText(),
+            new ImageIcon(getClass().getResource(imageComboKS.getSelectedItem().toString()), ((ImageIcon) imageComboKS.getSelectedItem()).getDescription()),
+            commentTxtKS.getText(), 
+            typeComboKS.getSelectedItem().toString(),
+            wideTxtKS.getText(),
+            heightTxtKS.getText(),
+            netColorComboKS.getSelectedItem().toString(),
+            ropeNoComboKS.getSelectedItem().toString(),
+            StringUtils.isNotBlank(ropeTxt1KS.getText())? Integer.parseInt(ropeTxt1KS.getText()) : 0,
+            StringUtils.isNotBlank(ropeTxt2KS.getText())? Integer.parseInt(ropeTxt2KS.getText()) : 0,
+            StringUtils.isNotBlank(ropeTxt3KS.getText())? Integer.parseInt(ropeTxt3KS.getText()) : 0,
+            StringUtils.isNotBlank(ropeTxt4KS.getText())? Integer.parseInt(ropeTxt4KS.getText()) : 0,
+            aluColorComboKS.getSelectedItem().toString()
+         });
     }//GEN-LAST:event_addLabelKSMouseReleased
 
     private void ropeNoComboKSItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ropeNoComboKSItemStateChanged
-        // TODO add your handling code here:
+        String ropeComboValue = ropeNoComboKS.getSelectedItem().toString();
+        if(StringUtils.isNotBlank(ropeComboValue)){
+            Integer ropeIntValue = Integer.parseInt(ropeComboValue);
+            
+            if (ropeIntValue <= 14) {
+                if (6 <= ropeIntValue) {
+                    ropeTxt2KS.setEnabled(true);
+                }else{
+                    ropeTxt2KS.setEnabled(false);
+                }
+                
+                if (10 <= ropeIntValue) {
+                    ropeTxt3KS.setEnabled(true);
+                }else{
+                    ropeTxt3KS.setEnabled(false);
+                }
+                
+                if (10 < ropeIntValue) {
+                    ropeTxt4KS.setEnabled(true);
+                }else{
+                    ropeTxt4KS.setEnabled(false);
+                }
+            }
+        }
     }//GEN-LAST:event_ropeNoComboKSItemStateChanged
     
     private void createReport(Order order, List<OrderDetail> orderDetails, JFileChooser fileDirectory) throws FileNotFoundException, IOException {
         String srcFilePath = "/template/report1.xls";
-        String srcFilePath2 = "/template/report1.xls";
+        String srcFilePath2 = "/template/report2.xls";
         
         try {
             InputStream is = getClass().getResourceAsStream(srcFilePath);
@@ -1220,7 +1252,6 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JTextField commentTxtKS;
     private javax.swing.JTextField customerTxt;
     private javax.swing.JButton exportButton;
-    private javax.swing.JButton exportButton1;
     private javax.swing.JTextField heightTxtK;
     private javax.swing.JTextField heightTxtKS;
     private javax.swing.JComboBox<ImageIcon> imageComboK;
@@ -1315,9 +1346,14 @@ public class StartFrame extends javax.swing.JFrame {
     private void initComponents2() { 
         
         // Set Text Hearder to Center.
-        TableCellRenderer header = reportTableK.getTableHeader().getDefaultRenderer();
-        JLabel headerLabel = (JLabel) header;
-        headerLabel.setHorizontalAlignment(JLabel.CENTER);
+        TableCellRenderer headerK = reportTableK.getTableHeader().getDefaultRenderer();
+        JLabel headerLabelK = (JLabel) headerK;
+        headerLabelK.setHorizontalAlignment(JLabel.CENTER);
+        
+         // Set Text Hearder to Center.
+        TableCellRenderer headerKS = reportTableKS.getTableHeader().getDefaultRenderer();
+        JLabel headerLabelKS = (JLabel) headerKS;
+        headerLabelKS.setHorizontalAlignment(JLabel.CENTER);
         
         // Thai Calendar.
         orderDate.setLocale(locale);
@@ -1332,5 +1368,11 @@ public class StartFrame extends javax.swing.JFrame {
         imageComboK.addItem(new ImageIcon(getClass().getResource("/image/two_right.PNG"), "/image/two_right.PNG"));
         imageComboK.addItem(new ImageIcon(getClass().getResource("/image/three_left.PNG"), "/image/three_left.PNG"));
         imageComboK.addItem(new ImageIcon(getClass().getResource("/image/three_right.PNG"), "/image/three_right.PNG"));
+        
+        // Set Image Combobox
+        imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/two_left.PNG"), "/image/two_left.PNG"));
+        imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/two_right.PNG"), "/image/two_right.PNG"));
+        imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/three_left.PNG"), "/image/three_left.PNG"));
+        imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/three_right.PNG"), "/image/three_right.PNG"));
     }
 }
