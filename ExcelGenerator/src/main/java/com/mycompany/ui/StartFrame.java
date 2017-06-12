@@ -28,6 +28,7 @@ import javax.swing.JTable;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import org.jxls.common.Context;
@@ -1213,24 +1214,23 @@ public class StartFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_ropeNoComboKSItemStateChanged
     
     private void createReport(Order order, List<OrderDetailK> kOrderDetails, List<OrderDetailKS> ksOrderDetails, JFileChooser fileDirectory) throws FileNotFoundException, IOException {
-        String srcFilePath = "/template/report1.xls";
-        String srcFilePath2 = "/template/report2.xls";
-        
         try {
-            InputStream is = getClass().getResourceAsStream(srcFilePath);
-            InputStream is2 = getClass().getResourceAsStream(srcFilePath2);
-            
-            OutputStream os = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "." + XLS);
-            OutputStream os2 = new FileOutputStream(fileDirectory.getSelectedFile().toString()+ "_2" + "." + XLS);
-            
             Context context = new Context();
             context.putVar("order", order);
-            context.putVar("orderDetails", kOrderDetails);
-            JxlsHelper.getInstance().processTemplate(is, os, context);
             
-            context.putVar("orderDetails", ksOrderDetails);
-            JxlsHelper.getInstance().processTemplate(is2, os2, context);
+            if(CollectionUtils.isNotEmpty(kOrderDetails)){
+                InputStream is = getClass().getResourceAsStream("/template/report1.xls");
+                OutputStream os = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "." + XLS);
+                context.putVar("orderDetails", kOrderDetails);
+                JxlsHelper.getInstance().processTemplate(is, os, context);
+            }
             
+            if(CollectionUtils.isNotEmpty(ksOrderDetails)){
+                InputStream is2 = getClass().getResourceAsStream("/template/report2.xls");
+                OutputStream os2 = new FileOutputStream(fileDirectory.getSelectedFile().toString()+ "_2" + "." + XLS);
+                context.putVar("orderDetails", ksOrderDetails);
+                JxlsHelper.getInstance().processTemplate(is2, os2, context);
+            }
         }
         catch(IOException ex){
             ex.printStackTrace();
