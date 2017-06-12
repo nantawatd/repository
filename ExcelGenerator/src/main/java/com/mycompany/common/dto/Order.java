@@ -3,9 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.keprang.dto;
-
-import javax.swing.JTextField;
+package com.mycompany.common.dto;
 
 /**
  *

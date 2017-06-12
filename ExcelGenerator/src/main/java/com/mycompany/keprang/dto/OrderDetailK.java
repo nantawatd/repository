@@ -9,7 +9,7 @@ package com.mycompany.keprang.dto;
  *
  * @author Nantawat
  */
-public class OrderDetail {
+public class OrderDetailK {
     
     private String no;
     private String comment;

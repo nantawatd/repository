@@ -5,8 +5,9 @@
  */
 package com.mycompany.ui;
 
-import com.mycompany.keprang.dto.Order;
-import com.mycompany.keprang.dto.OrderDetail;
+import com.mycompany.common.dto.Order;
+import com.mycompany.keprang.dto.OrderDetailK;
+import com.mycompany.keprangson.dto.OrderDetailKS;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -24,9 +25,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JTable;
-import javax.swing.SwingConstants;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import org.apache.commons.lang3.StringUtils;
@@ -998,22 +997,21 @@ public class StartFrame extends javax.swing.JFrame {
         return order;
     }
 
-    private List<OrderDetail> createOrderDetail() throws IOException {
-        List<OrderDetail> orderDetails = new ArrayList<>();
-        OrderDetail detail;
+    private List<OrderDetailK> createOrderDetailK() throws IOException {
+        List<OrderDetailK> orderDetails = new ArrayList<>();
+        OrderDetailK detail;
         
         int columnCount = reportTableK.getColumnCount();
         int rowCount = reportTableK.getRowCount();
 
         for (int row = 0; row < rowCount; row++) {
-            detail = new OrderDetail();
+            detail = new OrderDetailK();
             detail.setNo(reportTableK.getValueAt(row, columnCount - 14).toString());
             detail.setDetail(reportTableK.getValueAt(row, columnCount - 13).toString());
             
             ImageIcon imageIcon = (ImageIcon) reportTableK.getValueAt(row, columnCount - 12);
             System.out.println("Desc ::" + imageIcon.getDescription());
             InputStream is = getClass().getResourceAsStream(imageIcon.getDescription());
-            System.out.println("is:::" + is);
             byte[] imageBytes = Util.toByteArray(is);
             detail.setImage(imageBytes);
             
@@ -1035,6 +1033,42 @@ public class StartFrame extends javax.swing.JFrame {
         }
         return orderDetails;
     }
+    
+    private List<OrderDetailKS> createOrderDetailKS() throws IOException {
+        List<OrderDetailKS> orderDetails = new ArrayList<>();
+        OrderDetailKS detail;
+        
+        int columnCount = reportTableKS.getColumnCount();
+        int rowCount = reportTableKS.getRowCount();
+
+        for (int row = 0; row < rowCount; row++) {
+            detail = new OrderDetailKS();
+            detail.setNo(reportTableKS.getValueAt(row, columnCount - 14).toString());
+            detail.setDetail(reportTableKS.getValueAt(row, columnCount - 13).toString());
+            
+            ImageIcon imageIcon = (ImageIcon) reportTableKS.getValueAt(row, columnCount - 12);
+            InputStream is = getClass().getResourceAsStream(imageIcon.getDescription());
+            byte[] imageBytes = Util.toByteArray(is);
+            detail.setImage(imageBytes);
+            
+            detail.setComment(reportTableKS.getValueAt(row, columnCount - 11).toString());
+            detail.setType(reportTableKS.getValueAt(row, columnCount - 10).toString());
+            detail.setWide(reportTableKS.getValueAt(row, columnCount - 9).toString());
+            detail.setHeight(reportTableKS.getValueAt(row, columnCount - 8).toString());
+            detail.setNetColor(reportTableKS.getValueAt(row, columnCount - 7).toString());
+            detail.setRopeNo(Integer.parseInt(reportTableKS.getValueAt(row, columnCount - 6).toString()));
+            
+            detail.setRope1(Integer.parseInt(reportTableKS.getValueAt(row, columnCount - 5).toString()));
+            detail.setRope2(Integer.parseInt(reportTableKS.getValueAt(row, columnCount - 4).toString()));
+            detail.setRope3(Integer.parseInt(reportTableKS.getValueAt(row, columnCount - 3).toString()));
+            detail.setRope4(Integer.parseInt(reportTableKS.getValueAt(row, columnCount - 2).toString()));
+            
+            detail.setAluColor(reportTableKS.getValueAt(row, columnCount - 1).toString());
+            
+            orderDetails.add(detail);
+        }
+        return orderDetails;
+    }
 
     private void exportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportButtonActionPerformed
         try {
@@ -1042,7 +1076,8 @@ public class StartFrame extends javax.swing.JFrame {
             Order order = createOrder();
             
             //2. Order Details
-            List<OrderDetail> orderDetails = createOrderDetail();
+            List<OrderDetailK> kOrderDetails = createOrderDetailK();
+            List<OrderDetailKS> ksOrderDetails = createOrderDetailKS();
 
             //Choose File Destination
             JFileChooser fileDirectory = new JFileChooser();
@@ -1051,7 +1086,7 @@ public class StartFrame extends javax.swing.JFrame {
             
             if (fileDirectory.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
                 //3. Export Report
-                createReport(order, orderDetails, fileDirectory);
+                createReport(order, kOrderDetails, ksOrderDetails, fileDirectory);
             }
           
         } catch (IOException ex) {
@@ -1089,8 +1124,6 @@ public class StartFrame extends javax.swing.JFrame {
     private void addLabelKMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLabelKMouseReleased
         DefaultTableModel model = (DefaultTableModel) reportTableK.getModel();
         
-        System.out.println("Image Table "+ imageComboK.getSelectedItem().toString());
-        
         model.addRow(new Object[]{
             (model.getRowCount() + 1),
             orderDetailK.getText(),
@@ -1114,7 +1147,7 @@ public class StartFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_removeLabelKMouseReleased
 
     private void removeLabelKSMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeLabelKSMouseReleased
-        removeItemFromTable(reportTableKS);
+       removeItemFromTable(reportTableKS);
     }//GEN-LAST:event_removeLabelKSMouseReleased
 
     private void removeItemFromTable(JTable reportTable){
@@ -1179,7 +1212,7 @@ public class StartFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ropeNoComboKSItemStateChanged
     
-    private void createReport(Order order, List<OrderDetail> orderDetails, JFileChooser fileDirectory) throws FileNotFoundException, IOException {
+    private void createReport(Order order, List<OrderDetailK> kOrderDetails, List<OrderDetailKS> ksOrderDetails, JFileChooser fileDirectory) throws FileNotFoundException, IOException {
         String srcFilePath = "/template/report1.xls";
         String srcFilePath2 = "/template/report2.xls";
         
@@ -1192,8 +1225,10 @@ public class StartFrame extends javax.swing.JFrame {
             
             Context context = new Context();
             context.putVar("order", order);
-            context.putVar("orderDetails", orderDetails);
+            context.putVar("orderDetails", kOrderDetails);
             JxlsHelper.getInstance().processTemplate(is, os, context);
+            
+            context.putVar("orderDetails", ksOrderDetails);
             JxlsHelper.getInstance().processTemplate(is2, os2, context);
             
         }
