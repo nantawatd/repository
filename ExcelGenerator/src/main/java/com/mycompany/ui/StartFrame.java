@@ -7,6 +7,7 @@ package com.mycompany.ui;
 
 import com.mycompany.common.dto.Order;
 import com.mycompany.keprang.dto.OrderDetailK;
+import com.mycompany.keprangpaung.dto.OrderDetailKP;
 import com.mycompany.keprangson.dto.OrderDetailKS;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -140,6 +141,45 @@ public class StartFrame extends javax.swing.JFrame {
         comment1TxtKS = new javax.swing.JTextField();
         jLabel41 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
+        jPanel17 = new javax.swing.JPanel();
+        jLabel42 = new javax.swing.JLabel();
+        jPanel18 = new javax.swing.JPanel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        typeComboKP = new javax.swing.JComboBox<>();
+        wideTxtKP = new javax.swing.JTextField();
+        jLabel46 = new javax.swing.JLabel();
+        heightTxtKP = new javax.swing.JTextField();
+        jLabel47 = new javax.swing.JLabel();
+        orderDetailKP = new javax.swing.JTextField();
+        jLabel48 = new javax.swing.JLabel();
+        commentTxtKP = new javax.swing.JTextField();
+        jLabel49 = new javax.swing.JLabel();
+        imageComboKP = new javax.swing.JComboBox<>();
+        jLabel50 = new javax.swing.JLabel();
+        jPanel19 = new javax.swing.JPanel();
+        ropeTxt1KP = new javax.swing.JTextField();
+        ropeTxt2KP = new javax.swing.JTextField();
+        ropeTxt3KP = new javax.swing.JTextField();
+        ropeTxt4KP = new javax.swing.JTextField();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        reportTableKP = new javax.swing.JTable();
+        removeLabelKP = new javax.swing.JLabel();
+        addLabelKP = new javax.swing.JLabel();
+        jPanel20 = new javax.swing.JPanel();
+        netColorComboKP = new javax.swing.JComboBox<>();
+        jLabel55 = new javax.swing.JLabel();
+        aluColorComboKP = new javax.swing.JComboBox<>();
+        jLabel56 = new javax.swing.JLabel();
+        ropeNoComboKP = new javax.swing.JComboBox<>();
+        jLabel57 = new javax.swing.JLabel();
+        comment1TxtKP = new javax.swing.JTextField();
+        jLabel58 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         billNumberTxt = new javax.swing.JTextField();
@@ -792,18 +832,324 @@ public class StartFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("มุ้งจีบเก็บรางซ้อน", jPanel5);
 
+        jPanel17.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel42.setFont(new java.awt.Font("Segoe UI Light", 0, 11)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel42.setText("Make your life easier.");
+        jPanel17.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, -1, -1));
+
+        jPanel18.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel43.setText("รายละเอียดสินค้า");
+
+        jLabel44.setText("ชนิด");
+
+        jLabel45.setText("กว้าง");
+
+        typeComboKP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "W", "D"}));
+        typeComboKP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+
+        wideTxtKP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        wideTxtKP.setMinimumSize(new java.awt.Dimension(6, 22));
+        wideTxtKP.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        jLabel46.setText("มิลลิเมตร");
+
+        heightTxtKP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        heightTxtKP.setMinimumSize(new java.awt.Dimension(6, 22));
+        heightTxtKP.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        jLabel47.setText("มิลลิเมตร");
+
+        orderDetailKP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        orderDetailKP.setMinimumSize(new java.awt.Dimension(6, 22));
+        orderDetailKP.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        jLabel48.setText("หมายเหตุ");
+
+        commentTxtKP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        commentTxtKP.setMinimumSize(new java.awt.Dimension(6, 22));
+        commentTxtKP.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        jLabel49.setText("สูง");
+
+        imageComboKP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+
+        jLabel50.setText("รูปภาพ");
+
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(heightTxtKP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(wideTxtKP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(typeComboKP, 0, 98, Short.MAX_VALUE)
+                    .addComponent(commentTxtKP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(imageComboKP, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(orderDetailKP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel47))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addGap(7, 7, 7)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel43)
+                    .addComponent(orderDetailKP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(imageComboKP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel50))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(commentTxtKP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel48))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(typeComboKP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel44))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(wideTxtKP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel46)
+                    .addComponent(jLabel45))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(heightTxtKP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel47)
+                    .addComponent(jLabel49))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel17.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 310, 210));
+
+        jPanel19.setBackground(new java.awt.Color(255, 255, 255));
+
+        ropeTxt1KP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        ropeTxt1KP.setMinimumSize(new java.awt.Dimension(6, 22));
+        ropeTxt1KP.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        ropeTxt2KP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        ropeTxt2KP.setEnabled(false);
+        ropeTxt2KP.setMinimumSize(new java.awt.Dimension(6, 22));
+        ropeTxt2KP.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        ropeTxt3KP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        ropeTxt3KP.setEnabled(false);
+        ropeTxt3KP.setMinimumSize(new java.awt.Dimension(6, 22));
+        ropeTxt3KP.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        ropeTxt4KP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        ropeTxt4KP.setEnabled(false);
+        ropeTxt4KP.setMinimumSize(new java.awt.Dimension(6, 22));
+        ropeTxt4KP.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        jLabel51.setText("เชือกเส้นที่ 1");
+
+        jLabel52.setText("เชือกเส้นที่ 2");
+
+        jLabel53.setText("เชือกเส้นที่ 3");
+
+        jLabel54.setText("เชือกเส้นที่ 4");
+
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ropeTxt1KP, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                    .addComponent(ropeTxt2KP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ropeTxt3KP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ropeTxt4KP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(45, 45, 45))
+        );
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ropeTxt1KP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel51))
+                .addGap(9, 9, 9)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel52)
+                    .addComponent(ropeTxt2KP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ropeTxt3KP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel53))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel54)
+                    .addComponent(ropeTxt4KP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(81, 81, 81))
+        );
+
+        jPanel17.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 230, 160));
+
+        jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        reportTableKP.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ลำดับ", "รายละเอียดสินค้า", "Image", "หมายเหตุ", "ชนิด", "กว้าง", "สูง", "ผ้ามุ้งสี", "จำนวนเชือก", "เชือกเส้น 1", "เชือกเส้น 2", "เชือกเส้น 3", "เชือกเส้น 4", "Alu สี"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Object.class, javax.swing.ImageIcon.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        reportTableKP.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        jScrollPane3.setViewportView(reportTableKP);
+
+        jPanel17.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 861, 210));
+
+        removeLabelKP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Trash_32px.png"))); // NOI18N
+        removeLabelKP.setText("ลบ");
+        removeLabelKP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                removeLabelKPMouseReleased(evt);
+            }
+        });
+        jPanel17.add(removeLabelKP, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, 70, -1));
+
+        addLabelKP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Plus_32px.png"))); // NOI18N
+        addLabelKP.setText("เพิ่ม");
+        addLabelKP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                addLabelKPMouseReleased(evt);
+            }
+        });
+        jPanel17.add(addLabelKP, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, 70, -1));
+
+        jPanel20.setBackground(new java.awt.Color(255, 255, 255));
+
+        netColorComboKP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "เทา", "ดำ" }));
+        netColorComboKP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+
+        jLabel55.setText("ผ้ามุ้งสี");
+
+        aluColorComboKP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ขาว", "ดำ", "ไม้", "เทาซาฮาร่า", "ดำซาฮาร่า", "ดาร์คบราว" }));
+        aluColorComboKP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+
+        jLabel56.setText("Alu สี");
+
+        ropeNoComboKP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "4", "6", "8", "10", "14" }));
+        ropeNoComboKP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        ropeNoComboKP.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ropeNoComboKPItemStateChanged(evt);
+            }
+        });
+
+        jLabel57.setText("จำนวนเชือก");
+
+        comment1TxtKP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        comment1TxtKP.setMinimumSize(new java.awt.Dimension(6, 22));
+        comment1TxtKP.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        jLabel58.setText("หมายเหตุ");
+
+        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
+        jPanel20.setLayout(jPanel20Layout);
+        jPanel20Layout.setHorizontalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel20Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel20Layout.createSequentialGroup()
+                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(aluColorComboKP, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(netColorComboKP, javax.swing.GroupLayout.Alignment.TRAILING, 0, 96, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
+                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ropeNoComboKP, 0, 96, Short.MAX_VALUE)
+                            .addComponent(comment1TxtKP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+        jPanel20Layout.setVerticalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel20Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(netColorComboKP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel55))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(aluColorComboKP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel56))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ropeNoComboKP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel57))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comment1TxtKP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel58))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel17.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 200, 160));
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 885, Short.MAX_VALUE)
+            .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, 885, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 474, Short.MAX_VALUE)
+            .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, 474, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("tab3", jPanel7);
+        jTabbedPane1.addTab("มุ้งจีบเก็บแบบพ่วง", jPanel7);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1070,6 +1416,42 @@ public class StartFrame extends javax.swing.JFrame {
         }
         return orderDetails;
     }
+    
+    private List<OrderDetailKP> createOrderDetailKP() throws IOException {
+        List<OrderDetailKP> orderDetails = new ArrayList<>();
+        OrderDetailKP detail;
+        
+        int columnCount = reportTableKP.getColumnCount();
+        int rowCount = reportTableKP.getRowCount();
+
+        for (int row = 0; row < rowCount; row++) {
+            detail = new OrderDetailKP();
+            detail.setNo(reportTableKP.getValueAt(row, columnCount - 14).toString());
+            detail.setDetail(reportTableKP.getValueAt(row, columnCount - 13).toString());
+            
+            ImageIcon imageIcon = (ImageIcon) reportTableKP.getValueAt(row, columnCount - 12);
+            InputStream is = getClass().getResourceAsStream(imageIcon.getDescription());
+            byte[] imageBytes = Util.toByteArray(is);
+            detail.setImage(imageBytes);
+            
+            detail.setComment(reportTableKP.getValueAt(row, columnCount - 11).toString());
+            detail.setType(reportTableKP.getValueAt(row, columnCount - 10).toString());
+            detail.setWide(reportTableKP.getValueAt(row, columnCount - 9).toString());
+            detail.setHeight(reportTableKP.getValueAt(row, columnCount - 8).toString());
+            detail.setNetColor(reportTableKP.getValueAt(row, columnCount - 7).toString());
+            detail.setRopeNo(Integer.parseInt(reportTableKP.getValueAt(row, columnCount - 6).toString()));
+            
+            detail.setRope1(Integer.parseInt(reportTableKP.getValueAt(row, columnCount - 5).toString()));
+            detail.setRope2(Integer.parseInt(reportTableKP.getValueAt(row, columnCount - 4).toString()));
+            detail.setRope3(Integer.parseInt(reportTableKP.getValueAt(row, columnCount - 3).toString()));
+            detail.setRope4(Integer.parseInt(reportTableKP.getValueAt(row, columnCount - 2).toString()));
+            
+            detail.setAluColor(reportTableKP.getValueAt(row, columnCount - 1).toString());
+            
+            orderDetails.add(detail);
+        }
+        return orderDetails;
+    }
 
     private void exportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportButtonActionPerformed
         try {
@@ -1079,6 +1461,7 @@ public class StartFrame extends javax.swing.JFrame {
             //2. Order Details
             List<OrderDetailK> kOrderDetails = createOrderDetailK();
             List<OrderDetailKS> ksOrderDetails = createOrderDetailKS();
+            List<OrderDetailKP> kpOrderDetails = createOrderDetailKP();
 
             //Choose File Destination
             JFileChooser fileDirectory = new JFileChooser();
@@ -1087,7 +1470,7 @@ public class StartFrame extends javax.swing.JFrame {
             
             if (fileDirectory.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
                 //3. Export Report
-                createReport(order, kOrderDetails, ksOrderDetails, fileDirectory);
+                createReport(order, kOrderDetails, ksOrderDetails, kpOrderDetails, fileDirectory);
             }
           
         } catch (IOException ex) {
@@ -1212,8 +1595,60 @@ public class StartFrame extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_ropeNoComboKSItemStateChanged
+
+    private void removeLabelKPMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeLabelKPMouseReleased
+        removeItemFromTable(reportTableKS);
+    }//GEN-LAST:event_removeLabelKPMouseReleased
+
+    private void addLabelKPMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLabelKPMouseReleased
+        DefaultTableModel model = (DefaultTableModel) reportTableKP.getModel();
+        
+        model.addRow(new Object[]{
+            (model.getRowCount() + 1),
+            orderDetailKP.getText(),
+            new ImageIcon(getClass().getResource(imageComboKP.getSelectedItem().toString()), ((ImageIcon) imageComboKP.getSelectedItem()).getDescription()),
+            commentTxtKP.getText(), 
+            typeComboKP.getSelectedItem().toString(),
+            wideTxtKP.getText(),
+            heightTxtKP.getText(),
+            netColorComboKP.getSelectedItem().toString(),
+            ropeNoComboKP.getSelectedItem().toString(),
+            StringUtils.isNotBlank(ropeTxt1KP.getText())? Integer.parseInt(ropeTxt1KP.getText()) : 0,
+            StringUtils.isNotBlank(ropeTxt2KP.getText())? Integer.parseInt(ropeTxt2KP.getText()) : 0,
+            StringUtils.isNotBlank(ropeTxt3KP.getText())? Integer.parseInt(ropeTxt3KP.getText()) : 0,
+            StringUtils.isNotBlank(ropeTxt4KP.getText())? Integer.parseInt(ropeTxt4KP.getText()) : 0,
+            aluColorComboKP.getSelectedItem().toString()
+        });
+    }//GEN-LAST:event_addLabelKPMouseReleased
+
+    private void ropeNoComboKPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ropeNoComboKPItemStateChanged
+        String ropeComboValue = ropeNoComboKP.getSelectedItem().toString();
+        if(StringUtils.isNotBlank(ropeComboValue)){
+            Integer ropeIntValue = Integer.parseInt(ropeComboValue);
+            
+            if (ropeIntValue <= 14) {
+                if (6 <= ropeIntValue) {
+                    ropeTxt2KP.setEnabled(true);
+                }else{
+                    ropeTxt2KP.setEnabled(false);
+                }
+                
+                if (10 <= ropeIntValue) {
+                    ropeTxt3KP.setEnabled(true);
+                }else{
+                    ropeTxt3KP.setEnabled(false);
+                }
+                
+                if (10 < ropeIntValue) {
+                    ropeTxt4KP.setEnabled(true);
+                }else{
+                    ropeTxt4KP.setEnabled(false);
+                }
+            }
+        }
+    }//GEN-LAST:event_ropeNoComboKPItemStateChanged
     
-    private void createReport(Order order, List<OrderDetailK> kOrderDetails, List<OrderDetailKS> ksOrderDetails, JFileChooser fileDirectory) throws FileNotFoundException, IOException {
+    private void createReport(Order order, List<OrderDetailK> kOrderDetails, List<OrderDetailKS> ksOrderDetails, List<OrderDetailKP> kpOrderDetails, JFileChooser fileDirectory) throws FileNotFoundException, IOException {
         try {
             Context context = new Context();
             context.putVar("order", order);
@@ -1230,6 +1665,13 @@ public class StartFrame extends javax.swing.JFrame {
                 OutputStream os2 = new FileOutputStream(fileDirectory.getSelectedFile().toString()+ "_2" + "." + XLS);
                 context.putVar("orderDetails", ksOrderDetails);
                 JxlsHelper.getInstance().processTemplate(is2, os2, context);
+            }
+            
+            if(CollectionUtils.isNotEmpty(kpOrderDetails)){
+              InputStream is3 = getClass().getResourceAsStream("/template/report3.xls");
+              OutputStream os3 = new FileOutputStream(fileDirectory.getSelectedFile().toString()+ "_3" + "." + XLS);
+              context.putVar("orderDetails", kpOrderDetails);
+              JxlsHelper.getInstance().processTemplate(is3, os3, context);
             }
         }
         catch(IOException ex){
@@ -1277,19 +1719,25 @@ public class StartFrame extends javax.swing.JFrame {
     private static final String XLS = "xls";
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel addLabelK;
+    private javax.swing.JLabel addLabelKP;
     private javax.swing.JLabel addLabelKS;
     private javax.swing.JComboBox<String> aluColorComboK;
+    private javax.swing.JComboBox<String> aluColorComboKP;
     private javax.swing.JComboBox<String> aluColorComboKS;
     private javax.swing.JTextField billNumberTxt;
     private javax.swing.JTextField comment1TxtK;
+    private javax.swing.JTextField comment1TxtKP;
     private javax.swing.JTextField comment1TxtKS;
     private javax.swing.JTextField commentTxtK;
+    private javax.swing.JTextField commentTxtKP;
     private javax.swing.JTextField commentTxtKS;
     private javax.swing.JTextField customerTxt;
     private javax.swing.JButton exportButton;
     private javax.swing.JTextField heightTxtK;
+    private javax.swing.JTextField heightTxtKP;
     private javax.swing.JTextField heightTxtKS;
     private javax.swing.JComboBox<ImageIcon> imageComboK;
+    private javax.swing.JComboBox<ImageIcon> imageComboKP;
     private javax.swing.JComboBox<ImageIcon> imageComboKS;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1326,7 +1774,24 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1339,7 +1804,11 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -1349,32 +1818,44 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JComboBox<String> netColorComboK;
+    private javax.swing.JComboBox<String> netColorComboKP;
     private javax.swing.JComboBox<String> netColorComboKS;
     private org.jdesktop.swingx.JXDatePicker orderDate;
     private javax.swing.JTextField orderDetailK;
+    private javax.swing.JTextField orderDetailKP;
     private javax.swing.JTextField orderDetailKS;
     private javax.swing.JTextField quotationIdTxt;
     private org.jdesktop.swingx.JXDatePicker receiveDate;
     private javax.swing.JLabel removeLabelK;
+    private javax.swing.JLabel removeLabelKP;
     private javax.swing.JLabel removeLabelKS;
     private javax.swing.JTable reportTableK;
+    private javax.swing.JTable reportTableKP;
     private javax.swing.JTable reportTableKS;
     private javax.swing.JComboBox<String> ropeNoComboK;
+    private javax.swing.JComboBox<String> ropeNoComboKP;
     private javax.swing.JComboBox<String> ropeNoComboKS;
     private javax.swing.JTextField ropeTxt1K;
+    private javax.swing.JTextField ropeTxt1KP;
     private javax.swing.JTextField ropeTxt1KS;
     private javax.swing.JTextField ropeTxt2K;
+    private javax.swing.JTextField ropeTxt2KP;
     private javax.swing.JTextField ropeTxt2KS;
     private javax.swing.JTextField ropeTxt3K;
+    private javax.swing.JTextField ropeTxt3KP;
     private javax.swing.JTextField ropeTxt3KS;
     private javax.swing.JTextField ropeTxt4K;
+    private javax.swing.JTextField ropeTxt4KP;
     private javax.swing.JTextField ropeTxt4KS;
     private javax.swing.JComboBox<String> sellerSelect;
     private javax.swing.JComboBox<String> typeComboK;
+    private javax.swing.JComboBox<String> typeComboKP;
     private javax.swing.JComboBox<String> typeComboKS;
     private javax.swing.JTextField wideTxtK;
+    private javax.swing.JTextField wideTxtKP;
     private javax.swing.JTextField wideTxtKS;
     // End of variables declaration//GEN-END:variables
      
@@ -1409,5 +1890,11 @@ public class StartFrame extends javax.swing.JFrame {
         imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/two_right.PNG"), "/image/two_right.PNG"));
         imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/three_left.PNG"), "/image/three_left.PNG"));
         imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/three_right.PNG"), "/image/three_right.PNG"));
+        
+          // Set Image Combobox
+        imageComboKP.addItem(new ImageIcon(getClass().getResource("/image/two_left.PNG"), "/image/two_left.PNG"));
+        imageComboKP.addItem(new ImageIcon(getClass().getResource("/image/two_right.PNG"), "/image/two_right.PNG"));
+        imageComboKP.addItem(new ImageIcon(getClass().getResource("/image/three_left.PNG"), "/image/three_left.PNG"));
+        imageComboKP.addItem(new ImageIcon(getClass().getResource("/image/three_right.PNG"), "/image/three_right.PNG"));
     }
 }
