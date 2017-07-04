@@ -73,4 +73,22 @@ public class Order {
     public void setSellerName(String sellerName) {
         this.sellerName = sellerName;
     }
+    
+    public static void main(String[] arg){
+        autoCalculateNumberOfSlot();
+    }
+    
+    private static void autoCalculateNumberOfSlot(){
+        //    mHeight = height - (2+(10.5*2)+1)
+        //
+        //30 <= ( mHeight / 10 ) / x
+        //x <= ( mHeight / 10 ) / 30
+        int height = 2500;//Integer.parseInt(heightTxtNH.getText());
+        double mHeight = height - (2 + (10.5 * 2) + 1);
+        System.out.println("mHeight ::" + mHeight);
+        
+        double slotNumber = (mHeight / 10) / 30;
+        System.out.println("slotNumber:::" + slotNumber);
+    }
+    
 }

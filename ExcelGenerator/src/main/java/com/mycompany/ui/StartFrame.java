@@ -1219,6 +1219,11 @@ public class StartFrame extends javax.swing.JFrame {
         heightTxtNH.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
         heightTxtNH.setMinimumSize(new java.awt.Dimension(6, 22));
         heightTxtNH.setPreferredSize(new java.awt.Dimension(6, 22));
+        heightTxtNH.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                heightTxtNHFocusLost(evt);
+            }
+        });
 
         jLabel64.setText("มิลลิเมตร");
 
@@ -1440,7 +1445,7 @@ public class StartFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel74.setText("จำนวนเชือก");
+        jLabel74.setText("จำนวนช่อง");
 
         comment1TxtNH.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
         comment1TxtNH.setMinimumSize(new java.awt.Dimension(6, 22));
@@ -1592,7 +1597,7 @@ public class StartFrame extends javax.swing.JFrame {
         customerTxt.setName(""); // NOI18N
         customerTxt.setPreferredSize(new java.awt.Dimension(6, 22));
 
-        sellerSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "โจเซฟ", "Home Work", "อ้อย", "อ๋อ", "ตา", "เฮียสุวัฒน์", "เอก", "เบียร์"}));
+        sellerSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "โจเซฟ", "สุขุมาล", "ราตรี", "เฮียต๋อง", "เฮียเส็ง", "เฮียอ๋า", "เอียลิ้ม", "กมลชนก", "เสาวลักษณ์"}));
         sellerSelect.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
 
         jLabel7.setText("ชื่อลูกค้า");
@@ -2010,6 +2015,25 @@ public class StartFrame extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_ropeNoComboNHItemStateChanged
+
+    private void heightTxtNHFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_heightTxtNHFocusLost
+        autoCalculateNumberOfSlot();
+    }//GEN-LAST:event_heightTxtNHFocusLost
+    
+    private void autoCalculateNumberOfSlot(){
+        //    mHeight = height - (2+(10.5*2)+1)
+        //
+        //30 <= ( mHeight / 10 ) / x
+        //x <= ( mHeight / 10 ) / 30
+        if(StringUtils.isNotBlank(heightTxtNH.getText())){
+            int height = Integer.parseInt(heightTxtNH.getText());
+            double mHeight = height - (2 + (10.5 * 2) + 1);
+            double slotNumber = Math.floor((mHeight / 10) / 30);
+            System.out.println("slotNumber:::" + slotNumber);
+
+            ropeNoComboNH.setSelectedIndex(1);
+        }
+    }
     
     private void createReport(Order order, JFileChooser fileDirectory,
                               List<OrderDetail> kOrderDetails, List<OrderDetail> ksOrderDetails, 
