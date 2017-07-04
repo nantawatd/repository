@@ -87,7 +87,7 @@ public class Order {
         double mHeight = height - (2 + (10.5 * 2) + 1);
         System.out.println("mHeight ::" + mHeight);
         
-        double slotNumber = (mHeight / 10) / 30;
+        double slotNumber = Math.ceil((mHeight / 10) / 30);
         System.out.println("slotNumber:::" + slotNumber);
     }
     

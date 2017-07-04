@@ -1437,7 +1437,7 @@ public class StartFrame extends javax.swing.JFrame {
 
         jLabel73.setText("Alu สี");
 
-        ropeNoComboNH.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "4", "6", "8", "10", "14" }));
+        ropeNoComboNH.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "3", "4", "5", "6", "7" , "8", "9" }));
         ropeNoComboNH.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
         ropeNoComboNH.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -2025,13 +2025,22 @@ public class StartFrame extends javax.swing.JFrame {
         //
         //30 <= ( mHeight / 10 ) / x
         //x <= ( mHeight / 10 ) / 30
+        // 3 4 5 6 7 8 9
         if(StringUtils.isNotBlank(heightTxtNH.getText())){
-            int height = Integer.parseInt(heightTxtNH.getText());
-            double mHeight = height - (2 + (10.5 * 2) + 1);
-            double slotNumber = Math.floor((mHeight / 10) / 30);
-            System.out.println("slotNumber:::" + slotNumber);
-
-            ropeNoComboNH.setSelectedIndex(1);
+            Integer height = Integer.parseInt(heightTxtNH.getText());
+            Double mHeight = height - (2 + (10.5 * 2) + 1);
+            Double slotNumber = Math.ceil((mHeight / 10) / 30);
+            System.out.println("mHeight ::" + mHeight + "::::::: slotNumber:::" + slotNumber);
+            
+            if(slotNumber < 3.0){
+                slotNumber = 3.0;
+            }
+            if(slotNumber > 9.0){
+                slotNumber = 9.0;
+            }
+            
+            ropeNoComboNH.setSelectedIndex(slotNumber.intValue() - 3);
+            
         }
     }
     
