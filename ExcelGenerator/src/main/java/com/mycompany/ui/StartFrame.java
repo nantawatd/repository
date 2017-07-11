@@ -219,6 +219,45 @@ public class StartFrame extends javax.swing.JFrame {
         comment1TxtNH = new javax.swing.JTextField();
         jLabel75 = new javax.swing.JLabel();
         jPanel22 = new javax.swing.JPanel();
+        jPanel28 = new javax.swing.JPanel();
+        jLabel76 = new javax.swing.JLabel();
+        jPanel29 = new javax.swing.JPanel();
+        jLabel77 = new javax.swing.JLabel();
+        jLabel78 = new javax.swing.JLabel();
+        jLabel79 = new javax.swing.JLabel();
+        typeComboNL = new javax.swing.JComboBox<>();
+        wideTxtNL = new javax.swing.JTextField();
+        jLabel80 = new javax.swing.JLabel();
+        heightTxtNL = new javax.swing.JTextField();
+        jLabel81 = new javax.swing.JLabel();
+        orderDetailNL = new javax.swing.JTextField();
+        jLabel82 = new javax.swing.JLabel();
+        commentTxtNL = new javax.swing.JTextField();
+        jLabel83 = new javax.swing.JLabel();
+        imageComboNL = new javax.swing.JComboBox<>();
+        jLabel84 = new javax.swing.JLabel();
+        jPanel30 = new javax.swing.JPanel();
+        ropeTxt1NL = new javax.swing.JTextField();
+        ropeTxt2NL = new javax.swing.JTextField();
+        ropeTxt3NL = new javax.swing.JTextField();
+        ropeTxt4NL = new javax.swing.JTextField();
+        jLabel85 = new javax.swing.JLabel();
+        jLabel86 = new javax.swing.JLabel();
+        jLabel87 = new javax.swing.JLabel();
+        jLabel88 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        reportTableNL = new javax.swing.JTable();
+        removeLabelNL = new javax.swing.JLabel();
+        addLabelNL = new javax.swing.JLabel();
+        jPanel31 = new javax.swing.JPanel();
+        netColorComboNL = new javax.swing.JComboBox<>();
+        jLabel89 = new javax.swing.JLabel();
+        aluColorComboNL = new javax.swing.JComboBox<>();
+        jLabel90 = new javax.swing.JLabel();
+        ropeNoComboNL = new javax.swing.JComboBox<>();
+        jLabel91 = new javax.swing.JLabel();
+        comment1TxtNL = new javax.swing.JTextField();
+        jLabel92 = new javax.swing.JLabel();
         jPanel23 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
@@ -1311,17 +1350,14 @@ public class StartFrame extends javax.swing.JFrame {
         ropeTxt1NH.setPreferredSize(new java.awt.Dimension(6, 22));
 
         ropeTxt2NH.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
-        ropeTxt2NH.setEnabled(false);
         ropeTxt2NH.setMinimumSize(new java.awt.Dimension(6, 22));
         ropeTxt2NH.setPreferredSize(new java.awt.Dimension(6, 22));
 
         ropeTxt3NH.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
-        ropeTxt3NH.setEnabled(false);
         ropeTxt3NH.setMinimumSize(new java.awt.Dimension(6, 22));
         ropeTxt3NH.setPreferredSize(new java.awt.Dimension(6, 22));
 
         ropeTxt4NH.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
-        ropeTxt4NH.setEnabled(false);
         ropeTxt4NH.setMinimumSize(new java.awt.Dimension(6, 22));
         ropeTxt4NH.setPreferredSize(new java.awt.Dimension(6, 22));
 
@@ -1439,11 +1475,6 @@ public class StartFrame extends javax.swing.JFrame {
 
         ropeNoComboNH.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "3", "4", "5", "6", "7" , "8", "9" }));
         ropeNoComboNH.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
-        ropeNoComboNH.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                ropeNoComboNHItemStateChanged(evt);
-            }
-        });
 
         jLabel74.setText("จำนวนช่อง");
 
@@ -1515,18 +1546,321 @@ public class StartFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("มุ้งจีบรางสูง", jPanel21);
 
+        jPanel28.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel28.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel76.setFont(new java.awt.Font("Segoe UI Light", 0, 11)); // NOI18N
+        jLabel76.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel76.setText("Make your life easier.");
+        jPanel28.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, -1, -1));
+
+        jPanel29.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel77.setText("รายละเอียดสินค้า");
+
+        jLabel78.setText("ชนิด");
+
+        jLabel79.setText("กว้าง");
+
+        typeComboNL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "W", "D"}));
+        typeComboNL.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+
+        wideTxtNL.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        wideTxtNL.setMinimumSize(new java.awt.Dimension(6, 22));
+        wideTxtNL.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        jLabel80.setText("มิลลิเมตร");
+
+        heightTxtNL.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        heightTxtNL.setMinimumSize(new java.awt.Dimension(6, 22));
+        heightTxtNL.setPreferredSize(new java.awt.Dimension(6, 22));
+        heightTxtNL.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                heightTxtNLFocusLost(evt);
+            }
+        });
+
+        jLabel81.setText("มิลลิเมตร");
+
+        orderDetailNL.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        orderDetailNL.setMinimumSize(new java.awt.Dimension(6, 22));
+        orderDetailNL.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        jLabel82.setText("หมายเหตุ");
+
+        commentTxtNL.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        commentTxtNL.setMinimumSize(new java.awt.Dimension(6, 22));
+        commentTxtNL.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        jLabel83.setText("สูง");
+
+        imageComboNL.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+
+        jLabel84.setText("รูปภาพ");
+
+        javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
+        jPanel29.setLayout(jPanel29Layout);
+        jPanel29Layout.setHorizontalGroup(
+            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel29Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel78, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel79, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel77, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel83, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel84, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel82, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(heightTxtNL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(wideTxtNL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(typeComboNL, 0, 98, Short.MAX_VALUE)
+                    .addComponent(commentTxtNL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(imageComboNL, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(orderDetailNL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel81))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel29Layout.setVerticalGroup(
+            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel29Layout.createSequentialGroup()
+                .addGap(7, 7, 7)
+                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel77)
+                    .addComponent(orderDetailNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(imageComboNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel84))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(commentTxtNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel82))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(typeComboNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel78))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(wideTxtNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel80)
+                    .addComponent(jLabel79))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(heightTxtNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel81)
+                    .addComponent(jLabel83))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel28.add(jPanel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 310, 210));
+
+        jPanel30.setBackground(new java.awt.Color(255, 255, 255));
+
+        ropeTxt1NL.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        ropeTxt1NL.setMinimumSize(new java.awt.Dimension(6, 22));
+        ropeTxt1NL.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        ropeTxt2NL.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        ropeTxt2NL.setMinimumSize(new java.awt.Dimension(6, 22));
+        ropeTxt2NL.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        ropeTxt3NL.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        ropeTxt3NL.setMinimumSize(new java.awt.Dimension(6, 22));
+        ropeTxt3NL.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        ropeTxt4NL.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        ropeTxt4NL.setMinimumSize(new java.awt.Dimension(6, 22));
+        ropeTxt4NL.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        jLabel85.setText("เชือกเส้นที่ 1");
+
+        jLabel86.setText("เชือกเส้นที่ 2");
+
+        jLabel87.setText("เชือกเส้นที่ 3");
+
+        jLabel88.setText("เชือกเส้นที่ 4");
+
+        javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
+        jPanel30.setLayout(jPanel30Layout);
+        jPanel30Layout.setHorizontalGroup(
+            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel30Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel85, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel86, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel87, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel88, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ropeTxt1NL, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                    .addComponent(ropeTxt2NL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ropeTxt3NL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ropeTxt4NL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(45, 45, 45))
+        );
+        jPanel30Layout.setVerticalGroup(
+            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel30Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ropeTxt1NL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel85))
+                .addGap(9, 9, 9)
+                .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel86)
+                    .addComponent(ropeTxt2NL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ropeTxt3NL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel87))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel88)
+                    .addComponent(ropeTxt4NL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(81, 81, 81))
+        );
+
+        jPanel28.add(jPanel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 230, 160));
+
+        jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane5.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        reportTableNL.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ลำดับ", "รายละเอียดสินค้า", "Image", "หมายเหตุ", "ชนิด", "กว้าง", "สูง", "ผ้ามุ้งสี", "จำนวนเชือก", "เชือกเส้น 1", "เชือกเส้น 2", "เชือกเส้น 3", "เชือกเส้น 4", "Alu สี"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Object.class, javax.swing.ImageIcon.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        reportTableNL.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        jScrollPane5.setViewportView(reportTableNL);
+
+        jPanel28.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 861, 210));
+
+        removeLabelNL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Trash_32px.png"))); // NOI18N
+        removeLabelNL.setText("ลบ");
+        removeLabelNL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                removeLabelNLMouseReleased(evt);
+            }
+        });
+        jPanel28.add(removeLabelNL, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, 70, -1));
+
+        addLabelNL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Plus_32px.png"))); // NOI18N
+        addLabelNL.setText("เพิ่ม");
+        addLabelNL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                addLabelNLMouseReleased(evt);
+            }
+        });
+        jPanel28.add(addLabelNL, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, 70, -1));
+
+        jPanel31.setBackground(new java.awt.Color(255, 255, 255));
+
+        netColorComboNL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "เทา", "ดำ" }));
+        netColorComboNL.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+
+        jLabel89.setText("ผ้ามุ้งสี");
+
+        aluColorComboNL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ขาว", "ดำ", "ไม้", "เทาซาฮาร่า", "ดำซาฮาร่า", "ดาร์คบราว" }));
+        aluColorComboNL.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+
+        jLabel90.setText("Alu สี");
+
+        ropeNoComboNL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "3", "4", "5", "6", "7" , "8", "9" }));
+        ropeNoComboNL.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+
+        jLabel91.setText("จำนวนช่อง");
+
+        comment1TxtNL.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        comment1TxtNL.setMinimumSize(new java.awt.Dimension(6, 22));
+        comment1TxtNL.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        jLabel92.setText("หมายเหตุ");
+
+        javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
+        jPanel31.setLayout(jPanel31Layout);
+        jPanel31Layout.setHorizontalGroup(
+            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel31Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel31Layout.createSequentialGroup()
+                        .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel89, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel90, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(aluColorComboNL, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(netColorComboNL, javax.swing.GroupLayout.Alignment.TRAILING, 0, 96, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel31Layout.createSequentialGroup()
+                        .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel91, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel92, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ropeNoComboNL, 0, 96, Short.MAX_VALUE)
+                            .addComponent(comment1TxtNL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+        jPanel31Layout.setVerticalGroup(
+            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel31Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(netColorComboNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel89))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(aluColorComboNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel90))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ropeNoComboNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel91))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comment1TxtNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel92))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel28.add(jPanel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 200, 160));
+
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
         jPanel22.setLayout(jPanel22Layout);
         jPanel22Layout.setHorizontalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 885, Short.MAX_VALUE)
+            .addComponent(jPanel28, javax.swing.GroupLayout.DEFAULT_SIZE, 885, Short.MAX_VALUE)
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 474, Short.MAX_VALUE)
+            .addComponent(jPanel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("tab5", jPanel22);
+        jTabbedPane1.addTab("มุ้งจีบรางต่ำ", jPanel22);
 
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
@@ -1989,36 +2323,38 @@ public class StartFrame extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_addLabelNHMouseReleased
 
-    private void ropeNoComboNHItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ropeNoComboNHItemStateChanged
-        String ropeComboValue = ropeNoComboNH.getSelectedItem().toString();
-        if(StringUtils.isNotBlank(ropeComboValue)){
-            Integer ropeIntValue = Integer.parseInt(ropeComboValue);
-            
-            if (ropeIntValue <= 14) {
-                if (6 <= ropeIntValue) {
-                    ropeTxt2NH.setEnabled(true);
-                }else{
-                    ropeTxt2NH.setEnabled(false);
-                }
-                
-                if (10 <= ropeIntValue) {
-                    ropeTxt3NH.setEnabled(true);
-                }else{
-                    ropeTxt3NH.setEnabled(false);
-                }
-                
-                if (10 < ropeIntValue) {
-                    ropeTxt4NH.setEnabled(true);
-                }else{
-                    ropeTxt4NH.setEnabled(false);
-                }
-            }
-        }
-    }//GEN-LAST:event_ropeNoComboNHItemStateChanged
-
     private void heightTxtNHFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_heightTxtNHFocusLost
         autoCalculateNumberOfSlot();
     }//GEN-LAST:event_heightTxtNHFocusLost
+
+    private void heightTxtNLFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_heightTxtNLFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_heightTxtNLFocusLost
+
+    private void removeLabelNLMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeLabelNLMouseReleased
+       removeItemFromTable(reportTableNL);
+    }//GEN-LAST:event_removeLabelNLMouseReleased
+
+    private void addLabelNLMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLabelNLMouseReleased
+        DefaultTableModel model = (DefaultTableModel) reportTableNL.getModel();
+        
+        model.addRow(new Object[]{
+            (model.getRowCount() + 1),
+            orderDetailNL.getText(),
+            new ImageIcon(getClass().getResource(imageComboNL.getSelectedItem().toString()), ((ImageIcon) imageComboNL.getSelectedItem()).getDescription()),
+            commentTxtNL.getText(), 
+            typeComboNL.getSelectedItem().toString(),
+            wideTxtNL.getText(),
+            heightTxtNL.getText(),
+            netColorComboNL.getSelectedItem().toString(),
+            ropeNoComboNL.getSelectedItem().toString(),
+            StringUtils.isNotBlank(ropeTxt1NL.getText())? Integer.parseInt(ropeTxt1NL.getText()) : 0,
+            StringUtils.isNotBlank(ropeTxt2NL.getText())? Integer.parseInt(ropeTxt2NL.getText()) : 0,
+            StringUtils.isNotBlank(ropeTxt3NL.getText())? Integer.parseInt(ropeTxt3NL.getText()) : 0,
+            StringUtils.isNotBlank(ropeTxt4NL.getText())? Integer.parseInt(ropeTxt4NL.getText()) : 0,
+            aluColorComboNL.getSelectedItem().toString()
+        });
+    }//GEN-LAST:event_addLabelNLMouseReleased
     
     private void autoCalculateNumberOfSlot(){
         //    mHeight = height - (2+(10.5*2)+1)
@@ -2127,29 +2463,35 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JLabel addLabelKP;
     private javax.swing.JLabel addLabelKS;
     private javax.swing.JLabel addLabelNH;
+    private javax.swing.JLabel addLabelNL;
     private javax.swing.JComboBox<String> aluColorComboK;
     private javax.swing.JComboBox<String> aluColorComboKP;
     private javax.swing.JComboBox<String> aluColorComboKS;
     private javax.swing.JComboBox<String> aluColorComboNH;
+    private javax.swing.JComboBox<String> aluColorComboNL;
     private javax.swing.JTextField billNumberTxt;
     private javax.swing.JTextField comment1TxtK;
     private javax.swing.JTextField comment1TxtKP;
     private javax.swing.JTextField comment1TxtKS;
     private javax.swing.JTextField comment1TxtNH;
+    private javax.swing.JTextField comment1TxtNL;
     private javax.swing.JTextField commentTxtK;
     private javax.swing.JTextField commentTxtKP;
     private javax.swing.JTextField commentTxtKS;
     private javax.swing.JTextField commentTxtNH;
+    private javax.swing.JTextField commentTxtNL;
     private javax.swing.JTextField customerTxt;
     private javax.swing.JButton exportButton;
     private javax.swing.JTextField heightTxtK;
     private javax.swing.JTextField heightTxtKP;
     private javax.swing.JTextField heightTxtKS;
     private javax.swing.JTextField heightTxtNH;
+    private javax.swing.JTextField heightTxtNL;
     private javax.swing.JComboBox<ImageIcon> imageComboK;
     private javax.swing.JComboBox<ImageIcon> imageComboKP;
     private javax.swing.JComboBox<ImageIcon> imageComboKS;
     private javax.swing.JComboBox<ImageIcon> imageComboNH;
+    private javax.swing.JComboBox<ImageIcon> imageComboNL;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -2222,8 +2564,25 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
+    private javax.swing.JLabel jLabel84;
+    private javax.swing.JLabel jLabel85;
+    private javax.swing.JLabel jLabel86;
+    private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLabel88;
+    private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel90;
+    private javax.swing.JLabel jLabel91;
+    private javax.swing.JLabel jLabel92;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -2244,7 +2603,11 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
+    private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel30;
+    private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
@@ -2255,55 +2618,67 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JComboBox<String> netColorComboK;
     private javax.swing.JComboBox<String> netColorComboKP;
     private javax.swing.JComboBox<String> netColorComboKS;
     private javax.swing.JComboBox<String> netColorComboNH;
+    private javax.swing.JComboBox<String> netColorComboNL;
     private org.jdesktop.swingx.JXDatePicker orderDate;
     private javax.swing.JTextField orderDetailK;
     private javax.swing.JTextField orderDetailKP;
     private javax.swing.JTextField orderDetailKS;
     private javax.swing.JTextField orderDetailNH;
+    private javax.swing.JTextField orderDetailNL;
     private javax.swing.JTextField quotationIdTxt;
     private org.jdesktop.swingx.JXDatePicker receiveDate;
     private javax.swing.JLabel removeLabelK;
     private javax.swing.JLabel removeLabelKP;
     private javax.swing.JLabel removeLabelKS;
     private javax.swing.JLabel removeLabelNH;
+    private javax.swing.JLabel removeLabelNL;
     private javax.swing.JTable reportTableK;
     private javax.swing.JTable reportTableKP;
     private javax.swing.JTable reportTableKS;
     private javax.swing.JTable reportTableNH;
+    private javax.swing.JTable reportTableNL;
     private javax.swing.JComboBox<String> ropeNoComboK;
     private javax.swing.JComboBox<String> ropeNoComboKP;
     private javax.swing.JComboBox<String> ropeNoComboKS;
     private javax.swing.JComboBox<String> ropeNoComboNH;
+    private javax.swing.JComboBox<String> ropeNoComboNL;
     private javax.swing.JTextField ropeTxt1K;
     private javax.swing.JTextField ropeTxt1KP;
     private javax.swing.JTextField ropeTxt1KS;
     private javax.swing.JTextField ropeTxt1NH;
+    private javax.swing.JTextField ropeTxt1NL;
     private javax.swing.JTextField ropeTxt2K;
     private javax.swing.JTextField ropeTxt2KP;
     private javax.swing.JTextField ropeTxt2KS;
     private javax.swing.JTextField ropeTxt2NH;
+    private javax.swing.JTextField ropeTxt2NL;
     private javax.swing.JTextField ropeTxt3K;
     private javax.swing.JTextField ropeTxt3KP;
     private javax.swing.JTextField ropeTxt3KS;
     private javax.swing.JTextField ropeTxt3NH;
+    private javax.swing.JTextField ropeTxt3NL;
     private javax.swing.JTextField ropeTxt4K;
     private javax.swing.JTextField ropeTxt4KP;
     private javax.swing.JTextField ropeTxt4KS;
     private javax.swing.JTextField ropeTxt4NH;
+    private javax.swing.JTextField ropeTxt4NL;
     private javax.swing.JComboBox<String> sellerSelect;
     private javax.swing.JComboBox<String> typeComboK;
     private javax.swing.JComboBox<String> typeComboKP;
     private javax.swing.JComboBox<String> typeComboKS;
     private javax.swing.JComboBox<String> typeComboNH;
+    private javax.swing.JComboBox<String> typeComboNL;
     private javax.swing.JTextField wideTxtK;
     private javax.swing.JTextField wideTxtKP;
     private javax.swing.JTextField wideTxtKS;
     private javax.swing.JTextField wideTxtNH;
+    private javax.swing.JTextField wideTxtNL;
     // End of variables declaration//GEN-END:variables
      
     private void initComponents2() { 
@@ -2331,12 +2706,14 @@ public class StartFrame extends javax.swing.JFrame {
         imageComboK.addItem(new ImageIcon(getClass().getResource("/image/two_right.PNG"), "/image/two_right.PNG"));
         imageComboK.addItem(new ImageIcon(getClass().getResource("/image/three_left.PNG"), "/image/three_left.PNG"));
         imageComboK.addItem(new ImageIcon(getClass().getResource("/image/three_right.PNG"), "/image/three_right.PNG"));
+        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/right.PNG"), "/image/right.PNG"));
         
         // Set Image Combobox
         imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/two_left.PNG"), "/image/two_left.PNG"));
         imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/two_right.PNG"), "/image/two_right.PNG"));
         imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/three_left.PNG"), "/image/three_left.PNG"));
         imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/three_right.PNG"), "/image/three_right.PNG"));
+        
         
         // Set Image Combobox
         imageComboKP.addItem(new ImageIcon(getClass().getResource("/image/two_left.PNG"), "/image/two_left.PNG"));
