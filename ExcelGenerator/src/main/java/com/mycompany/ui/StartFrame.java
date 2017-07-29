@@ -2107,6 +2107,7 @@ public class StartFrame extends javax.swing.JFrame {
             List<OrderDetail> ksOrderDetails = createOrderDetail(reportTableKS);
             List<OrderDetail> kpOrderDetails = createOrderDetail(reportTableKP);
             List<OrderDetail> nhOrderDetails = createOrderDetail(reportTableNH);
+            List<OrderDetail> nlOrderDetails = createOrderDetail(reportTableNL);
 
             //Choose File Destination
             JFileChooser fileDirectory = new JFileChooser();
@@ -2115,7 +2116,7 @@ public class StartFrame extends javax.swing.JFrame {
             
             if (fileDirectory.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
                 //3. Export Report
-                createReport(order, fileDirectory, kOrderDetails, ksOrderDetails, kpOrderDetails, nhOrderDetails);
+                createReport(order, fileDirectory, kOrderDetails, ksOrderDetails, kpOrderDetails, nhOrderDetails, nlOrderDetails);
             }
           
         } catch (IOException ex) {
@@ -2284,11 +2285,11 @@ public class StartFrame extends javax.swing.JFrame {
     }
     
     private void heightTxtNHFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_heightTxtNHFocusLost
-        autoCalculateNumberOfSlot();
+        autoCalculateNumberOfSlot(ropeNoComboNH, heightTxtNH);
     }//GEN-LAST:event_heightTxtNHFocusLost
 
     private void heightTxtNLFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_heightTxtNLFocusLost
-        // TODO add your handling code here:
+        autoCalculateNumberOfSlot(ropeNoComboNL, heightTxtNL);
     }//GEN-LAST:event_heightTxtNLFocusLost
 
     private void removeLabelNLMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeLabelNLMouseReleased
@@ -2316,14 +2317,14 @@ public class StartFrame extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_addLabelNLMouseReleased
     
-    private void autoCalculateNumberOfSlot(){
+    private void autoCalculateNumberOfSlot(JComboBox ropeNoComboN, JTextField heightTxtN){
         //    mHeight = height - (2+(10.5*2)+1)
         //
         //30 <= ( mHeight / 10 ) / x
         //x <= ( mHeight / 10 ) / 30
         // 3 4 5 6 7 8 9
-        if(StringUtils.isNotBlank(heightTxtNH.getText())){
-            Integer height = Integer.parseInt(heightTxtNH.getText());
+        if(StringUtils.isNotBlank(heightTxtN.getText())){
+            Integer height = Integer.parseInt(heightTxtN.getText());
             Double mHeight = height - (2 + (10.5 * 2) + 1);
             Double slotNumber = Math.ceil((mHeight / 10) / 30);
             System.out.println("mHeight ::" + mHeight + "::::::: slotNumber:::" + slotNumber);
@@ -2334,15 +2335,14 @@ public class StartFrame extends javax.swing.JFrame {
             if(slotNumber > 9.0){
                 slotNumber = 9.0;
             }
-            
-            ropeNoComboNH.setSelectedIndex(slotNumber.intValue() - 3);
-            
+            ropeNoComboN.setSelectedIndex(slotNumber.intValue() - 3);
         }
     }
     
     private void createReport(Order order, JFileChooser fileDirectory,
                               List<OrderDetail> kOrderDetails, List<OrderDetail> ksOrderDetails, 
-                              List<OrderDetail> kpOrderDetails, List<OrderDetail> nhOrderDetails) throws FileNotFoundException, IOException {
+                              List<OrderDetail> kpOrderDetails, List<OrderDetail> nhOrderDetails,
+                              List<OrderDetail> nlOrderDetails) throws FileNotFoundException, IOException {
         try {
             Context context = new Context();
             context.putVar("order", order);
@@ -2373,6 +2373,13 @@ public class StartFrame extends javax.swing.JFrame {
               OutputStream os4 = new FileOutputStream(fileDirectory.getSelectedFile().toString()+ "_4" + "." + XLS);
               context.putVar("orderDetails", nhOrderDetails);
               JxlsHelper.getInstance().processTemplate(is4, os4, context);
+            }
+            
+             if(CollectionUtils.isNotEmpty(nlOrderDetails)){
+              InputStream is5 = getClass().getResourceAsStream("/template/report5.xls");
+              OutputStream os5 = new FileOutputStream(fileDirectory.getSelectedFile().toString()+ "_5" + "." + XLS);
+              context.putVar("orderDetails", nlOrderDetails);
+              JxlsHelper.getInstance().processTemplate(is5, os5, context);
             }
         }
         catch(IOException ex){
@@ -2686,5 +2693,11 @@ public class StartFrame extends javax.swing.JFrame {
         imageComboNH.addItem(new ImageIcon(getClass().getResource("/image/two_right.PNG"), "/image/two_right.PNG"));
         imageComboNH.addItem(new ImageIcon(getClass().getResource("/image/three_left.PNG"), "/image/three_left.PNG"));
         imageComboNH.addItem(new ImageIcon(getClass().getResource("/image/three_right.PNG"), "/image/three_right.PNG"));
+        
+        // Set Image Combobox
+        imageComboNL.addItem(new ImageIcon(getClass().getResource("/image/two_left.PNG"), "/image/two_left.PNG"));
+        imageComboNL.addItem(new ImageIcon(getClass().getResource("/image/two_right.PNG"), "/image/two_right.PNG"));
+        imageComboNL.addItem(new ImageIcon(getClass().getResource("/image/three_left.PNG"), "/image/three_left.PNG"));
+        imageComboNL.addItem(new ImageIcon(getClass().getResource("/image/three_right.PNG"), "/image/three_right.PNG"));
     }
 }
