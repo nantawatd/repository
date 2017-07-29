@@ -21,9 +21,11 @@ import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
@@ -2077,31 +2079,24 @@ public class StartFrame extends javax.swing.JFrame {
             OrderDetail detail = new OrderDetail();
             detail.setNo(reportTable.getValueAt(row, columnCount - 14).toString());
             detail.setDetail(reportTable.getValueAt(row, columnCount - 13).toString());
-
-            ImageIcon imageIcon = (ImageIcon) reportTable.getValueAt(row, columnCount - 12);
-            InputStream is = getClass().getResourceAsStream(imageIcon.getDescription());
-            byte[] imageBytes = Util.toByteArray(is);
-            detail.setImage(imageBytes);
-
+            detail.setImage(ImageIconToImageBytes(reportTable, row, columnCount - 12));
             detail.setComment(reportTable.getValueAt(row, columnCount - 11).toString());
             detail.setType(reportTable.getValueAt(row, columnCount - 10).toString());
             detail.setWide(reportTable.getValueAt(row, columnCount - 9).toString());
             detail.setHeight(reportTable.getValueAt(row, columnCount - 8).toString());
             detail.setNetColor(reportTable.getValueAt(row, columnCount - 7).toString());
             detail.setRopeNo(Integer.parseInt(reportTable.getValueAt(row, columnCount - 6).toString()));
-
             detail.setRope1(Integer.parseInt(reportTable.getValueAt(row, columnCount - 5).toString()));
             detail.setRope2(Integer.parseInt(reportTable.getValueAt(row, columnCount - 4).toString()));
             detail.setRope3(Integer.parseInt(reportTable.getValueAt(row, columnCount - 3).toString()));
             detail.setRope4(Integer.parseInt(reportTable.getValueAt(row, columnCount - 2).toString()));
-
             detail.setAluColor(reportTable.getValueAt(row, columnCount - 1).toString());
 
             orderDetails.add(detail);
         }
         return orderDetails;
     }
-    
+
     private void exportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportButtonActionPerformed
         try {
             //1. Order Infomation
@@ -2129,30 +2124,7 @@ public class StartFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_exportButtonActionPerformed
 
     private void ropeNoComboKItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ropeNoComboKItemStateChanged
-        String ropeComboValue = ropeNoComboK.getSelectedItem().toString();
-        if(StringUtils.isNotBlank(ropeComboValue)){
-            Integer ropeIntValue = Integer.parseInt(ropeComboValue);
-            
-            if (ropeIntValue <= 14) {
-                if (6 <= ropeIntValue) {
-                    ropeTxt2K.setEnabled(true);
-                }else{
-                    ropeTxt2K.setEnabled(false);
-                }
-                
-                if (10 <= ropeIntValue) {
-                    ropeTxt3K.setEnabled(true);
-                }else{
-                    ropeTxt3K.setEnabled(false);
-                }
-                
-                if (10 < ropeIntValue) {
-                    ropeTxt4K.setEnabled(true);
-                }else{
-                    ropeTxt4K.setEnabled(false);
-                }
-            }
-        }
+        autoEnableKepRangRopeNum(ropeNoComboK, ropeTxt2K, ropeTxt3K, ropeTxt4K);
     }//GEN-LAST:event_ropeNoComboKItemStateChanged
 
     private void addLabelKMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLabelKMouseReleased
@@ -2183,20 +2155,6 @@ public class StartFrame extends javax.swing.JFrame {
     private void removeLabelKSMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeLabelKSMouseReleased
        removeItemFromTable(reportTableKS);
     }//GEN-LAST:event_removeLabelKSMouseReleased
-
-    private void removeItemFromTable(JTable reportTable){
-        DefaultTableModel model = (DefaultTableModel) reportTable.getModel();
-        int[] indices = reportTable.getSelectedRows();
-        Arrays.sort(indices);
-        for (int i = indices.length - 1; i >= 0; i--) {
-            model.removeRow(indices[i]);
-        }
-
-        //Reset row number.
-        for (int i = 0; i < model.getRowCount(); i++) {
-            model.setValueAt(i + 1, i, 0);
-        }
-    }
     
     private void addLabelKSMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLabelKSMouseReleased
         DefaultTableModel model = (DefaultTableModel) reportTableKS.getModel();
@@ -2220,30 +2178,7 @@ public class StartFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_addLabelKSMouseReleased
 
     private void ropeNoComboKSItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ropeNoComboKSItemStateChanged
-        String ropeComboValue = ropeNoComboKS.getSelectedItem().toString();
-        if(StringUtils.isNotBlank(ropeComboValue)){
-            Integer ropeIntValue = Integer.parseInt(ropeComboValue);
-            
-            if (ropeIntValue <= 14) {
-                if (6 <= ropeIntValue) {
-                    ropeTxt2KS.setEnabled(true);
-                }else{
-                    ropeTxt2KS.setEnabled(false);
-                }
-                
-                if (10 <= ropeIntValue) {
-                    ropeTxt3KS.setEnabled(true);
-                }else{
-                    ropeTxt3KS.setEnabled(false);
-                }
-                
-                if (10 < ropeIntValue) {
-                    ropeTxt4KS.setEnabled(true);
-                }else{
-                    ropeTxt4KS.setEnabled(false);
-                }
-            }
-        }
+        autoEnableKepRangRopeNum(ropeNoComboKS, ropeTxt2KS, ropeTxt3KS, ropeTxt4KS);
     }//GEN-LAST:event_ropeNoComboKSItemStateChanged
 
     private void removeLabelKPMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeLabelKPMouseReleased
@@ -2272,30 +2207,7 @@ public class StartFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_addLabelKPMouseReleased
 
     private void ropeNoComboKPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ropeNoComboKPItemStateChanged
-        String ropeComboValue = ropeNoComboKP.getSelectedItem().toString();
-        if(StringUtils.isNotBlank(ropeComboValue)){
-            Integer ropeIntValue = Integer.parseInt(ropeComboValue);
-            
-            if (ropeIntValue <= 14) {
-                if (6 <= ropeIntValue) {
-                    ropeTxt2KP.setEnabled(true);
-                }else{
-                    ropeTxt2KP.setEnabled(false);
-                }
-                
-                if (10 <= ropeIntValue) {
-                    ropeTxt3KP.setEnabled(true);
-                }else{
-                    ropeTxt3KP.setEnabled(false);
-                }
-                
-                if (10 < ropeIntValue) {
-                    ropeTxt4KP.setEnabled(true);
-                }else{
-                    ropeTxt4KP.setEnabled(false);
-                }
-            }
-        }
+        autoEnableKepRangRopeNum(ropeNoComboKP, ropeTxt2KP, ropeTxt3KP, ropeTxt4KP);
     }//GEN-LAST:event_ropeNoComboKPItemStateChanged
 
     private void removeLabelNHMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeLabelNHMouseReleased
@@ -2323,6 +2235,54 @@ public class StartFrame extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_addLabelNHMouseReleased
 
+     private void autoEnableKepRangRopeNum(JComboBox<String> ropeNoComboK, JTextField ropeTxt2K, JTextField ropeTxt3K, JTextField ropeTxt4K) throws NumberFormatException {
+        String ropeComboValue = ropeNoComboK.getSelectedItem().toString();
+        if(StringUtils.isNotBlank(ropeComboValue)){
+            Integer ropeIntValue = Integer.parseInt(ropeComboValue);
+            
+            if (ropeIntValue <= 14) {
+                if (6 <= ropeIntValue) {
+                    ropeTxt2K.setEnabled(true);
+                }else{
+                    ropeTxt2K.setEnabled(false);
+                }
+                
+                if (10 <= ropeIntValue) {
+                    ropeTxt3K.setEnabled(true);
+                }else{
+                    ropeTxt3K.setEnabled(false);
+                }
+                
+                if (10 < ropeIntValue) {
+                    ropeTxt4K.setEnabled(true);
+                }else{
+                    ropeTxt4K.setEnabled(false);
+                }
+            }
+        }
+    }
+     
+    private void removeItemFromTable(JTable reportTable){
+        DefaultTableModel model = (DefaultTableModel) reportTable.getModel();
+        int[] indices = reportTable.getSelectedRows();
+        Arrays.sort(indices);
+        for (int i = indices.length - 1; i >= 0; i--) {
+            model.removeRow(indices[i]);
+        }
+
+        //Reset row number.
+        for (int i = 0; i < model.getRowCount(); i++) {
+            model.setValueAt(i + 1, i, 0);
+        }
+    }
+    
+    private byte[] ImageIconToImageBytes(JTable reportTable, int row, int columnCount) throws IOException {
+        ImageIcon imageIcon = (ImageIcon) reportTable.getValueAt(row, columnCount);
+        InputStream is = getClass().getResourceAsStream(imageIcon.getDescription());
+        byte[] imageBytes = Util.toByteArray(is);
+        return imageBytes;
+    }
+    
     private void heightTxtNHFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_heightTxtNHFocusLost
         autoCalculateNumberOfSlot();
     }//GEN-LAST:event_heightTxtNHFocusLost
