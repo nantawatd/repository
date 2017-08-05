@@ -2183,7 +2183,7 @@ public class StartFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_ropeNoComboKSItemStateChanged
 
     private void removeLabelKPMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeLabelKPMouseReleased
-        removeItemFromTable(reportTableKS);
+        removeItemFromTable(reportTableKP);
     }//GEN-LAST:event_removeLabelKPMouseReleased
 
     private void addLabelKPMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLabelKPMouseReleased
