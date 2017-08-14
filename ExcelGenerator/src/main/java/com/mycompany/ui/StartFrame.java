@@ -72,12 +72,12 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         heightTxtK = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        orderDetailK = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         commentTxtK = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         imageComboK = new javax.swing.JComboBox<>();
         jLabel24 = new javax.swing.JLabel();
+        orderDetailComboK = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
         ropeTxt1K = new javax.swing.JTextField();
         ropeTxt2K = new javax.swing.JTextField();
@@ -112,12 +112,12 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         heightTxtKS = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
-        orderDetailKS = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
         commentTxtKS = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
         imageComboKS = new javax.swing.JComboBox<>();
         jLabel33 = new javax.swing.JLabel();
+        orderDetailComboKS = new javax.swing.JComboBox<>();
         jPanel14 = new javax.swing.JPanel();
         ropeTxt1KS = new javax.swing.JTextField();
         ropeTxt2KS = new javax.swing.JTextField();
@@ -152,12 +152,12 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel46 = new javax.swing.JLabel();
         heightTxtKP = new javax.swing.JTextField();
         jLabel47 = new javax.swing.JLabel();
-        orderDetailKP = new javax.swing.JTextField();
         jLabel48 = new javax.swing.JLabel();
         commentTxtKP = new javax.swing.JTextField();
         jLabel49 = new javax.swing.JLabel();
         imageComboKP = new javax.swing.JComboBox<>();
         jLabel50 = new javax.swing.JLabel();
+        orderDetailComboKP = new javax.swing.JComboBox<>();
         jPanel19 = new javax.swing.JPanel();
         ropeTxt1KP = new javax.swing.JTextField();
         ropeTxt2KP = new javax.swing.JTextField();
@@ -192,12 +192,12 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel63 = new javax.swing.JLabel();
         heightTxtNH = new javax.swing.JTextField();
         jLabel64 = new javax.swing.JLabel();
-        orderDetailNH = new javax.swing.JTextField();
         jLabel65 = new javax.swing.JLabel();
         commentTxtNH = new javax.swing.JTextField();
         jLabel66 = new javax.swing.JLabel();
         imageComboNH = new javax.swing.JComboBox<>();
         jLabel67 = new javax.swing.JLabel();
+        orderDetailComboNH = new javax.swing.JComboBox<>();
         jPanel26 = new javax.swing.JPanel();
         ropeTxt1NH = new javax.swing.JTextField();
         ropeTxt2NH = new javax.swing.JTextField();
@@ -232,12 +232,12 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel80 = new javax.swing.JLabel();
         heightTxtNL = new javax.swing.JTextField();
         jLabel81 = new javax.swing.JLabel();
-        orderDetailNL = new javax.swing.JTextField();
         jLabel82 = new javax.swing.JLabel();
         commentTxtNL = new javax.swing.JTextField();
         jLabel83 = new javax.swing.JLabel();
         imageComboNL = new javax.swing.JComboBox<>();
         jLabel84 = new javax.swing.JLabel();
+        orderDetailComboNL = new javax.swing.JComboBox<>();
         jPanel30 = new javax.swing.JPanel();
         ropeTxt1NL = new javax.swing.JTextField();
         ropeTxt2NL = new javax.swing.JTextField();
@@ -315,10 +315,6 @@ public class StartFrame extends javax.swing.JFrame {
 
         jLabel14.setText("มิลลิเมตร");
 
-        orderDetailK.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
-        orderDetailK.setMinimumSize(new java.awt.Dimension(6, 22));
-        orderDetailK.setPreferredSize(new java.awt.Dimension(6, 22));
-
         jLabel17.setText("หมายเหตุ");
 
         commentTxtK.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
@@ -330,6 +326,8 @@ public class StartFrame extends javax.swing.JFrame {
         imageComboK.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
 
         jLabel24.setText("รูปภาพ");
+
+        orderDetailComboK.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ดึงขวา", "ดึงซ้าย", "ดึงเข้าหากัน" }));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -351,20 +349,21 @@ public class StartFrame extends javax.swing.JFrame {
                     .addComponent(typeComboK, 0, 98, Short.MAX_VALUE)
                     .addComponent(commentTxtK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(imageComboK, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(orderDetailK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(orderDetailComboK, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(7, 7, 7)
+                .addGap(8, 8, 8)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(orderDetailK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(orderDetailComboK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(imageComboK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -390,7 +389,7 @@ public class StartFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 310, 210));
+        jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 310, 220));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -556,7 +555,7 @@ public class StartFrame extends javax.swing.JFrame {
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(aluColorComboK, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(netColorComboK, javax.swing.GroupLayout.Alignment.TRAILING, 0, 96, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                    .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -625,10 +624,6 @@ public class StartFrame extends javax.swing.JFrame {
 
         jLabel30.setText("มิลลิเมตร");
 
-        orderDetailKS.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
-        orderDetailKS.setMinimumSize(new java.awt.Dimension(6, 22));
-        orderDetailKS.setPreferredSize(new java.awt.Dimension(6, 22));
-
         jLabel31.setText("หมายเหตุ");
 
         commentTxtKS.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
@@ -640,6 +635,8 @@ public class StartFrame extends javax.swing.JFrame {
         imageComboKS.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
 
         jLabel33.setText("รูปภาพ");
+
+        orderDetailComboKS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ดึงขวา", "ดึงซ้าย", "ดึงเข้าหากัน" }));
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -661,20 +658,20 @@ public class StartFrame extends javax.swing.JFrame {
                     .addComponent(typeComboKS, 0, 98, Short.MAX_VALUE)
                     .addComponent(commentTxtKS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(imageComboKS, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(orderDetailKS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(orderDetailComboKS, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel30))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(7, 7, 7)
+                .addGap(8, 8, 8)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel26)
-                    .addComponent(orderDetailKS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(orderDetailComboKS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(imageComboKS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -697,7 +694,7 @@ public class StartFrame extends javax.swing.JFrame {
                     .addComponent(heightTxtKS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel30)
                     .addComponent(jLabel32))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 27, Short.MAX_VALUE))
         );
 
         jPanel12.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 310, 210));
@@ -895,7 +892,7 @@ public class StartFrame extends javax.swing.JFrame {
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comment1TxtKS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel41))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         jPanel12.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 200, 160));
@@ -944,10 +941,6 @@ public class StartFrame extends javax.swing.JFrame {
 
         jLabel47.setText("มิลลิเมตร");
 
-        orderDetailKP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
-        orderDetailKP.setMinimumSize(new java.awt.Dimension(6, 22));
-        orderDetailKP.setPreferredSize(new java.awt.Dimension(6, 22));
-
         jLabel48.setText("หมายเหตุ");
 
         commentTxtKP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
@@ -959,6 +952,8 @@ public class StartFrame extends javax.swing.JFrame {
         imageComboKP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
 
         jLabel50.setText("รูปภาพ");
+
+        orderDetailComboKP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ดึงขวา", "ดึงซ้าย", "ดึงเข้าหากัน" }));
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
@@ -980,20 +975,20 @@ public class StartFrame extends javax.swing.JFrame {
                     .addComponent(typeComboKP, 0, 98, Short.MAX_VALUE)
                     .addComponent(commentTxtKP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(imageComboKP, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(orderDetailKP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(orderDetailComboKP, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel47))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
-                .addGap(7, 7, 7)
+                .addGap(8, 8, 8)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel43)
-                    .addComponent(orderDetailKP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(orderDetailComboKP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(imageComboKP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1016,7 +1011,7 @@ public class StartFrame extends javax.swing.JFrame {
                     .addComponent(heightTxtKP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel47)
                     .addComponent(jLabel49))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 27, Short.MAX_VALUE))
         );
 
         jPanel17.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 310, 210));
@@ -1268,10 +1263,6 @@ public class StartFrame extends javax.swing.JFrame {
 
         jLabel64.setText("มิลลิเมตร");
 
-        orderDetailNH.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
-        orderDetailNH.setMinimumSize(new java.awt.Dimension(6, 22));
-        orderDetailNH.setPreferredSize(new java.awt.Dimension(6, 22));
-
         jLabel65.setText("หมายเหตุ");
 
         commentTxtNH.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
@@ -1283,6 +1274,8 @@ public class StartFrame extends javax.swing.JFrame {
         imageComboNH.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
 
         jLabel67.setText("รูปภาพ");
+
+        orderDetailComboNH.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ดึงขวา", "ดึงซ้าย", "ดึงเข้าหากัน" }));
 
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
         jPanel25.setLayout(jPanel25Layout);
@@ -1304,20 +1297,20 @@ public class StartFrame extends javax.swing.JFrame {
                     .addComponent(typeComboNH, 0, 98, Short.MAX_VALUE)
                     .addComponent(commentTxtNH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(imageComboNH, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(orderDetailNH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(orderDetailComboNH, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel64))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel25Layout.setVerticalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel25Layout.createSequentialGroup()
-                .addGap(7, 7, 7)
+                .addGap(8, 8, 8)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel60)
-                    .addComponent(orderDetailNH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(orderDetailComboNH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(imageComboNH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1340,7 +1333,7 @@ public class StartFrame extends javax.swing.JFrame {
                     .addComponent(heightTxtNH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel64)
                     .addComponent(jLabel66))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 27, Short.MAX_VALUE))
         );
 
         jPanel24.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 310, 210));
@@ -1584,10 +1577,6 @@ public class StartFrame extends javax.swing.JFrame {
 
         jLabel81.setText("มิลลิเมตร");
 
-        orderDetailNL.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
-        orderDetailNL.setMinimumSize(new java.awt.Dimension(6, 22));
-        orderDetailNL.setPreferredSize(new java.awt.Dimension(6, 22));
-
         jLabel82.setText("หมายเหตุ");
 
         commentTxtNL.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
@@ -1599,6 +1588,8 @@ public class StartFrame extends javax.swing.JFrame {
         imageComboNL.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
 
         jLabel84.setText("รูปภาพ");
+
+        orderDetailComboNL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ดึงขวา", "ดึงซ้าย", "ดึงเข้าหากัน" }));
 
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
@@ -1620,20 +1611,20 @@ public class StartFrame extends javax.swing.JFrame {
                     .addComponent(typeComboNL, 0, 98, Short.MAX_VALUE)
                     .addComponent(commentTxtNL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(imageComboNL, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(orderDetailNL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(orderDetailComboNL, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel81))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel80, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                    .addComponent(jLabel81, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel29Layout.setVerticalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel29Layout.createSequentialGroup()
-                .addGap(7, 7, 7)
+                .addGap(8, 8, 8)
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel77)
-                    .addComponent(orderDetailNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(orderDetailComboNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(imageComboNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1656,7 +1647,7 @@ public class StartFrame extends javax.swing.JFrame {
                     .addComponent(heightTxtNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel81)
                     .addComponent(jLabel83))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 27, Short.MAX_VALUE))
         );
 
         jPanel28.add(jPanel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 310, 210));
@@ -2133,7 +2124,7 @@ public class StartFrame extends javax.swing.JFrame {
         
         model.addRow(new Object[]{
             (model.getRowCount() + 1),
-            orderDetailK.getText(),
+            orderDetailComboK.getSelectedItem().toString(),
             new ImageIcon(getClass().getResource(imageComboK.getSelectedItem().toString()), ((ImageIcon) imageComboK.getSelectedItem()).getDescription()),
             commentTxtK.getText(), 
             typeComboK.getSelectedItem().toString(),
@@ -2162,7 +2153,7 @@ public class StartFrame extends javax.swing.JFrame {
         
         model.addRow(new Object[]{
             (model.getRowCount() + 1),
-            orderDetailKS.getText(),
+            orderDetailComboKS.getSelectedItem().toString(),
             new ImageIcon(getClass().getResource(imageComboKS.getSelectedItem().toString()), ((ImageIcon) imageComboKS.getSelectedItem()).getDescription()),
             commentTxtKS.getText(), 
             typeComboKS.getSelectedItem().toString(),
@@ -2191,7 +2182,7 @@ public class StartFrame extends javax.swing.JFrame {
         
         model.addRow(new Object[]{
             (model.getRowCount() + 1),
-            orderDetailKP.getText(),
+            orderDetailComboKP.getSelectedItem().toString(),
             new ImageIcon(getClass().getResource(imageComboKP.getSelectedItem().toString()), ((ImageIcon) imageComboKP.getSelectedItem()).getDescription()),
             commentTxtKP.getText(), 
             typeComboKP.getSelectedItem().toString(),
@@ -2220,7 +2211,7 @@ public class StartFrame extends javax.swing.JFrame {
         
         model.addRow(new Object[]{
             (model.getRowCount() + 1),
-            orderDetailNH.getText(),
+            orderDetailComboNH.getSelectedItem().toString(),
             new ImageIcon(getClass().getResource(imageComboNH.getSelectedItem().toString()), ((ImageIcon) imageComboNH.getSelectedItem()).getDescription()),
             commentTxtNH.getText(), 
             typeComboNH.getSelectedItem().toString(),
@@ -2301,7 +2292,7 @@ public class StartFrame extends javax.swing.JFrame {
         
         model.addRow(new Object[]{
             (model.getRowCount() + 1),
-            orderDetailNL.getText(),
+            orderDetailComboNL.getSelectedItem().toString(),
             new ImageIcon(getClass().getResource(imageComboNL.getSelectedItem().toString()), ((ImageIcon) imageComboNL.getSelectedItem()).getDescription()),
             commentTxtNL.getText(), 
             typeComboNL.getSelectedItem().toString(),
@@ -2593,11 +2584,11 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> netColorComboNH;
     private javax.swing.JComboBox<String> netColorComboNL;
     private org.jdesktop.swingx.JXDatePicker orderDate;
-    private javax.swing.JTextField orderDetailK;
-    private javax.swing.JTextField orderDetailKP;
-    private javax.swing.JTextField orderDetailKS;
-    private javax.swing.JTextField orderDetailNH;
-    private javax.swing.JTextField orderDetailNL;
+    private javax.swing.JComboBox<String> orderDetailComboK;
+    private javax.swing.JComboBox<String> orderDetailComboKP;
+    private javax.swing.JComboBox<String> orderDetailComboKS;
+    private javax.swing.JComboBox<String> orderDetailComboNH;
+    private javax.swing.JComboBox<String> orderDetailComboNL;
     private javax.swing.JTextField quotationIdTxt;
     private org.jdesktop.swingx.JXDatePicker receiveDate;
     private javax.swing.JLabel removeLabelK;
