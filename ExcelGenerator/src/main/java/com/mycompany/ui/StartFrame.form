@@ -3,6 +3,7 @@
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -214,6 +215,9 @@
                             </EtchetBorder>
                           </Border>
                         </Property>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Text Cursor"/>
+                        </Property>
                         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                           <Dimension value="[6, 22]"/>
                         </Property>
@@ -221,6 +225,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel13">
                       <Properties>
@@ -236,6 +243,9 @@
                             </EtchetBorder>
                           </Border>
                         </Property>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Text Cursor"/>
+                        </Property>
                         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                           <Dimension value="[6, 22]"/>
                         </Property>
@@ -243,6 +253,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel14">
                       <Properties>
@@ -390,6 +403,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JTextField" name="ropeTxt2K">
                       <Properties>
@@ -408,6 +424,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JTextField" name="ropeTxt3K">
                       <Properties>
@@ -426,6 +445,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JTextField" name="ropeTxt4K">
                       <Properties>
@@ -444,6 +466,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel20">
                       <Properties>
@@ -492,6 +517,11 @@
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0"/>
                         </Property>
+                        <Property name="dragEnabled" type="boolean" value="true"/>
+                        <Property name="dropMode" type="javax.swing.DropMode" editor="org.netbeans.modules.form.editors.EnumEditor">
+                          <Value id="INSERT_ROWS"/>
+                        </Property>
+                        <Property name="rowHeight" type="int" value="25"/>
                         <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                           <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                         </Property>
@@ -893,6 +923,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel29">
                       <Properties>
@@ -915,6 +948,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel30">
                       <Properties>
@@ -1062,6 +1098,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JTextField" name="ropeTxt2KS">
                       <Properties>
@@ -1080,6 +1119,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JTextField" name="ropeTxt3KS">
                       <Properties>
@@ -1098,6 +1140,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JTextField" name="ropeTxt4KS">
                       <Properties>
@@ -1116,6 +1161,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel34">
                       <Properties>
@@ -1164,6 +1212,7 @@
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0"/>
                         </Property>
+                        <Property name="rowHeight" type="int" value="25"/>
                         <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                           <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                         </Property>
@@ -1565,6 +1614,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel46">
                       <Properties>
@@ -1587,6 +1639,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel47">
                       <Properties>
@@ -1734,6 +1789,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JTextField" name="ropeTxt2KP">
                       <Properties>
@@ -1752,6 +1810,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JTextField" name="ropeTxt3KP">
                       <Properties>
@@ -1770,6 +1831,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JTextField" name="ropeTxt4KP">
                       <Properties>
@@ -1788,6 +1852,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel51">
                       <Properties>
@@ -1836,6 +1903,7 @@
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0"/>
                         </Property>
+                        <Property name="rowHeight" type="int" value="25"/>
                         <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                           <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                         </Property>
@@ -2237,6 +2305,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel63">
                       <Properties>
@@ -2262,6 +2333,9 @@
                       <Events>
                         <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="heightTxtNHFocusLost"/>
                       </Events>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel64">
                       <Properties>
@@ -2409,6 +2483,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JTextField" name="ropeTxt2NH">
                       <Properties>
@@ -2426,6 +2503,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JTextField" name="ropeTxt3NH">
                       <Properties>
@@ -2443,6 +2523,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JTextField" name="ropeTxt4NH">
                       <Properties>
@@ -2460,6 +2543,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel68">
                       <Properties>
@@ -2508,6 +2594,7 @@
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0"/>
                         </Property>
+                        <Property name="rowHeight" type="int" value="25"/>
                         <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                           <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                         </Property>
@@ -2906,6 +2993,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel80">
                       <Properties>
@@ -2931,6 +3021,9 @@
                       <Events>
                         <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="heightTxtNLFocusLost"/>
                       </Events>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel81">
                       <Properties>
@@ -3078,6 +3171,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JTextField" name="ropeTxt2NL">
                       <Properties>
@@ -3095,6 +3191,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JTextField" name="ropeTxt3NL">
                       <Properties>
@@ -3112,6 +3211,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JTextField" name="ropeTxt4NL">
                       <Properties>
@@ -3129,6 +3231,9 @@
                           <Dimension value="[6, 22]"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new DoubleJTextField()"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel85">
                       <Properties>
@@ -3177,6 +3282,7 @@
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0"/>
                         </Property>
+                        <Property name="rowHeight" type="int" value="25"/>
                         <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                           <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                         </Property>
@@ -3721,7 +3827,7 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="exportButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Export Report"/>
+            <Property name="text" type="java.lang.String" value="&#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe23;&#xe32;&#xe22;&#xe07;&#xe32;&#xe19;"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exportButtonActionPerformed"/>

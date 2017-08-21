@@ -7,6 +7,7 @@ package com.mycompany.ui;
 
 import com.mycompany.common.dto.Order;
 import com.mycompany.common.dto.OrderDetail;
+import com.mycompany.common.util.DoubleJTextField;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -68,9 +69,9 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         typeComboK = new javax.swing.JComboBox<>();
-        wideTxtK = new javax.swing.JTextField();
+        wideTxtK = new DoubleJTextField();
         jLabel13 = new javax.swing.JLabel();
-        heightTxtK = new javax.swing.JTextField();
+        heightTxtK = new DoubleJTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         commentTxtK = new javax.swing.JTextField();
@@ -79,10 +80,10 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         orderDetailComboK = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
-        ropeTxt1K = new javax.swing.JTextField();
-        ropeTxt2K = new javax.swing.JTextField();
-        ropeTxt3K = new javax.swing.JTextField();
-        ropeTxt4K = new javax.swing.JTextField();
+        ropeTxt1K = new DoubleJTextField();
+        ropeTxt2K = new DoubleJTextField();
+        ropeTxt3K = new DoubleJTextField();
+        ropeTxt4K = new DoubleJTextField();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
@@ -108,9 +109,9 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         typeComboKS = new javax.swing.JComboBox<>();
-        wideTxtKS = new javax.swing.JTextField();
+        wideTxtKS = new DoubleJTextField();
         jLabel29 = new javax.swing.JLabel();
-        heightTxtKS = new javax.swing.JTextField();
+        heightTxtKS = new DoubleJTextField();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         commentTxtKS = new javax.swing.JTextField();
@@ -119,10 +120,10 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel33 = new javax.swing.JLabel();
         orderDetailComboKS = new javax.swing.JComboBox<>();
         jPanel14 = new javax.swing.JPanel();
-        ropeTxt1KS = new javax.swing.JTextField();
-        ropeTxt2KS = new javax.swing.JTextField();
-        ropeTxt3KS = new javax.swing.JTextField();
-        ropeTxt4KS = new javax.swing.JTextField();
+        ropeTxt1KS = new DoubleJTextField();
+        ropeTxt2KS = new DoubleJTextField();
+        ropeTxt3KS = new DoubleJTextField();
+        ropeTxt4KS = new DoubleJTextField();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
@@ -148,9 +149,9 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         typeComboKP = new javax.swing.JComboBox<>();
-        wideTxtKP = new javax.swing.JTextField();
+        wideTxtKP = new DoubleJTextField();
         jLabel46 = new javax.swing.JLabel();
-        heightTxtKP = new javax.swing.JTextField();
+        heightTxtKP = new DoubleJTextField();
         jLabel47 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
         commentTxtKP = new javax.swing.JTextField();
@@ -159,10 +160,10 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel50 = new javax.swing.JLabel();
         orderDetailComboKP = new javax.swing.JComboBox<>();
         jPanel19 = new javax.swing.JPanel();
-        ropeTxt1KP = new javax.swing.JTextField();
-        ropeTxt2KP = new javax.swing.JTextField();
-        ropeTxt3KP = new javax.swing.JTextField();
-        ropeTxt4KP = new javax.swing.JTextField();
+        ropeTxt1KP = new DoubleJTextField();
+        ropeTxt2KP = new DoubleJTextField();
+        ropeTxt3KP = new DoubleJTextField();
+        ropeTxt4KP = new DoubleJTextField();
         jLabel51 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
@@ -188,9 +189,9 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel61 = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
         typeComboNH = new javax.swing.JComboBox<>();
-        wideTxtNH = new javax.swing.JTextField();
+        wideTxtNH = new DoubleJTextField();
         jLabel63 = new javax.swing.JLabel();
-        heightTxtNH = new javax.swing.JTextField();
+        heightTxtNH = new DoubleJTextField();
         jLabel64 = new javax.swing.JLabel();
         jLabel65 = new javax.swing.JLabel();
         commentTxtNH = new javax.swing.JTextField();
@@ -199,10 +200,10 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel67 = new javax.swing.JLabel();
         orderDetailComboNH = new javax.swing.JComboBox<>();
         jPanel26 = new javax.swing.JPanel();
-        ropeTxt1NH = new javax.swing.JTextField();
-        ropeTxt2NH = new javax.swing.JTextField();
-        ropeTxt3NH = new javax.swing.JTextField();
-        ropeTxt4NH = new javax.swing.JTextField();
+        ropeTxt1NH = new DoubleJTextField();
+        ropeTxt2NH = new DoubleJTextField();
+        ropeTxt3NH = new DoubleJTextField();
+        ropeTxt4NH = new DoubleJTextField();
         jLabel68 = new javax.swing.JLabel();
         jLabel69 = new javax.swing.JLabel();
         jLabel70 = new javax.swing.JLabel();
@@ -228,9 +229,9 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel78 = new javax.swing.JLabel();
         jLabel79 = new javax.swing.JLabel();
         typeComboNL = new javax.swing.JComboBox<>();
-        wideTxtNL = new javax.swing.JTextField();
+        wideTxtNL = new DoubleJTextField();
         jLabel80 = new javax.swing.JLabel();
-        heightTxtNL = new javax.swing.JTextField();
+        heightTxtNL = new DoubleJTextField();
         jLabel81 = new javax.swing.JLabel();
         jLabel82 = new javax.swing.JLabel();
         commentTxtNL = new javax.swing.JTextField();
@@ -239,10 +240,10 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel84 = new javax.swing.JLabel();
         orderDetailComboNL = new javax.swing.JComboBox<>();
         jPanel30 = new javax.swing.JPanel();
-        ropeTxt1NL = new javax.swing.JTextField();
-        ropeTxt2NL = new javax.swing.JTextField();
-        ropeTxt3NL = new javax.swing.JTextField();
-        ropeTxt4NL = new javax.swing.JTextField();
+        ropeTxt1NL = new DoubleJTextField();
+        ropeTxt2NL = new DoubleJTextField();
+        ropeTxt3NL = new DoubleJTextField();
+        ropeTxt4NL = new DoubleJTextField();
         jLabel85 = new javax.swing.JLabel();
         jLabel86 = new javax.swing.JLabel();
         jLabel87 = new javax.swing.JLabel();
@@ -281,6 +282,7 @@ public class StartFrame extends javax.swing.JFrame {
         exportButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
@@ -304,12 +306,14 @@ public class StartFrame extends javax.swing.JFrame {
         typeComboK.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
 
         wideTxtK.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        wideTxtK.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         wideTxtK.setMinimumSize(new java.awt.Dimension(6, 22));
         wideTxtK.setPreferredSize(new java.awt.Dimension(6, 22));
 
         jLabel13.setText("มิลลิเมตร");
 
         heightTxtK.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        heightTxtK.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         heightTxtK.setMinimumSize(new java.awt.Dimension(6, 22));
         heightTxtK.setPreferredSize(new java.awt.Dimension(6, 22));
 
@@ -490,6 +494,9 @@ public class StartFrame extends javax.swing.JFrame {
             }
         });
         reportTableK.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        reportTableK.setDragEnabled(true);
+        reportTableK.setDropMode(javax.swing.DropMode.INSERT_ROWS);
+        reportTableK.setRowHeight(25);
         jScrollPane1.setViewportView(reportTableK);
 
         jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 861, 210));
@@ -798,6 +805,7 @@ public class StartFrame extends javax.swing.JFrame {
             }
         });
         reportTableKS.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        reportTableKS.setRowHeight(25);
         jScrollPane2.setViewportView(reportTableKS);
 
         jPanel12.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 861, 210));
@@ -1115,6 +1123,7 @@ public class StartFrame extends javax.swing.JFrame {
             }
         });
         reportTableKP.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        reportTableKP.setRowHeight(25);
         jScrollPane3.setViewportView(reportTableKP);
 
         jPanel17.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 861, 210));
@@ -1434,6 +1443,7 @@ public class StartFrame extends javax.swing.JFrame {
             }
         });
         reportTableNH.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        reportTableNH.setRowHeight(25);
         jScrollPane4.setViewportView(reportTableNH);
 
         jPanel24.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 861, 210));
@@ -1748,6 +1758,7 @@ public class StartFrame extends javax.swing.JFrame {
             }
         });
         reportTableNL.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        reportTableNL.setRowHeight(25);
         jScrollPane5.setViewportView(reportTableNL);
 
         jPanel28.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 861, 210));
@@ -2003,7 +2014,7 @@ public class StartFrame extends javax.swing.JFrame {
 
         jPanel16.setBackground(new java.awt.Color(255, 255, 255));
 
-        exportButton.setText("Export Report");
+        exportButton.setText("บันทึกรายงาน");
         exportButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exportButtonActionPerformed(evt);
@@ -2646,7 +2657,7 @@ public class StartFrame extends javax.swing.JFrame {
         JLabel headerLabelK = (JLabel) headerK;
         headerLabelK.setHorizontalAlignment(JLabel.CENTER);
         
-         // Set Text Hearder to Center.
+        // Set Text Hearder to Center.
         TableCellRenderer headerKS = reportTableKS.getTableHeader().getDefaultRenderer();
         JLabel headerLabelKS = (JLabel) headerKS;
         headerLabelKS.setHorizontalAlignment(JLabel.CENTER);
@@ -2664,7 +2675,7 @@ public class StartFrame extends javax.swing.JFrame {
         imageComboK.addItem(new ImageIcon(getClass().getResource("/image/two_right.PNG"), "/image/two_right.PNG"));
         imageComboK.addItem(new ImageIcon(getClass().getResource("/image/three_left.PNG"), "/image/three_left.PNG"));
         imageComboK.addItem(new ImageIcon(getClass().getResource("/image/three_right.PNG"), "/image/three_right.PNG"));
-        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/right.PNG"), "/image/right.PNG"));
+//        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/right.PNG"), "/image/right.PNG"));
         
         // Set Image Combobox
         imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/two_left.PNG"), "/image/two_left.PNG"));
