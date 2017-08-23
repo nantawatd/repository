@@ -2071,7 +2071,7 @@ public class StartFrame extends javax.swing.JFrame {
         order.setComment1(comment1TxtK.getText());
         return order;
     }
-    
+
     private List<OrderDetail> createOrderDetail(JTable reportTable) throws IOException {
         List<OrderDetail> orderDetails = new ArrayList<>();
         int columnCount = reportTable.getColumnCount();
@@ -2103,7 +2103,7 @@ public class StartFrame extends javax.swing.JFrame {
         try {
             //1. Order Infomation
             Order order = createOrder();
-            
+
             //2. Order Details
             List<OrderDetail> kOrderDetails = createOrderDetail(reportTableK);
             List<OrderDetail> ksOrderDetails = createOrderDetail(reportTableKS);
@@ -2115,12 +2115,12 @@ public class StartFrame extends javax.swing.JFrame {
             JFileChooser fileDirectory = new JFileChooser();
             FileNameExtensionFilter filter = new FileNameExtensionFilter("Excel (." + XLS + ")", XLS);
             fileDirectory.setFileFilter(filter);
-            
+
             if (fileDirectory.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
                 //3. Export Report
                 createReport(order, fileDirectory, kOrderDetails, ksOrderDetails, kpOrderDetails, nhOrderDetails, nlOrderDetails);
             }
-          
+
         } catch (IOException ex) {
             Logger.getLogger(StartFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -2131,53 +2131,19 @@ public class StartFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_ropeNoComboKItemStateChanged
 
     private void addLabelKMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLabelKMouseReleased
-        DefaultTableModel model = (DefaultTableModel) reportTableK.getModel();
-        
-        model.addRow(new Object[]{
-            (model.getRowCount() + 1),
-            orderDetailComboK.getSelectedItem().toString(),
-            new ImageIcon(getClass().getResource(imageComboK.getSelectedItem().toString()), ((ImageIcon) imageComboK.getSelectedItem()).getDescription()),
-            commentTxtK.getText(), 
-            typeComboK.getSelectedItem().toString(),
-            wideTxtK.getText(),
-            heightTxtK.getText(),
-            netColorComboK.getSelectedItem().toString(),
-            ropeNoComboK.getSelectedItem().toString(),
-            StringUtils.isNotBlank(ropeTxt1K.getText())? Integer.parseInt(ropeTxt1K.getText()) : 0,
-            StringUtils.isNotBlank(ropeTxt2K.getText())? Integer.parseInt(ropeTxt2K.getText()) : 0,
-            StringUtils.isNotBlank(ropeTxt3K.getText())? Integer.parseInt(ropeTxt3K.getText()) : 0,
-            StringUtils.isNotBlank(ropeTxt4K.getText())? Integer.parseInt(ropeTxt4K.getText()) : 0,
-            aluColorComboK.getSelectedItem().toString()
-         });
+        addDataIntoTable(reportTableK, orderDetailComboK, imageComboK, commentTxtK, typeComboK, wideTxtK, heightTxtK, netColorComboK, ropeNoComboK, ropeTxt1K, ropeTxt2K, ropeTxt3K, ropeTxt4K, aluColorComboK);
     }//GEN-LAST:event_addLabelKMouseReleased
 
     private void removeLabelKMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeLabelKMouseReleased
-       removeItemFromTable(reportTableK);
+        removeItemFromTable(reportTableK);
     }//GEN-LAST:event_removeLabelKMouseReleased
 
     private void removeLabelKSMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeLabelKSMouseReleased
-       removeItemFromTable(reportTableKS);
+        removeItemFromTable(reportTableKS);
     }//GEN-LAST:event_removeLabelKSMouseReleased
-    
+
     private void addLabelKSMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLabelKSMouseReleased
-        DefaultTableModel model = (DefaultTableModel) reportTableKS.getModel();
-        
-        model.addRow(new Object[]{
-            (model.getRowCount() + 1),
-            orderDetailComboKS.getSelectedItem().toString(),
-            new ImageIcon(getClass().getResource(imageComboKS.getSelectedItem().toString()), ((ImageIcon) imageComboKS.getSelectedItem()).getDescription()),
-            commentTxtKS.getText(), 
-            typeComboKS.getSelectedItem().toString(),
-            wideTxtKS.getText(),
-            heightTxtKS.getText(),
-            netColorComboKS.getSelectedItem().toString(),
-            ropeNoComboKS.getSelectedItem().toString(),
-            StringUtils.isNotBlank(ropeTxt1KS.getText())? Integer.parseInt(ropeTxt1KS.getText()) : 0,
-            StringUtils.isNotBlank(ropeTxt2KS.getText())? Integer.parseInt(ropeTxt2KS.getText()) : 0,
-            StringUtils.isNotBlank(ropeTxt3KS.getText())? Integer.parseInt(ropeTxt3KS.getText()) : 0,
-            StringUtils.isNotBlank(ropeTxt4KS.getText())? Integer.parseInt(ropeTxt4KS.getText()) : 0,
-            aluColorComboKS.getSelectedItem().toString()
-         });
+        addDataIntoTable(reportTableKS, orderDetailComboKS, imageComboKS, commentTxtKS, typeComboKS, wideTxtKS, heightTxtKS, netColorComboKS, ropeNoComboKS, ropeTxt1KS, ropeTxt2KS, ropeTxt3KS, ropeTxt4KS, aluColorComboKS);
     }//GEN-LAST:event_addLabelKSMouseReleased
 
     private void ropeNoComboKSItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ropeNoComboKSItemStateChanged
@@ -2189,24 +2155,7 @@ public class StartFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_removeLabelKPMouseReleased
 
     private void addLabelKPMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLabelKPMouseReleased
-        DefaultTableModel model = (DefaultTableModel) reportTableKP.getModel();
-        
-        model.addRow(new Object[]{
-            (model.getRowCount() + 1),
-            orderDetailComboKP.getSelectedItem().toString(),
-            new ImageIcon(getClass().getResource(imageComboKP.getSelectedItem().toString()), ((ImageIcon) imageComboKP.getSelectedItem()).getDescription()),
-            commentTxtKP.getText(), 
-            typeComboKP.getSelectedItem().toString(),
-            wideTxtKP.getText(),
-            heightTxtKP.getText(),
-            netColorComboKP.getSelectedItem().toString(),
-            ropeNoComboKP.getSelectedItem().toString(),
-            StringUtils.isNotBlank(ropeTxt1KP.getText())? Integer.parseInt(ropeTxt1KP.getText()) : 0,
-            StringUtils.isNotBlank(ropeTxt2KP.getText())? Integer.parseInt(ropeTxt2KP.getText()) : 0,
-            StringUtils.isNotBlank(ropeTxt3KP.getText())? Integer.parseInt(ropeTxt3KP.getText()) : 0,
-            StringUtils.isNotBlank(ropeTxt4KP.getText())? Integer.parseInt(ropeTxt4KP.getText()) : 0,
-            aluColorComboKP.getSelectedItem().toString()
-        });
+        addDataIntoTable(reportTableKP, orderDetailComboKP, imageComboKP, commentTxtKP, typeComboKP, wideTxtKP, heightTxtKP, netColorComboKP, ropeNoComboKP, ropeTxt1KP, ropeTxt2KP, ropeTxt3KP, ropeTxt4KP, aluColorComboKP);
     }//GEN-LAST:event_addLabelKPMouseReleased
 
     private void ropeNoComboKPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ropeNoComboKPItemStateChanged
@@ -2218,54 +2167,80 @@ public class StartFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_removeLabelNHMouseReleased
 
     private void addLabelNHMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLabelNHMouseReleased
-        DefaultTableModel model = (DefaultTableModel) reportTableNH.getModel();
-        
-        model.addRow(new Object[]{
-            (model.getRowCount() + 1),
-            orderDetailComboNH.getSelectedItem().toString(),
-            new ImageIcon(getClass().getResource(imageComboNH.getSelectedItem().toString()), ((ImageIcon) imageComboNH.getSelectedItem()).getDescription()),
-            commentTxtNH.getText(), 
-            typeComboNH.getSelectedItem().toString(),
-            wideTxtNH.getText(),
-            heightTxtNH.getText(),
-            netColorComboNH.getSelectedItem().toString(),
-            ropeNoComboNH.getSelectedItem().toString(),
-            StringUtils.isNotBlank(ropeTxt1NH.getText())? Integer.parseInt(ropeTxt1NH.getText()) : 0,
-            StringUtils.isNotBlank(ropeTxt2NH.getText())? Integer.parseInt(ropeTxt2NH.getText()) : 0,
-            StringUtils.isNotBlank(ropeTxt3NH.getText())? Integer.parseInt(ropeTxt3NH.getText()) : 0,
-            StringUtils.isNotBlank(ropeTxt4NH.getText())? Integer.parseInt(ropeTxt4NH.getText()) : 0,
-            aluColorComboNH.getSelectedItem().toString()
-        });
+        addDataIntoTable(reportTableNH, orderDetailComboNH, imageComboNH, commentTxtNH, typeComboNH, wideTxtNH, heightTxtNH, netColorComboNH, ropeNoComboNH, ropeTxt1NH, ropeTxt2NH, ropeTxt3NH, ropeTxt4NH, aluColorComboNH);
     }//GEN-LAST:event_addLabelNHMouseReleased
 
-     private void autoEnableKepRangRopeNum(JComboBox<String> ropeNoComboK, JTextField ropeTxt2K, JTextField ropeTxt3K, JTextField ropeTxt4K) throws NumberFormatException {
+    private void heightTxtNHFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_heightTxtNHFocusLost
+        autoCalculateNumberOfSlot(ropeNoComboNH, heightTxtNH);
+    }//GEN-LAST:event_heightTxtNHFocusLost
+
+    private void heightTxtNLFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_heightTxtNLFocusLost
+        autoCalculateNumberOfSlot(ropeNoComboNL, heightTxtNL);
+    }//GEN-LAST:event_heightTxtNLFocusLost
+
+    private void removeLabelNLMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeLabelNLMouseReleased
+        removeItemFromTable(reportTableNL);
+    }//GEN-LAST:event_removeLabelNLMouseReleased
+
+    private void addLabelNLMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLabelNLMouseReleased
+        addDataIntoTable(reportTableNL, orderDetailComboNL, imageComboNL, commentTxtNL, typeComboNL, wideTxtNL, heightTxtNL, netColorComboNL, ropeNoComboNL, ropeTxt1NL, ropeTxt2NL, ropeTxt3NL, ropeTxt4NL, aluColorComboNL);
+    }//GEN-LAST:event_addLabelNLMouseReleased
+    
+    private void addDataIntoTable(JTable reportTable, JComboBox<String> orderDetailCombo, JComboBox<ImageIcon> imageCombo, JTextField commentTxt,
+            JComboBox<String> typeCombo, JTextField wideTxt, JTextField heightTxt, JComboBox<String> netColorCombo, JComboBox<String> ropeNoCombo,
+            JTextField ropeTxt1, JTextField ropeTxt2, JTextField ropeTxt3, JTextField ropeTxt4, JComboBox<String> aluColorCombo) {
+
+        DefaultTableModel model = (DefaultTableModel) reportTable.getModel();
+
+        model.addRow(new Object[]{
+            (model.getRowCount() + 1),
+            orderDetailCombo.getSelectedItem().toString(),
+            new ImageIcon(getClass().getResource(imageCombo.getSelectedItem().toString()), ((ImageIcon) imageCombo.getSelectedItem()).getDescription()),
+            commentTxt.getText(),
+            typeCombo.getSelectedItem().toString(),
+            wideTxt.getText(),
+            heightTxt.getText(),
+            netColorCombo.getSelectedItem().toString(),
+            ropeNoCombo.getSelectedItem().toString(),
+            StringUtils.isNotBlank(ropeTxt1.getText()) ? Integer.parseInt(ropeTxt1.getText()) : 0,
+            StringUtils.isNotBlank(ropeTxt2.getText()) ? Integer.parseInt(ropeTxt2.getText()) : 0,
+            StringUtils.isNotBlank(ropeTxt3.getText()) ? Integer.parseInt(ropeTxt3.getText()) : 0,
+            StringUtils.isNotBlank(ropeTxt4.getText()) ? Integer.parseInt(ropeTxt4.getText()) : 0,
+            aluColorCombo.getSelectedItem().toString()
+        });
+    }
+    
+    private void autoEnableKepRangRopeNum(JComboBox<String> ropeNoComboK, JTextField ropeTxt2K, JTextField ropeTxt3K, JTextField ropeTxt4K) throws NumberFormatException {
         String ropeComboValue = ropeNoComboK.getSelectedItem().toString();
-        if(StringUtils.isNotBlank(ropeComboValue)){
+        if (StringUtils.isNotBlank(ropeComboValue)) {
             Integer ropeIntValue = Integer.parseInt(ropeComboValue);
-            
+
             if (ropeIntValue <= 14) {
                 if (6 <= ropeIntValue) {
                     ropeTxt2K.setEnabled(true);
-                }else{
+                } else {
                     ropeTxt2K.setEnabled(false);
+                    ropeTxt2K.setText(null);
                 }
-                
+
                 if (10 <= ropeIntValue) {
                     ropeTxt3K.setEnabled(true);
-                }else{
+                } else {
                     ropeTxt3K.setEnabled(false);
+                    ropeTxt3K.setText(null);
                 }
-                
+
                 if (10 < ropeIntValue) {
                     ropeTxt4K.setEnabled(true);
-                }else{
+                } else {
                     ropeTxt4K.setEnabled(false);
+                    ropeTxt4K.setText(null);
                 }
             }
         }
     }
-     
-    private void removeItemFromTable(JTable reportTable){
+
+    private void removeItemFromTable(JTable reportTable) {
         DefaultTableModel model = (DefaultTableModel) reportTable.getModel();
         int[] indices = reportTable.getSelectedRows();
         Arrays.sort(indices);
@@ -2278,7 +2253,7 @@ public class StartFrame extends javax.swing.JFrame {
             model.setValueAt(i + 1, i, 0);
         }
     }
-    
+
     private byte[] ImageIconToImageBytes(JTable reportTable, int row, int columnCount) throws IOException {
         ImageIcon imageIcon = (ImageIcon) reportTable.getValueAt(row, columnCount);
         InputStream is = getClass().getResourceAsStream(imageIcon.getDescription());
@@ -2286,109 +2261,75 @@ public class StartFrame extends javax.swing.JFrame {
         return imageBytes;
     }
     
-    private void heightTxtNHFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_heightTxtNHFocusLost
-        autoCalculateNumberOfSlot(ropeNoComboNH, heightTxtNH);
-    }//GEN-LAST:event_heightTxtNHFocusLost
-
-    private void heightTxtNLFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_heightTxtNLFocusLost
-        autoCalculateNumberOfSlot(ropeNoComboNL, heightTxtNL);
-    }//GEN-LAST:event_heightTxtNLFocusLost
-
-    private void removeLabelNLMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeLabelNLMouseReleased
-       removeItemFromTable(reportTableNL);
-    }//GEN-LAST:event_removeLabelNLMouseReleased
-
-    private void addLabelNLMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLabelNLMouseReleased
-        DefaultTableModel model = (DefaultTableModel) reportTableNL.getModel();
-        
-        model.addRow(new Object[]{
-            (model.getRowCount() + 1),
-            orderDetailComboNL.getSelectedItem().toString(),
-            new ImageIcon(getClass().getResource(imageComboNL.getSelectedItem().toString()), ((ImageIcon) imageComboNL.getSelectedItem()).getDescription()),
-            commentTxtNL.getText(), 
-            typeComboNL.getSelectedItem().toString(),
-            wideTxtNL.getText(),
-            heightTxtNL.getText(),
-            netColorComboNL.getSelectedItem().toString(),
-            ropeNoComboNL.getSelectedItem().toString(),
-            StringUtils.isNotBlank(ropeTxt1NL.getText())? Integer.parseInt(ropeTxt1NL.getText()) : 0,
-            StringUtils.isNotBlank(ropeTxt2NL.getText())? Integer.parseInt(ropeTxt2NL.getText()) : 0,
-            StringUtils.isNotBlank(ropeTxt3NL.getText())? Integer.parseInt(ropeTxt3NL.getText()) : 0,
-            StringUtils.isNotBlank(ropeTxt4NL.getText())? Integer.parseInt(ropeTxt4NL.getText()) : 0,
-            aluColorComboNL.getSelectedItem().toString()
-        });
-    }//GEN-LAST:event_addLabelNLMouseReleased
-    
-    private void autoCalculateNumberOfSlot(JComboBox ropeNoComboN, JTextField heightTxtN){
+    private void autoCalculateNumberOfSlot(JComboBox ropeNoComboN, JTextField heightTxtN) {
         //    mHeight = height - (2+(10.5*2)+1)
         //
         //30 <= ( mHeight / 10 ) / x
         //x <= ( mHeight / 10 ) / 30
         // 3 4 5 6 7 8 9
-        if(StringUtils.isNotBlank(heightTxtN.getText())){
+        if (StringUtils.isNotBlank(heightTxtN.getText())) {
             Integer height = Integer.parseInt(heightTxtN.getText());
             Double mHeight = height - (2 + (10.5 * 2) + 1);
             Double slotNumber = Math.ceil((mHeight / 10) / 30);
             System.out.println("mHeight ::" + mHeight + "::::::: slotNumber:::" + slotNumber);
-            
-            if(slotNumber < 3.0){
+
+            if (slotNumber < 3.0) {
                 slotNumber = 3.0;
             }
-            if(slotNumber > 9.0){
+            if (slotNumber > 9.0) {
                 slotNumber = 9.0;
             }
             ropeNoComboN.setSelectedIndex(slotNumber.intValue() - 3);
         }
     }
-    
+
     private void createReport(Order order, JFileChooser fileDirectory,
-                              List<OrderDetail> kOrderDetails, List<OrderDetail> ksOrderDetails, 
-                              List<OrderDetail> kpOrderDetails, List<OrderDetail> nhOrderDetails,
-                              List<OrderDetail> nlOrderDetails) throws FileNotFoundException, IOException {
+            List<OrderDetail> kOrderDetails, List<OrderDetail> ksOrderDetails,
+            List<OrderDetail> kpOrderDetails, List<OrderDetail> nhOrderDetails,
+            List<OrderDetail> nlOrderDetails) throws FileNotFoundException, IOException {
         try {
             Context context = new Context();
             context.putVar("order", order);
-            
-            if(CollectionUtils.isNotEmpty(kOrderDetails)){
+
+            if (CollectionUtils.isNotEmpty(kOrderDetails)) {
                 InputStream is = getClass().getResourceAsStream("/template/report1.xls");
                 OutputStream os = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "." + XLS);
                 context.putVar("orderDetails", kOrderDetails);
                 JxlsHelper.getInstance().processTemplate(is, os, context);
             }
-            
-            if(CollectionUtils.isNotEmpty(ksOrderDetails)){
+
+            if (CollectionUtils.isNotEmpty(ksOrderDetails)) {
                 InputStream is2 = getClass().getResourceAsStream("/template/report2.xls");
-                OutputStream os2 = new FileOutputStream(fileDirectory.getSelectedFile().toString()+ "_2" + "." + XLS);
+                OutputStream os2 = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "_2" + "." + XLS);
                 context.putVar("orderDetails", ksOrderDetails);
                 JxlsHelper.getInstance().processTemplate(is2, os2, context);
             }
-            
-            if(CollectionUtils.isNotEmpty(kpOrderDetails)){
-              InputStream is3 = getClass().getResourceAsStream("/template/report3.xls");
-              OutputStream os3 = new FileOutputStream(fileDirectory.getSelectedFile().toString()+ "_3" + "." + XLS);
-              context.putVar("orderDetails", kpOrderDetails);
-              JxlsHelper.getInstance().processTemplate(is3, os3, context);
+
+            if (CollectionUtils.isNotEmpty(kpOrderDetails)) {
+                InputStream is3 = getClass().getResourceAsStream("/template/report3.xls");
+                OutputStream os3 = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "_3" + "." + XLS);
+                context.putVar("orderDetails", kpOrderDetails);
+                JxlsHelper.getInstance().processTemplate(is3, os3, context);
             }
-            
-            if(CollectionUtils.isNotEmpty(nhOrderDetails)){
-              InputStream is4 = getClass().getResourceAsStream("/template/report4.xls");
-              OutputStream os4 = new FileOutputStream(fileDirectory.getSelectedFile().toString()+ "_4" + "." + XLS);
-              context.putVar("orderDetails", nhOrderDetails);
-              JxlsHelper.getInstance().processTemplate(is4, os4, context);
+
+            if (CollectionUtils.isNotEmpty(nhOrderDetails)) {
+                InputStream is4 = getClass().getResourceAsStream("/template/report4.xls");
+                OutputStream os4 = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "_4" + "." + XLS);
+                context.putVar("orderDetails", nhOrderDetails);
+                JxlsHelper.getInstance().processTemplate(is4, os4, context);
             }
-            
-             if(CollectionUtils.isNotEmpty(nlOrderDetails)){
-              InputStream is5 = getClass().getResourceAsStream("/template/report5.xls");
-              OutputStream os5 = new FileOutputStream(fileDirectory.getSelectedFile().toString()+ "_5" + "." + XLS);
-              context.putVar("orderDetails", nlOrderDetails);
-              JxlsHelper.getInstance().processTemplate(is5, os5, context);
+
+            if (CollectionUtils.isNotEmpty(nlOrderDetails)) {
+                InputStream is5 = getClass().getResourceAsStream("/template/report5.xls");
+                OutputStream os5 = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "_5" + "." + XLS);
+                context.putVar("orderDetails", nlOrderDetails);
+                JxlsHelper.getInstance().processTemplate(is5, os5, context);
             }
-        }
-        catch(IOException ex){
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
-    
+
     /**
      * @param args the command line arguments
      */
@@ -2415,7 +2356,7 @@ public class StartFrame extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(StartFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -2649,57 +2590,74 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JTextField wideTxtNH;
     private javax.swing.JTextField wideTxtNL;
     // End of variables declaration//GEN-END:variables
-     
-    private void initComponents2() { 
-        
-        // Set Text Hearder to Center.
-        TableCellRenderer headerK = reportTableK.getTableHeader().getDefaultRenderer();
-        JLabel headerLabelK = (JLabel) headerK;
-        headerLabelK.setHorizontalAlignment(JLabel.CENTER);
-        
-        // Set Text Hearder to Center.
-        TableCellRenderer headerKS = reportTableKS.getTableHeader().getDefaultRenderer();
-        JLabel headerLabelKS = (JLabel) headerKS;
-        headerLabelKS.setHorizontalAlignment(JLabel.CENTER);
-        
+
+    private void initComponents2() {
+        setTableHeaderCenter();
+
         // Thai Calendar.
         orderDate.setLocale(locale);
         receiveDate.setLocale(locale);
-        
+
         orderDate.setDate(new Date());
         orderDate.setFormats(FORMATER);
         receiveDate.setFormats(FORMATER);
-        
+
         // Set Image Combobox
         imageComboK.addItem(new ImageIcon(getClass().getResource("/image/two_left.PNG"), "/image/two_left.PNG"));
         imageComboK.addItem(new ImageIcon(getClass().getResource("/image/two_right.PNG"), "/image/two_right.PNG"));
         imageComboK.addItem(new ImageIcon(getClass().getResource("/image/three_left.PNG"), "/image/three_left.PNG"));
         imageComboK.addItem(new ImageIcon(getClass().getResource("/image/three_right.PNG"), "/image/three_right.PNG"));
 //        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/right.PNG"), "/image/right.PNG"));
-        
+
         // Set Image Combobox
         imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/two_left.PNG"), "/image/two_left.PNG"));
         imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/two_right.PNG"), "/image/two_right.PNG"));
         imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/three_left.PNG"), "/image/three_left.PNG"));
         imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/three_right.PNG"), "/image/three_right.PNG"));
-        
-        
+
         // Set Image Combobox
         imageComboKP.addItem(new ImageIcon(getClass().getResource("/image/two_left.PNG"), "/image/two_left.PNG"));
         imageComboKP.addItem(new ImageIcon(getClass().getResource("/image/two_right.PNG"), "/image/two_right.PNG"));
         imageComboKP.addItem(new ImageIcon(getClass().getResource("/image/three_left.PNG"), "/image/three_left.PNG"));
         imageComboKP.addItem(new ImageIcon(getClass().getResource("/image/three_right.PNG"), "/image/three_right.PNG"));
-        
+
         // Set Image Combobox
         imageComboNH.addItem(new ImageIcon(getClass().getResource("/image/two_left.PNG"), "/image/two_left.PNG"));
         imageComboNH.addItem(new ImageIcon(getClass().getResource("/image/two_right.PNG"), "/image/two_right.PNG"));
         imageComboNH.addItem(new ImageIcon(getClass().getResource("/image/three_left.PNG"), "/image/three_left.PNG"));
         imageComboNH.addItem(new ImageIcon(getClass().getResource("/image/three_right.PNG"), "/image/three_right.PNG"));
-        
+
         // Set Image Combobox
         imageComboNL.addItem(new ImageIcon(getClass().getResource("/image/two_left.PNG"), "/image/two_left.PNG"));
         imageComboNL.addItem(new ImageIcon(getClass().getResource("/image/two_right.PNG"), "/image/two_right.PNG"));
         imageComboNL.addItem(new ImageIcon(getClass().getResource("/image/three_left.PNG"), "/image/three_left.PNG"));
         imageComboNL.addItem(new ImageIcon(getClass().getResource("/image/three_right.PNG"), "/image/three_right.PNG"));
+    }
+
+    private void setTableHeaderCenter() {
+        // Set Text Hearder to Center.
+        TableCellRenderer headerK = reportTableK.getTableHeader().getDefaultRenderer();
+        JLabel headerLabelK = (JLabel) headerK;
+        headerLabelK.setHorizontalAlignment(JLabel.CENTER);
+
+        // Set Text Hearder to Center.
+        TableCellRenderer headerKS = reportTableKS.getTableHeader().getDefaultRenderer();
+        JLabel headerLabelKS = (JLabel) headerKS;
+        headerLabelKS.setHorizontalAlignment(JLabel.CENTER);
+
+        // Set Text Hearder to Center.
+        TableCellRenderer headerKP = reportTableKP.getTableHeader().getDefaultRenderer();
+        JLabel headerLabelKP = (JLabel) headerKP;
+        headerLabelKP.setHorizontalAlignment(JLabel.CENTER);
+
+        // Set Text Hearder to Center.
+        TableCellRenderer headerNL = reportTableNL.getTableHeader().getDefaultRenderer();
+        JLabel headerLabelNL = (JLabel) headerNL;
+        headerLabelNL.setHorizontalAlignment(JLabel.CENTER);
+
+        // Set Text Hearder to Center.
+        TableCellRenderer headerNH = reportTableNH.getTableHeader().getDefaultRenderer();
+        JLabel headerLabelNH = (JLabel) headerNH;
+        headerLabelNH.setHorizontalAlignment(JLabel.CENTER);
     }
 }
