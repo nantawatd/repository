@@ -8,6 +8,9 @@ package com.mycompany.ui;
 import com.mycompany.common.dto.Order;
 import com.mycompany.common.dto.OrderDetail;
 import com.mycompany.common.util.DoubleJTextField;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -25,6 +28,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -2098,29 +2102,35 @@ public class StartFrame extends javax.swing.JFrame {
         }
         return orderDetails;
     }
-
+    
     private void exportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportButtonActionPerformed
         try {
-            //1. Order Infomation
-            Order order = createOrder();
+            // Validation
+            if(validateFieldEmpty()){
 
-            //2. Order Details
-            List<OrderDetail> kOrderDetails = createOrderDetail(reportTableK);
-            List<OrderDetail> ksOrderDetails = createOrderDetail(reportTableKS);
-            List<OrderDetail> kpOrderDetails = createOrderDetail(reportTableKP);
-            List<OrderDetail> nhOrderDetails = createOrderDetail(reportTableNH);
-            List<OrderDetail> nlOrderDetails = createOrderDetail(reportTableNL);
+                //1. Order Infomation
+                Order order = createOrder();
 
-            //Choose File Destination
-            JFileChooser fileDirectory = new JFileChooser();
-            FileNameExtensionFilter filter = new FileNameExtensionFilter("Excel (." + XLS + ")", XLS);
-            fileDirectory.setFileFilter(filter);
+                //2. Order Details
+                List<OrderDetail> kOrderDetails = createOrderDetail(reportTableK);
+                List<OrderDetail> ksOrderDetails = createOrderDetail(reportTableKS);
+                List<OrderDetail> kpOrderDetails = createOrderDetail(reportTableKP);
+                List<OrderDetail> nhOrderDetails = createOrderDetail(reportTableNH);
+                List<OrderDetail> nlOrderDetails = createOrderDetail(reportTableNL);
 
-            if (fileDirectory.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-                //3. Export Report
-                createReport(order, fileDirectory, kOrderDetails, ksOrderDetails, kpOrderDetails, nhOrderDetails, nlOrderDetails);
+                //Choose File Destination
+                JFileChooser fileDirectory = new JFileChooser();
+                //Just set default name :)
+                fileDirectory.setSelectedFile(new File(customerTxt.getText()));
+
+                FileNameExtensionFilter filter = new FileNameExtensionFilter("Excel (." + XLS + ")", XLS);
+                fileDirectory.setFileFilter(filter);
+
+                if (fileDirectory.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+                    //3. Export Report
+                    createReport(order, fileDirectory, kOrderDetails, ksOrderDetails, kpOrderDetails, nhOrderDetails, nlOrderDetails);
+                }
             }
-
         } catch (IOException ex) {
             Logger.getLogger(StartFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -2282,7 +2292,29 @@ public class StartFrame extends javax.swing.JFrame {
             ropeNoComboN.setSelectedIndex(slotNumber.intValue() - 3);
         }
     }
-
+    
+    private boolean validateFieldEmpty(){
+        if (StringUtils.isBlank(billNumberTxt.getText())) {
+            JOptionPane.showMessageDialog(null, "กรุณาใส่เลขที่บิล");
+            return false;
+            
+        } else if (StringUtils.isBlank(quotationIdTxt.getText())) {
+            JOptionPane.showMessageDialog(null, "กรุณาใส่เลขใบเสนอราคา");
+            return false;
+            
+        } else if (StringUtils.isBlank(customerTxt.getText())) {
+            JOptionPane.showMessageDialog(null, "กรุณาใส่ชื่อลูกค้า");
+            return false;
+            
+        } else if (reportTableK.getRowCount() == 0 && reportTableKS.getRowCount() == 0 && 
+                  reportTableKP.getRowCount() == 0 && reportTableNH.getRowCount() == 0 && reportTableNL.getRowCount() == 0) {
+            JOptionPane.showMessageDialog(null, "ต้องมีรายละเอียดสินค้าอย่างน้อย 1 รายการ");
+            return false;
+        }
+        
+        return true;
+    }
+    
     private void createReport(Order order, JFileChooser fileDirectory,
             List<OrderDetail> kOrderDetails, List<OrderDetail> ksOrderDetails,
             List<OrderDetail> kpOrderDetails, List<OrderDetail> nhOrderDetails,
@@ -2293,35 +2325,35 @@ public class StartFrame extends javax.swing.JFrame {
 
             if (CollectionUtils.isNotEmpty(kOrderDetails)) {
                 InputStream is = getClass().getResourceAsStream("/template/report1.xls");
-                OutputStream os = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "." + XLS);
+                OutputStream os = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "_มุ้งจีบเก็บราง" + "." + XLS);
                 context.putVar("orderDetails", kOrderDetails);
                 JxlsHelper.getInstance().processTemplate(is, os, context);
             }
 
             if (CollectionUtils.isNotEmpty(ksOrderDetails)) {
                 InputStream is2 = getClass().getResourceAsStream("/template/report2.xls");
-                OutputStream os2 = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "_2" + "." + XLS);
+                OutputStream os2 = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "_มุ้งจีบเก็บรางซ้อน" + "." + XLS);
                 context.putVar("orderDetails", ksOrderDetails);
                 JxlsHelper.getInstance().processTemplate(is2, os2, context);
             }
 
             if (CollectionUtils.isNotEmpty(kpOrderDetails)) {
                 InputStream is3 = getClass().getResourceAsStream("/template/report3.xls");
-                OutputStream os3 = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "_3" + "." + XLS);
+                OutputStream os3 = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "_มุ้งจีบเก็บแบบพ่วง" + "." + XLS);
                 context.putVar("orderDetails", kpOrderDetails);
                 JxlsHelper.getInstance().processTemplate(is3, os3, context);
             }
 
             if (CollectionUtils.isNotEmpty(nhOrderDetails)) {
                 InputStream is4 = getClass().getResourceAsStream("/template/report4.xls");
-                OutputStream os4 = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "_4" + "." + XLS);
+                OutputStream os4 = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "_มุ้งจีบรางสูง" + "." + XLS);
                 context.putVar("orderDetails", nhOrderDetails);
                 JxlsHelper.getInstance().processTemplate(is4, os4, context);
             }
 
             if (CollectionUtils.isNotEmpty(nlOrderDetails)) {
                 InputStream is5 = getClass().getResourceAsStream("/template/report5.xls");
-                OutputStream os5 = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "_5" + "." + XLS);
+                OutputStream os5 = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "_มุ้งจีบรางต่ำ" + "." + XLS);
                 context.putVar("orderDetails", nlOrderDetails);
                 JxlsHelper.getInstance().processTemplate(is5, os5, context);
             }
@@ -2659,5 +2691,9 @@ public class StartFrame extends javax.swing.JFrame {
         TableCellRenderer headerNH = reportTableNH.getTableHeader().getDefaultRenderer();
         JLabel headerLabelNH = (JLabel) headerNH;
         headerLabelNH.setHorizontalAlignment(JLabel.CENTER);
+        
+        Image image = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/image/Microsoft_Excel_48.PNG"));
+        setIconImage(image);
+        setTitle("108 Home Design");
     }
 }
