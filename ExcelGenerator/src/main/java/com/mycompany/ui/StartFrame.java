@@ -64,7 +64,7 @@ public class StartFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        มุ้งจีบเก็บรางแบบแบ่งพ่วง = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -185,6 +185,46 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel57 = new javax.swing.JLabel();
         comment1TxtKP = new javax.swing.JTextField();
         jLabel58 = new javax.swing.JLabel();
+        jPanel23 = new javax.swing.JPanel();
+        jPanel32 = new javax.swing.JPanel();
+        jLabel93 = new javax.swing.JLabel();
+        jPanel33 = new javax.swing.JPanel();
+        jLabel94 = new javax.swing.JLabel();
+        jLabel95 = new javax.swing.JLabel();
+        jLabel96 = new javax.swing.JLabel();
+        typeComboKBP = new javax.swing.JComboBox<>();
+        wideTxtKBP = new DoubleJTextField();
+        jLabel97 = new javax.swing.JLabel();
+        heightTxtKBP = new DoubleJTextField();
+        jLabel98 = new javax.swing.JLabel();
+        jLabel99 = new javax.swing.JLabel();
+        commentTxtKBP = new javax.swing.JTextField();
+        jLabel100 = new javax.swing.JLabel();
+        imageComboKBP = new javax.swing.JComboBox<>();
+        jLabel101 = new javax.swing.JLabel();
+        orderDetailComboKBP = new javax.swing.JComboBox<>();
+        jPanel34 = new javax.swing.JPanel();
+        ropeTxt1KBP = new DoubleJTextField();
+        ropeTxt2KBP = new DoubleJTextField();
+        ropeTxt3KBP = new DoubleJTextField();
+        ropeTxt4KBP = new DoubleJTextField();
+        jLabel102 = new javax.swing.JLabel();
+        jLabel103 = new javax.swing.JLabel();
+        jLabel104 = new javax.swing.JLabel();
+        jLabel105 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        reportTableKBP = new javax.swing.JTable();
+        removeLabelKBP = new javax.swing.JLabel();
+        addLabelKBP = new javax.swing.JLabel();
+        jPanel35 = new javax.swing.JPanel();
+        netColorComboKBP = new javax.swing.JComboBox<>();
+        jLabel106 = new javax.swing.JLabel();
+        aluColorComboKBP = new javax.swing.JComboBox<>();
+        jLabel107 = new javax.swing.JLabel();
+        ropeNoComboKBP = new javax.swing.JComboBox<>();
+        jLabel108 = new javax.swing.JLabel();
+        comment1TxtKBP = new javax.swing.JTextField();
+        jLabel109 = new javax.swing.JLabel();
         jPanel21 = new javax.swing.JPanel();
         jPanel24 = new javax.swing.JPanel();
         jLabel59 = new javax.swing.JLabel();
@@ -265,7 +305,6 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel91 = new javax.swing.JLabel();
         comment1TxtNL = new javax.swing.JTextField();
         jLabel92 = new javax.swing.JLabel();
-        jPanel23 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         billNumberTxt = new javax.swing.JTextField();
@@ -602,7 +641,7 @@ public class StartFrame extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3);
 
-        jTabbedPane1.addTab("มุ้งจีบเก็บราง", jPanel1);
+        มุ้งจีบเก็บรางแบบแบ่งพ่วง.addTab("มุ้งจีบเก็บราง", jPanel1);
 
         jPanel12.setBackground(new java.awt.Color(255, 255, 255));
         jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -920,7 +959,7 @@ public class StartFrame extends javax.swing.JFrame {
             .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("มุ้งจีบเก็บรางซ้อน", jPanel5);
+        มุ้งจีบเก็บรางแบบแบ่งพ่วง.addTab("มุ้งจีบเก็บรางซ้อนราง", jPanel5);
 
         jPanel17.setBackground(new java.awt.Color(255, 255, 255));
         jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1238,7 +1277,325 @@ public class StartFrame extends javax.swing.JFrame {
             .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("มุ้งจีบเก็บแบบพ่วง", jPanel7);
+        มุ้งจีบเก็บรางแบบแบ่งพ่วง.addTab("มุ้งจีบเก็บแบบพ่วง", jPanel7);
+
+        jPanel32.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel32.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel93.setFont(new java.awt.Font("Segoe UI Light", 0, 11)); // NOI18N
+        jLabel93.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel93.setText("Make your life easier.");
+        jPanel32.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, -1, -1));
+
+        jPanel33.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel94.setText("รายละเอียดสินค้า");
+
+        jLabel95.setText("ชนิด");
+
+        jLabel96.setText("กว้าง");
+
+        typeComboKBP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "W", "D"}));
+        typeComboKBP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+
+        wideTxtKBP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        wideTxtKBP.setMinimumSize(new java.awt.Dimension(6, 22));
+        wideTxtKBP.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        jLabel97.setText("มิลลิเมตร");
+
+        heightTxtKBP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        heightTxtKBP.setMinimumSize(new java.awt.Dimension(6, 22));
+        heightTxtKBP.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        jLabel98.setText("มิลลิเมตร");
+
+        jLabel99.setText("หมายเหตุ");
+
+        commentTxtKBP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        commentTxtKBP.setMinimumSize(new java.awt.Dimension(6, 22));
+        commentTxtKBP.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        jLabel100.setText("สูง");
+
+        imageComboKBP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+
+        jLabel101.setText("รูปภาพ");
+
+        orderDetailComboKBP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ดึงขวา", "ดึงซ้าย", "ดึงเข้าหากัน" }));
+
+        javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
+        jPanel33.setLayout(jPanel33Layout);
+        jPanel33Layout.setHorizontalGroup(
+            jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel33Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel95, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel96, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel94, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel100, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel101, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel99, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(heightTxtKBP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(wideTxtKBP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(typeComboKBP, 0, 98, Short.MAX_VALUE)
+                    .addComponent(commentTxtKBP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(imageComboKBP, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(orderDetailComboKBP, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel97, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel98))
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+        jPanel33Layout.setVerticalGroup(
+            jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel33Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel94)
+                    .addComponent(orderDetailComboKBP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(imageComboKBP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel101))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(commentTxtKBP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel99))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(typeComboKBP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel95))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(wideTxtKBP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel97)
+                    .addComponent(jLabel96))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(heightTxtKBP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel98)
+                    .addComponent(jLabel100))
+                .addGap(0, 27, Short.MAX_VALUE))
+        );
+
+        jPanel32.add(jPanel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 310, 210));
+
+        jPanel34.setBackground(new java.awt.Color(255, 255, 255));
+
+        ropeTxt1KBP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        ropeTxt1KBP.setMinimumSize(new java.awt.Dimension(6, 22));
+        ropeTxt1KBP.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        ropeTxt2KBP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        ropeTxt2KBP.setEnabled(false);
+        ropeTxt2KBP.setMinimumSize(new java.awt.Dimension(6, 22));
+        ropeTxt2KBP.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        ropeTxt3KBP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        ropeTxt3KBP.setEnabled(false);
+        ropeTxt3KBP.setMinimumSize(new java.awt.Dimension(6, 22));
+        ropeTxt3KBP.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        ropeTxt4KBP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        ropeTxt4KBP.setEnabled(false);
+        ropeTxt4KBP.setMinimumSize(new java.awt.Dimension(6, 22));
+        ropeTxt4KBP.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        jLabel102.setText("เชือกเส้นที่ 1");
+
+        jLabel103.setText("เชือกเส้นที่ 2");
+
+        jLabel104.setText("เชือกเส้นที่ 3");
+
+        jLabel105.setText("เชือกเส้นที่ 4");
+
+        javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
+        jPanel34.setLayout(jPanel34Layout);
+        jPanel34Layout.setHorizontalGroup(
+            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel34Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel102, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel103, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel104, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel105, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ropeTxt1KBP, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                    .addComponent(ropeTxt2KBP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ropeTxt3KBP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ropeTxt4KBP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(45, 45, 45))
+        );
+        jPanel34Layout.setVerticalGroup(
+            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel34Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ropeTxt1KBP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel102))
+                .addGap(9, 9, 9)
+                .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel103)
+                    .addComponent(ropeTxt2KBP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ropeTxt3KBP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel104))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel105)
+                    .addComponent(ropeTxt4KBP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(81, 81, 81))
+        );
+
+        jPanel32.add(jPanel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 230, 160));
+
+        jScrollPane6.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane6.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        reportTableKBP.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ลำดับ", "รายละเอียดสินค้า", "Image", "หมายเหตุ", "ชนิด", "กว้าง", "สูง", "ผ้ามุ้งสี", "จำนวนเชือก", "เชือกเส้น 1", "เชือกเส้น 2", "เชือกเส้น 3", "เชือกเส้น 4", "Alu สี"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Object.class, javax.swing.ImageIcon.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        reportTableKBP.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        reportTableKBP.setRowHeight(25);
+        jScrollPane6.setViewportView(reportTableKBP);
+
+        jPanel32.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 861, 210));
+
+        removeLabelKBP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Trash_32px.png"))); // NOI18N
+        removeLabelKBP.setText("ลบ");
+        removeLabelKBP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                removeLabelKBPMouseReleased(evt);
+            }
+        });
+        jPanel32.add(removeLabelKBP, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, 70, -1));
+
+        addLabelKBP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/button/Plus_32px.png"))); // NOI18N
+        addLabelKBP.setText("เพิ่ม");
+        addLabelKBP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                addLabelKBPMouseReleased(evt);
+            }
+        });
+        jPanel32.add(addLabelKBP, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, 70, -1));
+
+        jPanel35.setBackground(new java.awt.Color(255, 255, 255));
+
+        netColorComboKBP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "เทา", "ดำ" }));
+        netColorComboKBP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+
+        jLabel106.setText("ผ้ามุ้งสี");
+
+        aluColorComboKBP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ขาว", "ดำ", "ไม้", "เทาซาฮาร่า", "ดำซาฮาร่า", "ดาร์คบราว" }));
+        aluColorComboKBP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+
+        jLabel107.setText("Alu สี");
+
+        ropeNoComboKBP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "4", "6", "8", "10", "14" }));
+        ropeNoComboKBP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        ropeNoComboKBP.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ropeNoComboKBPItemStateChanged(evt);
+            }
+        });
+
+        jLabel108.setText("จำนวนเชือก");
+
+        comment1TxtKBP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
+        comment1TxtKBP.setMinimumSize(new java.awt.Dimension(6, 22));
+        comment1TxtKBP.setPreferredSize(new java.awt.Dimension(6, 22));
+
+        jLabel109.setText("หมายเหตุ");
+
+        javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
+        jPanel35.setLayout(jPanel35Layout);
+        jPanel35Layout.setHorizontalGroup(
+            jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel35Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel35Layout.createSequentialGroup()
+                        .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel106, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel107, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(aluColorComboKBP, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(netColorComboKBP, javax.swing.GroupLayout.Alignment.TRAILING, 0, 96, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel35Layout.createSequentialGroup()
+                        .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel108, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel109, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ropeNoComboKBP, 0, 96, Short.MAX_VALUE)
+                            .addComponent(comment1TxtKBP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+        jPanel35Layout.setVerticalGroup(
+            jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel35Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(netColorComboKBP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel106))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(aluColorComboKBP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel107))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ropeNoComboKBP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel108))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comment1TxtKBP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel109))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel32.add(jPanel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 200, 160));
+
+        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+        jPanel23.setLayout(jPanel23Layout);
+        jPanel23Layout.setHorizontalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel32, javax.swing.GroupLayout.DEFAULT_SIZE, 885, Short.MAX_VALUE)
+        );
+        jPanel23Layout.setVerticalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        มุ้งจีบเก็บรางแบบแบ่งพ่วง.addTab("มุ้งจีบเก็บรางแบบแบ่งพ่วง", jPanel23);
 
         jPanel24.setBackground(new java.awt.Color(255, 255, 255));
         jPanel24.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1268,9 +1625,9 @@ public class StartFrame extends javax.swing.JFrame {
         heightTxtNH.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
         heightTxtNH.setMinimumSize(new java.awt.Dimension(6, 22));
         heightTxtNH.setPreferredSize(new java.awt.Dimension(6, 22));
-        heightTxtNH.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                heightTxtNHFocusLost(evt);
+        heightTxtNH.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                heightTxtNHKeyReleased(evt);
             }
         });
 
@@ -1553,7 +1910,7 @@ public class StartFrame extends javax.swing.JFrame {
             .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("มุ้งจีบรางสูง", jPanel21);
+        มุ้งจีบเก็บรางแบบแบ่งพ่วง.addTab("มุ้งจีบรางสูง", jPanel21);
 
         jPanel28.setBackground(new java.awt.Color(255, 255, 255));
         jPanel28.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1586,6 +1943,11 @@ public class StartFrame extends javax.swing.JFrame {
         heightTxtNL.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 heightTxtNLFocusLost(evt);
+            }
+        });
+        heightTxtNL.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                heightTxtNLKeyReleased(evt);
             }
         });
 
@@ -1868,20 +2230,7 @@ public class StartFrame extends javax.swing.JFrame {
             .addComponent(jPanel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("มุ้งจีบรางต่ำ", jPanel22);
-
-        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
-        jPanel23.setLayout(jPanel23Layout);
-        jPanel23Layout.setHorizontalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 885, Short.MAX_VALUE)
-        );
-        jPanel23Layout.setVerticalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 474, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("tab6", jPanel23);
+        มุ้งจีบเก็บรางแบบแบ่งพ่วง.addTab("มุ้งจีบรางต่ำ", jPanel22);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -2046,7 +2395,7 @@ public class StartFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(มุ้งจีบเก็บรางแบบแบ่งพ่วง, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -2055,7 +2404,7 @@ public class StartFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(มุ้งจีบเก็บรางแบบแบ่งพ่วง, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -2180,14 +2529,6 @@ public class StartFrame extends javax.swing.JFrame {
         addDataIntoTable(reportTableNH, orderDetailComboNH, imageComboNH, commentTxtNH, typeComboNH, wideTxtNH, heightTxtNH, netColorComboNH, ropeNoComboNH, ropeTxt1NH, ropeTxt2NH, ropeTxt3NH, ropeTxt4NH, aluColorComboNH);
     }//GEN-LAST:event_addLabelNHMouseReleased
 
-    private void heightTxtNHFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_heightTxtNHFocusLost
-        autoCalculateNumberOfSlot(ropeNoComboNH, heightTxtNH);
-    }//GEN-LAST:event_heightTxtNHFocusLost
-
-    private void heightTxtNLFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_heightTxtNLFocusLost
-        autoCalculateNumberOfSlot(ropeNoComboNL, heightTxtNL);
-    }//GEN-LAST:event_heightTxtNLFocusLost
-
     private void removeLabelNLMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeLabelNLMouseReleased
         removeItemFromTable(reportTableNL);
     }//GEN-LAST:event_removeLabelNLMouseReleased
@@ -2195,6 +2536,30 @@ public class StartFrame extends javax.swing.JFrame {
     private void addLabelNLMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLabelNLMouseReleased
         addDataIntoTable(reportTableNL, orderDetailComboNL, imageComboNL, commentTxtNL, typeComboNL, wideTxtNL, heightTxtNL, netColorComboNL, ropeNoComboNL, ropeTxt1NL, ropeTxt2NL, ropeTxt3NL, ropeTxt4NL, aluColorComboNL);
     }//GEN-LAST:event_addLabelNLMouseReleased
+
+    private void heightTxtNHKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_heightTxtNHKeyReleased
+        autoCalculateNumberOfSlot(ropeNoComboNH, heightTxtNH);
+    }//GEN-LAST:event_heightTxtNHKeyReleased
+
+    private void heightTxtNLKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_heightTxtNLKeyReleased
+        autoCalculateNumberOfSlot(ropeNoComboNL, heightTxtNL);
+    }//GEN-LAST:event_heightTxtNLKeyReleased
+
+    private void heightTxtNLFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_heightTxtNLFocusLost
+        autoCalculateNumberOfSlot(ropeNoComboNL, heightTxtNL);
+    }//GEN-LAST:event_heightTxtNLFocusLost
+
+    private void removeLabelKBPMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeLabelKBPMouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_removeLabelKBPMouseReleased
+
+    private void addLabelKBPMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLabelKBPMouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addLabelKBPMouseReleased
+
+    private void ropeNoComboKBPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ropeNoComboKBPItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ropeNoComboKBPItemStateChanged
     
     private void addDataIntoTable(JTable reportTable, JComboBox<String> orderDetailCombo, JComboBox<ImageIcon> imageCombo, JTextField commentTxt,
             JComboBox<String> typeCombo, JTextField wideTxt, JTextField heightTxt, JComboBox<String> netColorCombo, JComboBox<String> ropeNoCombo,
@@ -2332,7 +2697,7 @@ public class StartFrame extends javax.swing.JFrame {
 
             if (CollectionUtils.isNotEmpty(ksOrderDetails)) {
                 InputStream is2 = getClass().getResourceAsStream("/template/report2.xls");
-                OutputStream os2 = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "_มุ้งจีบเก็บรางซ้อน" + "." + XLS);
+                OutputStream os2 = new FileOutputStream(fileDirectory.getSelectedFile().toString() + "_มุ้งจีบเก็บรางซ้อนราง" + "." + XLS);
                 context.putVar("orderDetails", ksOrderDetails);
                 JxlsHelper.getInstance().processTemplate(is2, os2, context);
             }
@@ -2402,22 +2767,26 @@ public class StartFrame extends javax.swing.JFrame {
     private static final String XLS = "xls";
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel addLabelK;
+    private javax.swing.JLabel addLabelKBP;
     private javax.swing.JLabel addLabelKP;
     private javax.swing.JLabel addLabelKS;
     private javax.swing.JLabel addLabelNH;
     private javax.swing.JLabel addLabelNL;
     private javax.swing.JComboBox<String> aluColorComboK;
+    private javax.swing.JComboBox<String> aluColorComboKBP;
     private javax.swing.JComboBox<String> aluColorComboKP;
     private javax.swing.JComboBox<String> aluColorComboKS;
     private javax.swing.JComboBox<String> aluColorComboNH;
     private javax.swing.JComboBox<String> aluColorComboNL;
     private javax.swing.JTextField billNumberTxt;
     private javax.swing.JTextField comment1TxtK;
+    private javax.swing.JTextField comment1TxtKBP;
     private javax.swing.JTextField comment1TxtKP;
     private javax.swing.JTextField comment1TxtKS;
     private javax.swing.JTextField comment1TxtNH;
     private javax.swing.JTextField comment1TxtNL;
     private javax.swing.JTextField commentTxtK;
+    private javax.swing.JTextField commentTxtKBP;
     private javax.swing.JTextField commentTxtKP;
     private javax.swing.JTextField commentTxtKS;
     private javax.swing.JTextField commentTxtNH;
@@ -2425,16 +2794,28 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JTextField customerTxt;
     private javax.swing.JButton exportButton;
     private javax.swing.JTextField heightTxtK;
+    private javax.swing.JTextField heightTxtKBP;
     private javax.swing.JTextField heightTxtKP;
     private javax.swing.JTextField heightTxtKS;
     private javax.swing.JTextField heightTxtNH;
     private javax.swing.JTextField heightTxtNL;
     private javax.swing.JComboBox<ImageIcon> imageComboK;
+    private javax.swing.JComboBox<ImageIcon> imageComboKBP;
     private javax.swing.JComboBox<ImageIcon> imageComboKP;
     private javax.swing.JComboBox<ImageIcon> imageComboKS;
     private javax.swing.JComboBox<ImageIcon> imageComboNH;
     private javax.swing.JComboBox<ImageIcon> imageComboNL;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel101;
+    private javax.swing.JLabel jLabel102;
+    private javax.swing.JLabel jLabel103;
+    private javax.swing.JLabel jLabel104;
+    private javax.swing.JLabel jLabel105;
+    private javax.swing.JLabel jLabel106;
+    private javax.swing.JLabel jLabel107;
+    private javax.swing.JLabel jLabel108;
+    private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -2525,6 +2906,13 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel90;
     private javax.swing.JLabel jLabel91;
     private javax.swing.JLabel jLabel92;
+    private javax.swing.JLabel jLabel93;
+    private javax.swing.JLabel jLabel94;
+    private javax.swing.JLabel jLabel95;
+    private javax.swing.JLabel jLabel96;
+    private javax.swing.JLabel jLabel97;
+    private javax.swing.JLabel jLabel98;
+    private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -2550,6 +2938,10 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel31;
+    private javax.swing.JPanel jPanel32;
+    private javax.swing.JPanel jPanel33;
+    private javax.swing.JPanel jPanel34;
+    private javax.swing.JPanel jPanel35;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
@@ -2561,14 +2953,16 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JComboBox<String> netColorComboK;
+    private javax.swing.JComboBox<String> netColorComboKBP;
     private javax.swing.JComboBox<String> netColorComboKP;
     private javax.swing.JComboBox<String> netColorComboKS;
     private javax.swing.JComboBox<String> netColorComboNH;
     private javax.swing.JComboBox<String> netColorComboNL;
     private org.jdesktop.swingx.JXDatePicker orderDate;
     private javax.swing.JComboBox<String> orderDetailComboK;
+    private javax.swing.JComboBox<String> orderDetailComboKBP;
     private javax.swing.JComboBox<String> orderDetailComboKP;
     private javax.swing.JComboBox<String> orderDetailComboKS;
     private javax.swing.JComboBox<String> orderDetailComboNH;
@@ -2576,51 +2970,61 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JTextField quotationIdTxt;
     private org.jdesktop.swingx.JXDatePicker receiveDate;
     private javax.swing.JLabel removeLabelK;
+    private javax.swing.JLabel removeLabelKBP;
     private javax.swing.JLabel removeLabelKP;
     private javax.swing.JLabel removeLabelKS;
     private javax.swing.JLabel removeLabelNH;
     private javax.swing.JLabel removeLabelNL;
     private javax.swing.JTable reportTableK;
+    private javax.swing.JTable reportTableKBP;
     private javax.swing.JTable reportTableKP;
     private javax.swing.JTable reportTableKS;
     private javax.swing.JTable reportTableNH;
     private javax.swing.JTable reportTableNL;
     private javax.swing.JComboBox<String> ropeNoComboK;
+    private javax.swing.JComboBox<String> ropeNoComboKBP;
     private javax.swing.JComboBox<String> ropeNoComboKP;
     private javax.swing.JComboBox<String> ropeNoComboKS;
     private javax.swing.JComboBox<String> ropeNoComboNH;
     private javax.swing.JComboBox<String> ropeNoComboNL;
     private javax.swing.JTextField ropeTxt1K;
+    private javax.swing.JTextField ropeTxt1KBP;
     private javax.swing.JTextField ropeTxt1KP;
     private javax.swing.JTextField ropeTxt1KS;
     private javax.swing.JTextField ropeTxt1NH;
     private javax.swing.JTextField ropeTxt1NL;
     private javax.swing.JTextField ropeTxt2K;
+    private javax.swing.JTextField ropeTxt2KBP;
     private javax.swing.JTextField ropeTxt2KP;
     private javax.swing.JTextField ropeTxt2KS;
     private javax.swing.JTextField ropeTxt2NH;
     private javax.swing.JTextField ropeTxt2NL;
     private javax.swing.JTextField ropeTxt3K;
+    private javax.swing.JTextField ropeTxt3KBP;
     private javax.swing.JTextField ropeTxt3KP;
     private javax.swing.JTextField ropeTxt3KS;
     private javax.swing.JTextField ropeTxt3NH;
     private javax.swing.JTextField ropeTxt3NL;
     private javax.swing.JTextField ropeTxt4K;
+    private javax.swing.JTextField ropeTxt4KBP;
     private javax.swing.JTextField ropeTxt4KP;
     private javax.swing.JTextField ropeTxt4KS;
     private javax.swing.JTextField ropeTxt4NH;
     private javax.swing.JTextField ropeTxt4NL;
     private javax.swing.JComboBox<String> sellerSelect;
     private javax.swing.JComboBox<String> typeComboK;
+    private javax.swing.JComboBox<String> typeComboKBP;
     private javax.swing.JComboBox<String> typeComboKP;
     private javax.swing.JComboBox<String> typeComboKS;
     private javax.swing.JComboBox<String> typeComboNH;
     private javax.swing.JComboBox<String> typeComboNL;
     private javax.swing.JTextField wideTxtK;
+    private javax.swing.JTextField wideTxtKBP;
     private javax.swing.JTextField wideTxtKP;
     private javax.swing.JTextField wideTxtKS;
     private javax.swing.JTextField wideTxtNH;
     private javax.swing.JTextField wideTxtNL;
+    private javax.swing.JTabbedPane มุ้งจีบเก็บรางแบบแบ่งพ่วง;
     // End of variables declaration//GEN-END:variables
 
     private void initComponents2() {
@@ -2635,35 +3039,41 @@ public class StartFrame extends javax.swing.JFrame {
         receiveDate.setFormats(FORMATER);
 
         // Set Image Combobox
-        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/two_left.PNG"), "/image/two_left.PNG"));
-        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/two_right.PNG"), "/image/two_right.PNG"));
-        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/three_left.PNG"), "/image/three_left.PNG"));
-        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/three_right.PNG"), "/image/three_right.PNG"));
-//        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/right.PNG"), "/image/right.PNG"));
+        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/left.PNG"), "/image/left.PNG"));
+        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/right.PNG"), "/image/right.PNG"));
+        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/2left.PNG"), "/image/2left.PNG"));
+        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/2right.PNG"), "/image/2right.PNG"));
+        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/3left.PNG"), "/image/3left.PNG"));
+        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/3right.PNG"), "/image/3right.PNG"));
+        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/join.PNG"), "/image/join.PNG"));
+        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/2join.PNG"), "/image/2join.PNG"));
+        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/3join.PNG"), "/image/3join.PNG"));
+        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/12join.PNG"), "/image/12join.PNG"));
+        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/21join.PNG"), "/image/21join.PNG"));
 
         // Set Image Combobox
-        imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/two_left.PNG"), "/image/two_left.PNG"));
-        imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/two_right.PNG"), "/image/two_right.PNG"));
-        imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/three_left.PNG"), "/image/three_left.PNG"));
-        imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/three_right.PNG"), "/image/three_right.PNG"));
+        imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/left.PNG"), "/image/left.PNG"));
+        imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/right.PNG"), "/image/right.PNG"));
+        imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/2left.PNG"), "/image/2left.PNG"));
+        imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/2right.PNG"), "/image/2right.PNG"));
 
         // Set Image Combobox
-        imageComboKP.addItem(new ImageIcon(getClass().getResource("/image/two_left.PNG"), "/image/two_left.PNG"));
-        imageComboKP.addItem(new ImageIcon(getClass().getResource("/image/two_right.PNG"), "/image/two_right.PNG"));
-        imageComboKP.addItem(new ImageIcon(getClass().getResource("/image/three_left.PNG"), "/image/three_left.PNG"));
-        imageComboKP.addItem(new ImageIcon(getClass().getResource("/image/three_right.PNG"), "/image/three_right.PNG"));
+        imageComboKP.addItem(new ImageIcon(getClass().getResource("/image/left.PNG"), "/image/left.PNG"));
+        imageComboKP.addItem(new ImageIcon(getClass().getResource("/image/right.PNG"), "/image/right.PNG"));
+        imageComboKP.addItem(new ImageIcon(getClass().getResource("/image/2left.PNG"), "/image/2left.PNG"));
+        imageComboKP.addItem(new ImageIcon(getClass().getResource("/image/2right.PNG"), "/image/2right.PNG"));
 
         // Set Image Combobox
-        imageComboNH.addItem(new ImageIcon(getClass().getResource("/image/two_left.PNG"), "/image/two_left.PNG"));
-        imageComboNH.addItem(new ImageIcon(getClass().getResource("/image/two_right.PNG"), "/image/two_right.PNG"));
-        imageComboNH.addItem(new ImageIcon(getClass().getResource("/image/three_left.PNG"), "/image/three_left.PNG"));
-        imageComboNH.addItem(new ImageIcon(getClass().getResource("/image/three_right.PNG"), "/image/three_right.PNG"));
+        imageComboNH.addItem(new ImageIcon(getClass().getResource("/image/left.PNG"), "/image/left.PNG"));
+        imageComboNH.addItem(new ImageIcon(getClass().getResource("/image/right.PNG"), "/image/right.PNG"));
+        imageComboNH.addItem(new ImageIcon(getClass().getResource("/image/2left.PNG"), "/image/2left.PNG"));
+        imageComboNH.addItem(new ImageIcon(getClass().getResource("/image/2right.PNG"), "/image/2right.PNG"));
 
         // Set Image Combobox
-        imageComboNL.addItem(new ImageIcon(getClass().getResource("/image/two_left.PNG"), "/image/two_left.PNG"));
-        imageComboNL.addItem(new ImageIcon(getClass().getResource("/image/two_right.PNG"), "/image/two_right.PNG"));
-        imageComboNL.addItem(new ImageIcon(getClass().getResource("/image/three_left.PNG"), "/image/three_left.PNG"));
-        imageComboNL.addItem(new ImageIcon(getClass().getResource("/image/three_right.PNG"), "/image/three_right.PNG"));
+        imageComboNL.addItem(new ImageIcon(getClass().getResource("/image/left.PNG"), "/image/left.PNG"));
+        imageComboNL.addItem(new ImageIcon(getClass().getResource("/image/right.PNG"), "/image/right.PNG"));
+        imageComboNL.addItem(new ImageIcon(getClass().getResource("/image/2left.PNG"), "/image/2left.PNG"));
+        imageComboNL.addItem(new ImageIcon(getClass().getResource("/image/2right.PNG"), "/image/2right.PNG"));
     }
 
     private void setTableHeaderCenter() {
@@ -2692,8 +3102,12 @@ public class StartFrame extends javax.swing.JFrame {
         JLabel headerLabelNH = (JLabel) headerNH;
         headerLabelNH.setHorizontalAlignment(JLabel.CENTER);
         
-        Image image = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/image/Microsoft_Excel_48.PNG"));
-        setIconImage(image);
+//        Image image = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/image/Microsoft_Excel_48.PNG"));
+        System.out.println(getClass().getResource("/image/2right2.PNG"));
+        ImageIcon icon = new ImageIcon(getClass().getResource("/image/2right2.PNG"));
+//        ImageIcon icon = new ImageIcon(getClass().getResource("/image/Microsoft_Excel_48.PNG"));
+        
+        setIconImage(icon.getImage());
         setTitle("108 Home Design");
     }
 }
