@@ -123,13 +123,11 @@
                                   <Component id="orderDetailComboK" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="jLabel14" min="-2" pref="58" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                  </Group>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jLabel13" max="32767" attributes="0"/>
+                                  <Component id="jLabel14" pref="77" max="32767" attributes="0"/>
                               </Group>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -231,7 +229,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel13">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe34;&#xe25;&#xe25;&#xe34;&#xe40;&#xe21;&#xe15;&#xe23;"/>
+                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe21;."/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="heightTxtK">
@@ -259,7 +257,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel14">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe34;&#xe25;&#xe25;&#xe34;&#xe40;&#xe21;&#xe15;&#xe23;"/>
+                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe21;."/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel17">
@@ -929,7 +927,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel29">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe34;&#xe25;&#xe25;&#xe34;&#xe40;&#xe21;&#xe15;&#xe23;"/>
+                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe21;."/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="heightTxtKS">
@@ -954,7 +952,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel30">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe34;&#xe25;&#xe25;&#xe34;&#xe40;&#xe21;&#xe15;&#xe23;"/>
+                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe21;."/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel31">
@@ -1620,7 +1618,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel46">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe34;&#xe25;&#xe25;&#xe34;&#xe40;&#xe21;&#xe15;&#xe23;"/>
+                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe21;."/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="heightTxtKP">
@@ -1645,7 +1643,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel47">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe34;&#xe25;&#xe25;&#xe34;&#xe40;&#xe21;&#xe15;&#xe23;"/>
+                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe21;."/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel48">
@@ -2311,7 +2309,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel97">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe34;&#xe25;&#xe25;&#xe34;&#xe40;&#xe21;&#xe15;&#xe23;"/>
+                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe21;."/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="heightTxtKBP">
@@ -2336,7 +2334,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel98">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe34;&#xe25;&#xe25;&#xe34;&#xe40;&#xe21;&#xe15;&#xe23;"/>
+                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe21;."/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel99">
@@ -3002,7 +3000,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel63">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe34;&#xe25;&#xe25;&#xe34;&#xe40;&#xe21;&#xe15;&#xe23;"/>
+                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe21;."/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="heightTxtNH">
@@ -3030,7 +3028,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel64">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe34;&#xe25;&#xe25;&#xe34;&#xe40;&#xe21;&#xe15;&#xe23;"/>
+                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe21;."/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel65">
@@ -3690,7 +3688,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel80">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe34;&#xe25;&#xe25;&#xe34;&#xe40;&#xe21;&#xe15;&#xe23;"/>
+                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe21;."/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="heightTxtNL">
@@ -3719,7 +3717,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel81">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe34;&#xe25;&#xe25;&#xe34;&#xe40;&#xe21;&#xe15;&#xe23;"/>
+                        <Property name="text" type="java.lang.String" value="&#xe21;&#xe21;."/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel82">
@@ -4480,7 +4478,9 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="exportButton" min="-2" pref="120" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="emptyButton" min="-2" pref="120" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -4488,7 +4488,10 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="exportButton" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="exportButton" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="emptyButton" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -4501,6 +4504,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exportButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="emptyButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#xe25;&#xe49;&#xe32;&#xe07;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;&#xe17;&#xe31;&#xe49;&#xe07;&#xe2b;&#xe21;&#xe14;"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="emptyButtonActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

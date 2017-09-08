@@ -8,8 +8,9 @@ package com.mycompany.ui;
 import com.mycompany.common.dto.Order;
 import com.mycompany.common.dto.OrderDetail;
 import com.mycompany.common.util.DoubleJTextField;
-import java.awt.Image;
-import java.awt.Toolkit;
+import java.awt.Component;
+import java.awt.Window;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -31,6 +32,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
@@ -323,6 +325,7 @@ public class StartFrame extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel16 = new javax.swing.JPanel();
         exportButton = new javax.swing.JButton();
+        emptyButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -353,14 +356,14 @@ public class StartFrame extends javax.swing.JFrame {
         wideTxtK.setMinimumSize(new java.awt.Dimension(6, 22));
         wideTxtK.setPreferredSize(new java.awt.Dimension(6, 22));
 
-        jLabel13.setText("มิลลิเมตร");
+        jLabel13.setText("มม.");
 
         heightTxtK.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
         heightTxtK.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         heightTxtK.setMinimumSize(new java.awt.Dimension(6, 22));
         heightTxtK.setPreferredSize(new java.awt.Dimension(6, 22));
 
-        jLabel14.setText("มิลลิเมตร");
+        jLabel14.setText("มม.");
 
         jLabel17.setText("หมายเหตุ");
 
@@ -398,11 +401,10 @@ public class StartFrame extends javax.swing.JFrame {
                     .addComponent(imageComboK, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(orderDetailComboK, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -666,13 +668,13 @@ public class StartFrame extends javax.swing.JFrame {
         wideTxtKS.setMinimumSize(new java.awt.Dimension(6, 22));
         wideTxtKS.setPreferredSize(new java.awt.Dimension(6, 22));
 
-        jLabel29.setText("มิลลิเมตร");
+        jLabel29.setText("มม.");
 
         heightTxtKS.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
         heightTxtKS.setMinimumSize(new java.awt.Dimension(6, 22));
         heightTxtKS.setPreferredSize(new java.awt.Dimension(6, 22));
 
-        jLabel30.setText("มิลลิเมตร");
+        jLabel30.setText("มม.");
 
         jLabel31.setText("หมายเหตุ");
 
@@ -984,13 +986,13 @@ public class StartFrame extends javax.swing.JFrame {
         wideTxtKP.setMinimumSize(new java.awt.Dimension(6, 22));
         wideTxtKP.setPreferredSize(new java.awt.Dimension(6, 22));
 
-        jLabel46.setText("มิลลิเมตร");
+        jLabel46.setText("มม.");
 
         heightTxtKP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
         heightTxtKP.setMinimumSize(new java.awt.Dimension(6, 22));
         heightTxtKP.setPreferredSize(new java.awt.Dimension(6, 22));
 
-        jLabel47.setText("มิลลิเมตร");
+        jLabel47.setText("มม.");
 
         jLabel48.setText("หมายเหตุ");
 
@@ -1302,13 +1304,13 @@ public class StartFrame extends javax.swing.JFrame {
         wideTxtKBP.setMinimumSize(new java.awt.Dimension(6, 22));
         wideTxtKBP.setPreferredSize(new java.awt.Dimension(6, 22));
 
-        jLabel97.setText("มิลลิเมตร");
+        jLabel97.setText("มม.");
 
         heightTxtKBP.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
         heightTxtKBP.setMinimumSize(new java.awt.Dimension(6, 22));
         heightTxtKBP.setPreferredSize(new java.awt.Dimension(6, 22));
 
-        jLabel98.setText("มิลลิเมตร");
+        jLabel98.setText("มม.");
 
         jLabel99.setText("หมายเหตุ");
 
@@ -1620,7 +1622,7 @@ public class StartFrame extends javax.swing.JFrame {
         wideTxtNH.setMinimumSize(new java.awt.Dimension(6, 22));
         wideTxtNH.setPreferredSize(new java.awt.Dimension(6, 22));
 
-        jLabel63.setText("มิลลิเมตร");
+        jLabel63.setText("มม.");
 
         heightTxtNH.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
         heightTxtNH.setMinimumSize(new java.awt.Dimension(6, 22));
@@ -1631,7 +1633,7 @@ public class StartFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel64.setText("มิลลิเมตร");
+        jLabel64.setText("มม.");
 
         jLabel65.setText("หมายเหตุ");
 
@@ -1935,7 +1937,7 @@ public class StartFrame extends javax.swing.JFrame {
         wideTxtNL.setMinimumSize(new java.awt.Dimension(6, 22));
         wideTxtNL.setPreferredSize(new java.awt.Dimension(6, 22));
 
-        jLabel80.setText("มิลลิเมตร");
+        jLabel80.setText("มม.");
 
         heightTxtNL.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, null));
         heightTxtNL.setMinimumSize(new java.awt.Dimension(6, 22));
@@ -1951,7 +1953,7 @@ public class StartFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel81.setText("มิลลิเมตร");
+        jLabel81.setText("มม.");
 
         jLabel82.setText("หมายเหตุ");
 
@@ -2374,6 +2376,13 @@ public class StartFrame extends javax.swing.JFrame {
             }
         });
 
+        emptyButton.setText("ล้างข้อมูลทั้งหมด");
+        emptyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emptyButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
@@ -2381,13 +2390,17 @@ public class StartFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(exportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(emptyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(exportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(exportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(emptyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -2560,6 +2573,27 @@ public class StartFrame extends javax.swing.JFrame {
     private void ropeNoComboKBPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ropeNoComboKBPItemStateChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_ropeNoComboKBPItemStateChanged
+
+    private void emptyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emptyButtonActionPerformed
+        System.out.println("empty");
+        
+        removeAllTableRow(reportTableK);
+        removeAllTableRow(reportTableKBP);
+        removeAllTableRow(reportTableKP);
+        removeAllTableRow(reportTableKS);
+        removeAllTableRow(reportTableNH);
+        removeAllTableRow(reportTableNL);
+        
+        billNumberTxt.setText("");
+        quotationIdTxt.setText("");
+        customerTxt.setText("");
+        receiveDate.setDate(null);
+    }//GEN-LAST:event_emptyButtonActionPerformed
+    
+    private void removeAllTableRow(JTable reportTable){
+        DefaultTableModel model = (DefaultTableModel) reportTable.getModel();
+        model.setRowCount(0);
+    }
     
     private void addDataIntoTable(JTable reportTable, JComboBox<String> orderDetailCombo, JComboBox<ImageIcon> imageCombo, JTextField commentTxt,
             JComboBox<String> typeCombo, JTextField wideTxt, JTextField heightTxt, JComboBox<String> netColorCombo, JComboBox<String> ropeNoCombo,
@@ -2792,6 +2826,7 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JTextField commentTxtNH;
     private javax.swing.JTextField commentTxtNL;
     private javax.swing.JTextField customerTxt;
+    private javax.swing.JButton emptyButton;
     private javax.swing.JButton exportButton;
     private javax.swing.JTextField heightTxtK;
     private javax.swing.JTextField heightTxtKBP;
@@ -3039,43 +3074,27 @@ public class StartFrame extends javax.swing.JFrame {
         receiveDate.setFormats(FORMATER);
 
         // Set Image Combobox
-        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/left.PNG"), "/image/left.PNG"));
-        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/right.PNG"), "/image/right.PNG"));
-        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/2left.PNG"), "/image/2left.PNG"));
-        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/2right.PNG"), "/image/2right.PNG"));
-        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/3left.PNG"), "/image/3left.PNG"));
-        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/3right.PNG"), "/image/3right.PNG"));
-        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/join.PNG"), "/image/join.PNG"));
-        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/2join.PNG"), "/image/2join.PNG"));
-        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/3join.PNG"), "/image/3join.PNG"));
-        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/12join.PNG"), "/image/12join.PNG"));
-        imageComboK.addItem(new ImageIcon(getClass().getResource("/image/21join.PNG"), "/image/21join.PNG"));
-
-        // Set Image Combobox
-        imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/left.PNG"), "/image/left.PNG"));
-        imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/right.PNG"), "/image/right.PNG"));
-        imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/2left.PNG"), "/image/2left.PNG"));
-        imageComboKS.addItem(new ImageIcon(getClass().getResource("/image/2right.PNG"), "/image/2right.PNG"));
-
-        // Set Image Combobox
-        imageComboKP.addItem(new ImageIcon(getClass().getResource("/image/left.PNG"), "/image/left.PNG"));
-        imageComboKP.addItem(new ImageIcon(getClass().getResource("/image/right.PNG"), "/image/right.PNG"));
-        imageComboKP.addItem(new ImageIcon(getClass().getResource("/image/2left.PNG"), "/image/2left.PNG"));
-        imageComboKP.addItem(new ImageIcon(getClass().getResource("/image/2right.PNG"), "/image/2right.PNG"));
-
-        // Set Image Combobox
-        imageComboNH.addItem(new ImageIcon(getClass().getResource("/image/left.PNG"), "/image/left.PNG"));
-        imageComboNH.addItem(new ImageIcon(getClass().getResource("/image/right.PNG"), "/image/right.PNG"));
-        imageComboNH.addItem(new ImageIcon(getClass().getResource("/image/2left.PNG"), "/image/2left.PNG"));
-        imageComboNH.addItem(new ImageIcon(getClass().getResource("/image/2right.PNG"), "/image/2right.PNG"));
-
-        // Set Image Combobox
-        imageComboNL.addItem(new ImageIcon(getClass().getResource("/image/left.PNG"), "/image/left.PNG"));
-        imageComboNL.addItem(new ImageIcon(getClass().getResource("/image/right.PNG"), "/image/right.PNG"));
-        imageComboNL.addItem(new ImageIcon(getClass().getResource("/image/2left.PNG"), "/image/2left.PNG"));
-        imageComboNL.addItem(new ImageIcon(getClass().getResource("/image/2right.PNG"), "/image/2right.PNG"));
+        addImageCombo(imageComboK);
+        addImageCombo(imageComboKS);
+        addImageCombo(imageComboKP);
+        addImageCombo(imageComboNH);
+        addImageCombo(imageComboNL);
     }
 
+    private void addImageCombo(JComboBox<ImageIcon> imageCombo){
+        imageCombo.addItem(new ImageIcon(getClass().getResource("/image/left.PNG"), "/image/left.PNG"));
+        imageCombo.addItem(new ImageIcon(getClass().getResource("/image/right.PNG"), "/image/right.PNG"));
+        imageCombo.addItem(new ImageIcon(getClass().getResource("/image/2left.PNG"), "/image/2left.PNG"));
+        imageCombo.addItem(new ImageIcon(getClass().getResource("/image/2right.PNG"), "/image/2right.PNG"));
+        imageCombo.addItem(new ImageIcon(getClass().getResource("/image/3left.PNG"), "/image/3left.PNG"));
+        imageCombo.addItem(new ImageIcon(getClass().getResource("/image/3right.PNG"), "/image/3right.PNG"));
+        imageCombo.addItem(new ImageIcon(getClass().getResource("/image/join.PNG"), "/image/join.PNG"));
+        imageCombo.addItem(new ImageIcon(getClass().getResource("/image/2join.PNG"), "/image/2join.PNG"));
+        imageCombo.addItem(new ImageIcon(getClass().getResource("/image/3join.PNG"), "/image/3join.PNG"));
+        imageCombo.addItem(new ImageIcon(getClass().getResource("/image/12join.PNG"), "/image/12join.PNG"));
+        imageCombo.addItem(new ImageIcon(getClass().getResource("/image/21join.PNG"), "/image/21join.PNG"));
+    }
+    
     private void setTableHeaderCenter() {
         // Set Text Hearder to Center.
         TableCellRenderer headerK = reportTableK.getTableHeader().getDefaultRenderer();
